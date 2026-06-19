@@ -1,0 +1,46 @@
+site_name: golang-cop
+site_description: Small pure-Go OOP / generics primitives — interface-first array, null, result, string and error building blocks. No cgo.
+site_url: https://golang-cop.github.io/docs/
+repo_url: https://github.com/golang-cop
+repo_name: golang-cop
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-sunny, name: Light mode }
+  features: [navigation.sections, navigation.top, content.code.copy, search.suggest]
+
+extra_css: [stylesheets/brand.css]
+extra:
+  version:
+    provider: mike
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight
+
+nav:
+  - Home: index.md
+  - Components:
+      - Overview: components/index.md
+      - "array — interface-first slice": components/array.md
+      - "null — the null sentinel": components/null.md
+      - "result — payload + error wrapper": components/result.md
+      - "string — boxed string value": components/string.md
+      - "error — error interface + sentinels": components/error.md

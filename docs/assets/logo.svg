@@ -1,0 +1,15 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="golang-oop">
+  <defs>
+    <linearGradient id="oopgrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B7CF0"/>
+      <stop offset="1" stop-color="#4B33B0"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#oopgrad)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="78" y="72" width="100" height="112" rx="16"/>
+    <path d="M78 108H178"/>
+    <path d="M98 134H158"/>
+    <path d="M98 158H140"/>
+  </g>
+</svg>
