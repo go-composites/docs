@@ -1052,11 +1052,22 @@ sub-directory) boxes a Go <code>string</code> behind the org's interface-first s
 <span class="w">    </span><span class="nx">Set</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
 <span class="w">    </span><span class="nx">Split</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Length</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Concat</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Contains</span><span class="p">(</span><span class="nx">substr</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Replace</span><span class="p">(</span><span class="nx">old</span><span class="p">,</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Upper</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Lower</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Trim</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="p">}</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">WithGoString</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
+
+<span class="c1">// Null-Object variant (honours the full Interface, never nil):</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 </code></pre></div>
 <ul>
 <li><code>New()</code> builds an empty string; <code>New(String.WithGoString("Hello World!"))</code>
@@ -1067,8 +1078,31 @@ sub-directory) boxes a Go <code>string</code> behind the org's interface-first s
 <li><code>Split(sep)</code> splits on <code>sep</code> and returns a result whose payload is an
   <a href="../array/"><code>array</code></a> of <code>String</code> values (each split field boxed as a new
   <code>String</code>).</li>
-<li><code>IsNull()</code> always returns <code>false</code>.</li>
+<li><code>Length()</code> returns the number of <strong>runes</strong> (via <code>utf8.RuneCountInString</code>), so
+  multibyte UTF-8 content is counted correctly — not the byte length.</li>
+<li><code>Concat(other)</code> returns a result whose payload is a <strong>new</strong> <code>String</code> equal to
+  the receiver followed by <code>other</code>.</li>
+<li><code>Contains(substr)</code> returns a Go <code>bool</code>: whether <code>substr</code> is within the string.</li>
+<li><code>Replace(old, new)</code> returns a result whose payload is a <strong>new</strong> <code>String</code> with
+  all non-overlapping instances of <code>old</code> replaced by <code>new</code>.</li>
+<li><code>Upper()</code> / <code>Lower()</code> / <code>Trim()</code> each return a result whose payload is a
+  <strong>new</strong> <code>String</code> with, respectively, all characters upper-cased, lower-cased,
+  or leading/trailing white space removed.</li>
+<li><code>Equal(other)</code> returns a Go <code>bool</code>: whether the receiver and <code>other</code> carry the
+  same underlying string.</li>
+<li><code>IsNull()</code> returns <code>false</code> for a real string.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Null-Object variant</p>
+<p><code>String.Null()</code> returns the <strong>Null-Object</strong> string: an empty, immutable
+placeholder that honours the full <code>Interface</code> without ever being <code>nil</code>.
+<code>ToGoString()</code> is <code>""</code>, predicates (<code>Contains</code>, <code>Equal</code>) report <code>false</code>,
+<code>Length()</code> is <code>0</code>, value-producing operations return a successful result
+wrapping the null <code>String</code> (or, where chaining is meaningful, the receiver),
+and <code>IsNull()</code> returns <code>true</code>. Use it instead of a <code>nil</code>
+<code>String.Interface</code>. (The Null-Object lives in the same <code>src</code> package as a
+<code>Null()</code> constructor; there is no separate <code>src/null</code> sub-package.)</p>
+</div>
 <h2 id="usage">Usage</h2>
 <div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">String</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">String</span><span class="p">.</span><span class="nx">WithGoString</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">))</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// Hello World!</span>

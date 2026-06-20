@@ -1143,9 +1143,19 @@ and each method has a package-level twin that operates on a plain
 <span class="w">    </span><span class="nx">Last</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Clear</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Copy</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Len</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">IsEmpty</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Contains</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Insert</span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Delete</span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Reverse</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="p">}</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
+
+<span class="c1">// Null-Object variant (honours the full Interface, never nil):</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 
 <span class="c1">// Package-level twins over a raw []interface{}:</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">Each</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
@@ -1191,7 +1201,35 @@ and each method has a package-level twin that operates on a plain
 </tr>
 <tr>
 <td><code>Copy()</code></td>
-<td>Returns an empty result — <strong>not implemented</strong> (no copy is performed).</td>
+<td>Returns a result whose payload is a <strong>new, independent <code>Array</code></strong> (the backing slice is copied, so mutating one does not affect the other).</td>
+</tr>
+<tr>
+<td><code>Len()</code></td>
+<td>Returns the number of elements as a Go <code>int</code>.</td>
+</tr>
+<tr>
+<td><code>IsEmpty()</code></td>
+<td>Returns a Go <code>bool</code>: <code>true</code> when the array has no elements.</td>
+</tr>
+<tr>
+<td><code>Contains(x)</code></td>
+<td>Returns a result whose payload is a Go <code>bool</code>: <code>true</code> when <code>x</code> is present (compared with <code>reflect.DeepEqual</code>).</td>
+</tr>
+<tr>
+<td><code>Insert(i, x)</code></td>
+<td>Inserts <code>x</code> at index <code>i</code>, shifting the tail right (<code>i == Len()</code> appends). Payload is the array itself; an out-of-range <code>i</code> yields a result carrying an <code>Error</code> (<code>"Array.Insert: index out of range"</code>).</td>
+</tr>
+<tr>
+<td><code>Delete(i)</code></td>
+<td>Removes the element at index <code>i</code>, shifting the tail left. Payload is the <strong>removed item</strong>; an out-of-range <code>i</code> yields a result carrying an <code>Error</code> (<code>"Array.Delete: index out of range"</code>).</td>
+</tr>
+<tr>
+<td><code>Reverse()</code></td>
+<td>Reverses the array <strong>in place</strong>; payload is the array itself.</td>
+</tr>
+<tr>
+<td><code>IsNull()</code></td>
+<td>Returns <code>false</code> for a real array (see the Null-Object note below).</td>
 </tr>
 </tbody>
 </table>
@@ -1199,7 +1237,17 @@ and each method has a package-level twin that operates on a plain
 <p class="admonition-title">Bounds are not guarded</p>
 <p><code>Pop</code>, <code>First</code>, <code>Fetch</code>, and <code>Last</code> index the underlying slice directly and
 will <strong>panic</strong> on an out-of-range access (e.g. on an empty array). They do
-not convert the panic into an error result.</p>
+not convert the panic into an error result. By contrast, the newer
+<code>Insert</code> and <code>Delete</code> <strong>do</strong> validate their index and report an out-of-range
+access as an <code>Error</code> result.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Null-Object variant</p>
+<p><code>Array.Null()</code> returns the <strong>Null-Object</strong> array: an empty, immutable
+placeholder that honours the full <code>Interface</code> without ever being <code>nil</code>.
+Mutating methods are no-ops returning a successful result, lookups and
+queries return empty/<code>false</code>/zero values (<code>Len() == 0</code>, <code>IsEmpty() == true</code>),
+and <code>IsNull()</code> returns <code>true</code>. Use it instead of a <code>nil</code> <code>Array.Interface</code>.</p>
 </div>
 <h2 id="iteration-and-combinators">Iteration and combinators</h2>
 <p>All combinators take callbacks that return a <a href="../result/"><code>result</code></a> and

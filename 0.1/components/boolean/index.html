@@ -1054,12 +1054,20 @@ exposing truthiness as composite methods.</p>
 <span class="w">    </span><span class="nx">IsTrue</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">IsFalse</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">And</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Or</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Not</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Xor</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">Inspect</span><span class="p">()</span><span class="w"> </span><span class="nx">Inspect</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="p">}</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">True</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">False</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
+
+<span class="c1">// Null-Object variant (honours the full Interface, never nil):</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 </code></pre></div>
 <ul>
 <li><code>New(b)</code> wraps the Go <code>bool</code> <code>b</code>.</li>
@@ -1094,6 +1102,26 @@ exposing truthiness as composite methods.</p>
 <td>Returns a new <code>Boolean.Interface</code> boxing whether the two boxed values are equal.</td>
 </tr>
 <tr>
+<td><code>And(other)</code></td>
+<td>Returns a new <code>Boolean.Interface</code> boxing the logical <strong>AND</strong> of the receiver and <code>other</code>.</td>
+</tr>
+<tr>
+<td><code>Or(other)</code></td>
+<td>Returns a new <code>Boolean.Interface</code> boxing the logical <strong>OR</strong> of the receiver and <code>other</code>.</td>
+</tr>
+<tr>
+<td><code>Not()</code></td>
+<td>Returns a new <code>Boolean.Interface</code> boxing the logical <strong>negation</strong> of the receiver.</td>
+</tr>
+<tr>
+<td><code>Xor(other)</code></td>
+<td>Returns a new <code>Boolean.Interface</code> boxing the <strong>exclusive OR</strong> of the receiver and <code>other</code>.</td>
+</tr>
+<tr>
+<td><code>IsNull()</code></td>
+<td>Returns <code>false</code> for a real boolean (see the Null-Object note below).</td>
+</tr>
+<tr>
 <td><code>Inspect()</code></td>
 <td>Returns an <code>Inspect.Interface</code> describing the value (type, address, data).</td>
 </tr>
@@ -1107,7 +1135,22 @@ exposing truthiness as composite methods.</p>
 <span class="k">if</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="kc">true</span><span class="p">)).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;both are true&quot;</span><span class="p">)</span>
 <span class="p">}</span>
+
+<span class="c1">// Logical operators compose Boolean.Interface values:</span>
+<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">And</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">False</span><span class="p">()).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">Or</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">False</span><span class="p">()).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">Not</span><span class="p">().</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w">                </span><span class="c1">// false</span>
+<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">Xor</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">()).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w">  </span><span class="c1">// false</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Null-Object variant</p>
+<p><code>Boolean.Null()</code> returns the <strong>Null-Object</strong> boolean: a placeholder that
+honours the full <code>Interface</code> without ever being <code>nil</code>. A null boolean is
+<strong>neither true nor false</strong> — both <code>IsTrue()</code> and <code>IsFalse()</code> return <code>false</code>,
+<code>ToGoString()</code> renders <code>"null"</code>, and every logical operator (<code>And</code>, <code>Or</code>,
+<code>Not</code>, <code>Xor</code>, <code>Equal</code>) returns the null boolean. <code>IsNull()</code> returns <code>true</code>.
+Use it instead of a <code>nil</code> <code>Boolean.Interface</code>.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Structural truthiness recognised by <code>array</code></p>
 <p><code>IsTrue() bool</code> is a <strong>structural</strong> signal. <a href="../array/"><code>array</code></a>'s combinators
