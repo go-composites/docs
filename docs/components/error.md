@@ -1,13 +1,13 @@
 # error — error interface + sentinels
 
-`github.com/golang-oop/error` (Go package `Error`, imported from the `src/`
+`github.com/go-composites/error` (Go package `Error`, imported from the `src/`
 sub-directory) defines the family's **error contract** and a couple of sentinel
 implementations. It is a leaf module with no intra-org dependencies.
 
 ## The `Error` interface
 
 ```go
-import Error "github.com/golang-oop/error/src"
+import Error "github.com/go-composites/error/src"
 
 type Interface interface {
     Message() string
@@ -29,7 +29,7 @@ e.IsNull()  // false
 ### Null error — `src/null`
 
 ```go
-import NullError "github.com/golang-oop/error/src/null"
+import NullError "github.com/go-composites/error/src/null"
 
 e := NullError.New()
 e.Message() // "" (empty)
@@ -42,7 +42,7 @@ as the default error of a freshly constructed `Result`.
 ### Method-not-implemented error — `src/method_not_implemented`
 
 ```go
-import MethodNotImplementedError "github.com/golang-oop/error/src/method_not_implemented"
+import MethodNotImplementedError "github.com/go-composites/error/src/method_not_implemented"
 
 e := MethodNotImplementedError.New("Copy")
 e.Message() // "The method Copy is not implemented"

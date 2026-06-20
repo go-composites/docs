@@ -1,7 +1,7 @@
 # Components
 
-`golang-cop` is five small, interface-first packages. Each is its own
-repository and Go module (under the `github.com/golang-oop/` module path; see
+`go-composites` is five small, interface-first packages. Each is its own
+repository and Go module (under the `github.com/go-composites/` module path; see
 the [note on the homepage](../index.md#module-paths-vs-repository-org)).
 
 <div class="cop-grid" markdown>

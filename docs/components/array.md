@@ -1,13 +1,13 @@
 # array — interface-first slice
 
-`github.com/golang-oop/array` (Go package `Array`, imported from the `src/`
+`github.com/go-composites/array` (Go package `Array`, imported from the `src/`
 sub-directory) is an **interface-first** wrapper around a `[]interface{}`. Every
 method returns a [`result`](result.md), so it composes with the rest of the org.
 
 ## API
 
 ```go
-import Array "github.com/golang-oop/array/src"
+import Array "github.com/go-composites/array/src"
 
 type Interface interface {
     Each(fn func(int, interface{}) Result.Interface) Result.Interface

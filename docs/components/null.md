@@ -1,13 +1,13 @@
 # null — the null sentinel
 
-`github.com/golang-oop/null` (Go package `Null`, imported from the `src/`
+`github.com/go-composites/null` (Go package `Null`, imported from the `src/`
 sub-directory) is the org's minimal **null value**. It is a leaf module with no
 dependencies.
 
 ## API
 
 ```go
-import Null "github.com/golang-oop/null/src"
+import Null "github.com/go-composites/null/src"
 
 type Interface interface{}
 

@@ -1,14 +1,14 @@
 # result — payload + error wrapper
 
-`github.com/golang-oop/result` (Go package `Result`, imported from the `src/`
+`github.com/go-composites/result` (Go package `Result`, imported from the `src/`
 sub-directory) is the org's **return-value wrapper**. Instead of returning
-`(value, error)` Go-style, methods across `golang-cop` return a single
+`(value, error)` Go-style, methods across `go-composites` return a single
 `Result.Interface` carrying both a **payload** and an **error**.
 
 ## API
 
 ```go
-import Result "github.com/golang-oop/result/src"
+import Result "github.com/go-composites/result/src"
 
 type Interface interface {
     Payload() interface{}
@@ -35,7 +35,7 @@ r.Error()   // the null error (IsNull() == true)
 
 !!! danger "Known bug: `HasError()` is inverted in the published module"
     In the released module
-    (`github.com/golang-oop/result@v0.0.0-20240527141542-cb3939bd2b03`, the
+    (`github.com/go-composites/result@v0.0.0-20240527141542-cb3939bd2b03`, the
     version the rest of the org links against), `HasError()` is defined as:
 
     ```go

@@ -1,13 +1,13 @@
 # string — boxed string value
 
-`github.com/golang-oop/string` (Go package `String`, imported from the `src/`
+`github.com/go-composites/string` (Go package `String`, imported from the `src/`
 sub-directory) boxes a Go `string` behind the org's interface-first style, with
 `result`-returning mutators.
 
 ## API
 
 ```go
-import String "github.com/golang-oop/string/src"
+import String "github.com/go-composites/string/src"
 
 type Interface interface {
     Set(string) Result.Interface
