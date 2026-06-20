@@ -60,8 +60,10 @@ func Null() Interface
     `Length()` is `0`, value-producing operations return a successful result
     wrapping the null `String` (or, where chaining is meaningful, the receiver),
     and `IsNull()` returns `true`. Use it instead of a `nil`
-    `String.Interface`. (The Null-Object lives in the same `src` package as a
-    `Null()` constructor; there is no separate `src/null` sub-package.)
+    `String.Interface`. (`String.Null()` lives in the main `src` package; the
+    repo also ships a sibling `NullString` package at
+    `github.com/go-composites/string/src/null` providing the same Null-Object via
+    its own `New()` constructor.)
 
 ## Usage
 
