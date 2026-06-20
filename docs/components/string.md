@@ -21,6 +21,9 @@ type Interface interface {
     Lower() Result.Interface
     Trim() Result.Interface
     Equal(Interface) bool
+    StartsWith(prefix string) bool
+    EndsWith(suffix string) bool
+    Format(args ...interface{}) Result.Interface
     IsNull() bool
 }
 
@@ -51,6 +54,12 @@ func Null() Interface
   or leading/trailing white space removed.
 - `Equal(other)` returns a Go `bool`: whether the receiver and `other` carry the
   same underlying string.
+- `StartsWith(prefix)` returns a Go `bool`: whether the string begins with
+  `prefix`.
+- `EndsWith(suffix)` returns a Go `bool`: whether the string ends with `suffix`.
+- `Format(args...)` returns a result whose payload is a **new** `String` equal to
+  `fmt.Sprintf` applied with the receiver's value as the format string and
+  `args` as the operands.
 - `IsNull()` returns `false` for a real string.
 
 !!! note "Null-Object variant"

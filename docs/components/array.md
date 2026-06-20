@@ -32,6 +32,9 @@ type Interface interface {
     Insert(index int, item interface{}) Result.Interface
     Delete(index int) Result.Interface
     Reverse() Result.Interface
+    Sort(less func(a, b interface{}) bool) Result.Interface
+    IndexOf(item interface{}) Result.Interface
+    Slice(start, end int) Result.Interface
     IsNull() bool
 }
 
@@ -48,6 +51,9 @@ func Reduce(items []interface{}, seed interface{}, fn func(acc, item interface{}
 func Find(items []interface{}, pred func(int, interface{}) Result.Interface) Result.Interface
 func Any(items []interface{}, pred func(int, interface{}) Result.Interface) Result.Interface
 func All(items []interface{}, pred func(int, interface{}) Result.Interface) Result.Interface
+func Sort(items []interface{}, less func(a, b interface{}) bool) Result.Interface
+func IndexOf(items []interface{}, item interface{}) Result.Interface
+func Slice(items []interface{}, start, end int) Result.Interface
 ```
 
 ## Accessors and mutators
@@ -67,6 +73,9 @@ func All(items []interface{}, pred func(int, interface{}) Result.Interface) Resu
 | `Insert(i, x)` | Inserts `x` at index `i`, shifting the tail right (`i == Len()` appends). Payload is the array itself; an out-of-range `i` yields a result carrying an `Error` (`"Array.Insert: index out of range"`). |
 | `Delete(i)` | Removes the element at index `i`, shifting the tail left. Payload is the **removed item**; an out-of-range `i` yields a result carrying an `Error` (`"Array.Delete: index out of range"`). |
 | `Reverse()` | Reverses the array **in place**; payload is the array itself. |
+| `Sort(less)` | Sorts the array **in place** with `sort.SliceStable` (so the order is **stable**) using `less(a, b)`; payload is the array itself. |
+| `IndexOf(x)` | Returns a result whose payload is a Go `int`: the index of the **first** element equal to `x` (compared with `reflect.DeepEqual`), or `-1` when no element matches. |
+| `Slice(start, end)` | Returns a result whose payload is a **new, independent `Array`** holding the elements `[start:end)`. An out-of-range request (`start < 0`, `end > Len()`, or `start > end`) yields a result carrying an `Error` (`"Array.Slice: index out of range"`). |
 | `IsNull()` | Returns `false` for a real array (see the Null-Object note below). |
 
 !!! note "Bounds are not guarded"

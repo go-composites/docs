@@ -21,6 +21,9 @@ type Interface interface {
     Sub(Interface) Result.Interface
     Mul(Interface) Result.Interface
     Div(Interface) Result.Interface
+    Mod(Interface) Result.Interface
+    Abs() Result.Interface
+    Neg() Result.Interface
     Equal(Interface) Boolean.Interface
     LessThan(Interface) Boolean.Interface
     GreaterThan(Interface) Boolean.Interface
@@ -46,6 +49,9 @@ func WithFloat(value float64) Option
 | `IsNull()` | Always returns `false` — a concrete `Number` is never null. |
 | `Add` / `Sub` / `Mul` | Return a `Result` whose payload is a new `Number` carrying the result. The result stays integer only when **both** operands are integers; otherwise it becomes a float. |
 | `Div(other)` | Returns a `Result` whose payload is the quotient — **unless** `other` is zero, in which case the `Result` carries an `Error.New("division by zero")` instead of a payload. It never panics and never returns `nil`. |
+| `Mod(other)` | Returns a `Result` whose payload is the remainder of the receiver divided by `other`: Go's `%` operator when **both** operands are integers, otherwise `math.Mod`. When `other` is zero the `Result` carries an `Error.New("modulo by zero")` instead of a payload — it never panics and never returns `nil`. The result stays integer only when both operands are integers. |
+| `Abs()` | Returns a `Result` whose payload is a new `Number` holding the absolute value, preserving the receiver's integer or floating-point kind. |
+| `Neg()` | Returns a `Result` whose payload is a new `Number` holding the negation, preserving the receiver's integer or floating-point kind. |
 | `Equal` / `LessThan` / `GreaterThan` | Return a `Boolean.Interface` comparing the boxed numeric values. |
 | `Inspect()` | Returns a one-line `<Number:... kind=... value=...>` string. |
 
