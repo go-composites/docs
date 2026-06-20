@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first array, null, result, string and error building blocks. No cgo.">
+        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first null, error, result, boolean, number, string, array and dictionary building blocks, a compose pipeline, a one-import meta-package, a typed generics track, and the nonnil/respondto analyzers. No cgo, 100% coverage, 6-arch CI.">
       
       
       
@@ -343,6 +343,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyzers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyzers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -357,10 +374,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
+  <a href="#quality-bar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status
+        Quality bar
       
     </span>
   </a>
@@ -462,14 +479,14 @@
   
   
     <li class="md-nav__item">
-      <a href="components/array/" class="md-nav__link">
+      <a href="components/null/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    array — interface-first slice
+    null — the null sentinel
   
 
     
@@ -490,14 +507,14 @@
   
   
     <li class="md-nav__item">
-      <a href="components/null/" class="md-nav__link">
+      <a href="components/error/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    null — the null sentinel
+    error — error interface + sentinels
   
 
     
@@ -546,6 +563,62 @@
   
   
     <li class="md-nav__item">
+      <a href="components/boolean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    boolean — boxed boolean
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    number — boxed numeric value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="components/string/" class="md-nav__link">
         
   
@@ -574,14 +647,328 @@
   
   
     <li class="md-nav__item">
-      <a href="components/error/" class="md-nav__link">
+      <a href="components/array/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    error — error interface + sentinels
+    array — interface-first slice + combinators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dictionary — key/value map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    compose — pipe Result-returning steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    composites — one-import meta-package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/is/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    is — predicate helpers (placeholder)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Generics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/typed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    typed — Result[T] / Optional[T] / Slice[T]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyzers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analyzers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="analyzers/nonnil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nonnil — Null-Object enforcer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="analyzers/respondto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    respondto — reflective-dispatch checker
   
 
     
@@ -648,6 +1035,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyzers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyzers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -662,10 +1066,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
+  <a href="#quality-bar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status
+        Quality bar
       
     </span>
   </a>
@@ -690,17 +1094,21 @@
 
 
 <h1 id="go-composites">go-composites</h1>
-<p>A small collection of <strong>pure-Go composites</strong> for <strong>Composition-Oriented
-Programming</strong>: interface-first building blocks — an <code>array</code>, a <code>null</code> sentinel,
-a <code>result</code> wrapper, a boxed <code>string</code>, and an <code>error</code> interface with sentinels.
-No cgo, no third-party runtime dependencies (only <code>go-spew</code> in a demo <code>main</code>).</p>
+<p>A collection of <strong>pure-Go composites</strong> for <strong>Composition-Oriented
+Programming</strong>: small, interface-first building blocks — a <code>null</code> sentinel, an
+<code>error</code> interface, a <code>result</code> wrapper, boxed <code>boolean</code>/<code>number</code>/<code>string</code> values,
+an <code>array</code> and a <code>dictionary</code>, a <code>compose</code> pipeline, a one-import meta-package,
+and a <code>typed</code> generics track. No cgo, no third-party runtime dependencies (only
+<code>go-spew</code> in a demo <code>main</code>).</p>
 <p>The design is deliberately composition-oriented: each package exposes an
 <code>Interface</code> and a private <code>data</code> struct constructed through a <code>New(...)</code>
 function (several use functional options such as <code>WithPayload</code> / <code>WithGoString</code>).
 Composites are assembled by composing and delegating to smaller composites, never
-by inheritance. Methods return a <a href="components/result/"><code>result</code></a> value rather
-than the Go idiom of multiple return values, so the packages compose with one
-another.</p>
+by inheritance. Fallible methods return a <a href="components/result/"><code>result</code></a> value
+rather than the Go idiom of multiple return values, so the packages compose with
+one another, and the <strong>Null-Object</strong> pattern runs throughout — a fresh <code>Result</code>,
+<code>Error</code> or <code>Null</code> is a real, non-nil value, so callers branch on <code>HasError()</code>
+instead of nil checks.</p>
 <h2 id="module-paths">Module paths</h2>
 <div class="admonition note">
 <p class="admonition-title">Org and module path</p>
@@ -709,6 +1117,9 @@ Go module paths match it — <strong><code>github.com/go-composites/&lt;name&gt;
 the <code>array</code> repository declares <code>module github.com/go-composites/array</code>. The
 importable package lives under the <code>src/</code> sub-directory (e.g.
 <code>github.com/go-composites/array/src</code>, package <code>Array</code>).</p>
+<p>The one exception is the <a href="components/composites/"><code>composites</code></a>
+<strong>meta-package</strong>, which is imported at the module root —
+<code>import "github.com/go-composites/composites"</code>.</p>
 </div>
 <h2 id="components">Components</h2>
 <table>
@@ -721,19 +1132,29 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 </thead>
 <tbody>
 <tr>
-<td><a href="components/array/"><code>array</code></a></td>
-<td><code>github.com/go-composites/array/src</code></td>
-<td>Interface-first slice of <code>interface{}</code> with <code>Push</code>/<code>Pop</code>/<code>First</code>/<code>Fetch</code>/<code>Each</code>; every method returns a <code>result</code>.</td>
-</tr>
-<tr>
 <td><a href="components/null/"><code>null</code></a></td>
 <td><code>github.com/go-composites/null/src</code></td>
-<td>A minimal null sentinel value used as the default <code>result</code> payload.</td>
+<td>A minimal null-object sentinel used as the default <code>result</code> payload.</td>
+</tr>
+<tr>
+<td><a href="components/error/"><code>error</code></a></td>
+<td><code>github.com/go-composites/error/src</code></td>
+<td>The <code>error</code> interface (<code>Message</code>/<code>IsNull</code>) plus null and <code>method-not-implemented</code> sentinels.</td>
 </tr>
 <tr>
 <td><a href="components/result/"><code>result</code></a></td>
 <td><code>github.com/go-composites/result/src</code></td>
-<td>Wraps a <code>payload</code> plus an <code>error</code> built with functional options.</td>
+<td>Wraps a <code>payload</code> plus an <code>error</code> built with functional options; <code>HasError()</code> is <code>true</code> only on a real error.</td>
+</tr>
+<tr>
+<td><a href="components/boolean/"><code>boolean</code></a></td>
+<td><code>github.com/go-composites/boolean/src</code></td>
+<td>A boxed boolean (<code>IsTrue</code>/<code>IsFalse</code>/<code>Equal</code>); its structural <code>IsTrue()</code> is what <code>array</code>'s combinators treat as truthy.</td>
+</tr>
+<tr>
+<td><a href="components/number/"><code>number</code></a></td>
+<td><code>github.com/go-composites/number/src</code></td>
+<td>A boxed numeric value (int/float); arithmetic returns a <code>result</code>, so division by zero is an error value, not a panic.</td>
 </tr>
 <tr>
 <td><a href="components/string/"><code>string</code></a></td>
@@ -741,24 +1162,71 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td>A boxed string value with <code>Set</code>/<code>ToGoString</code>/<code>Split</code>.</td>
 </tr>
 <tr>
-<td><a href="components/error/"><code>error</code></a></td>
-<td><code>github.com/go-composites/error/src</code></td>
-<td>The <code>error</code> interface (<code>Message</code>/<code>IsNull</code>) plus null and <code>method-not-implemented</code> sentinels.</td>
+<td><a href="components/array/"><code>array</code></a></td>
+<td><code>github.com/go-composites/array/src</code></td>
+<td>Interface-first slice with <code>Push</code>/<code>Pop</code>/<code>First</code>/<code>Fetch</code>/<code>Each</code> <strong>plus combinators</strong> <code>Map</code>/<code>Filter</code>/<code>Reduce</code>/<code>Find</code>/<code>Any</code>/<code>All</code>; every method returns a <code>result</code>.</td>
+</tr>
+<tr>
+<td><a href="components/dictionary/"><code>dictionary</code></a></td>
+<td><code>github.com/go-composites/dictionary/src</code></td>
+<td>An interface-first key/value map; <code>Get</code> of a missing key returns a <code>result</code> error, not a panic.</td>
+</tr>
+<tr>
+<td><a href="components/compose/"><code>compose</code></a></td>
+<td><code>github.com/go-composites/compose/src</code></td>
+<td><code>Pipe</code>/<code>Run</code> compose <code>result</code>-returning steps into one left-to-right, short-circuiting pipeline.</td>
+</tr>
+<tr>
+<td><a href="components/composites/"><code>composites</code></a></td>
+<td><code>github.com/go-composites/composites</code></td>
+<td><strong>Meta-package</strong>: one import re-exporting the whole vocabulary as type aliases + constructors.</td>
+</tr>
+<tr>
+<td><a href="components/typed/"><code>typed</code></a></td>
+<td><code>github.com/go-composites/typed/src/...</code></td>
+<td>A <strong>generics</strong> parallel track: <code>Result[T]</code>, <code>Optional[T]</code>, <code>Slice[T]</code> with compile-time type safety.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analyzers">Analyzers</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it enforces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="analyzers/nonnil/"><code>nonnil</code></a></td>
+<td>A <code>go vet</code>-style analyzer that fails the build when an interface carrying <code>IsNull()</code> is returned, assigned, or stored as a bare <code>nil</code> — the Null-Object invariant.</td>
+</tr>
+<tr>
+<td><a href="analyzers/respondto/"><code>respondto</code></a></td>
+<td>A <code>go vet</code>-style analyzer that flags <code>RespondTo</code> reflective sends to a method that does not exist.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="dependency-shape">Dependency shape</h2>
-<div class="highlight"><pre><span></span><code>string ──▶ array ──▶ result ──▶ error
-                         └─────▶ null
+<div class="highlight"><pre><span></span><code>compose ─┐
+string ──┼▶ array ──▶ result ──▶ error
+number ──┤              └─────▶ null
+boolean ─┘
+dictionary ─▶ result
 </code></pre></div>
 <p><code>error</code> and <code>null</code> are leaf packages with no intra-org dependencies; <code>result</code>
-composes them; <code>array</code> and <code>string</code> build on <code>result</code>.</p>
-<h2 id="status">Status</h2>
-<p>These are early, small primitives (Go <code>1.21.6</code>, module versions are
-<code>v0.0.0</code> pseudo-versions). A couple of published methods have <strong>known bugs</strong> —
-see <a href="components/array/#last-known-bug"><code>array.Last()</code></a> and
-<a href="components/result/#haserror-inverted-semantics"><code>result.HasError()</code></a>. They
-are documented here as they actually behave, not as they were intended.</p>
+composes them; the value and collection composites build on <code>result</code>. The
+<a href="components/composites/"><code>composites</code></a> meta-package imports them all and
+re-exports them; <a href="components/typed/"><code>typed</code></a> is standalone with zero
+dependencies.</p>
+<h2 id="quality-bar">Quality bar</h2>
+<p>Every library (<code>src</code>) package is held to <strong>100% statement coverage</strong> (an org
+hard rule, gated in CI) and is built and tested across a native + emulated
+<strong>six-architecture</strong> matrix (amd64, arm64, riscv64, loong64, ppc64le, s390x).
+Two static analyzers enforce the org's invariants on every repo:
+<a href="analyzers/nonnil/"><code>nonnil</code></a> for the Null-Object rule and
+<a href="analyzers/respondto/"><code>respondto</code></a> for reflective dispatch. Everything is pure
+Go (<code>CGO_ENABLED=0</code>) and <strong>BSD-3-Clause</strong>.</p>
 
 
 

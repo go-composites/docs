@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first array, null, result, string and error building blocks. No cgo.">
+        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first null, error, result, boolean, number, string, array and dictionary building blocks, a compose pipeline, a one-import meta-package, a typed generics track, and the nonnil/respondto analyzers. No cgo, 100% coverage, 6-arch CI.">
       
       
       
         <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/array/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../string/">
       
       
-        <link rel="next" href="../null/">
+        <link rel="next" href="../dictionary/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>array — interface-first slice - go-composites</title>
+        <title>array — interface-first slice + combinators - go-composites</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              array — interface-first slice
+              array — interface-first slice + combinators
             
           </span>
         </div>
@@ -372,44 +372,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    array — interface-first slice
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../null/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    array — interface-first slice
+    null — the null sentinel
   
 
     
@@ -418,70 +391,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#last-known-bug" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Last() — known bug
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#each-and-the-inverted-result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Each and the inverted result
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -494,14 +403,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../null/" class="md-nav__link">
+      <a href="../error/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    null — the null sentinel
+    error — error interface + sentinels
   
 
     
@@ -550,6 +459,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../boolean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    boolean — boxed boolean
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    number — boxed numeric value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../string/" class="md-nav__link">
         
   
@@ -575,17 +540,450 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../error/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    array — interface-first slice + combinators
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    error — error interface + sentinels
+    array — interface-first slice + combinators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessors-and-mutators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessors and mutators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteration-and-combinators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration and combinators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration and combinators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Truthiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dictionary — key/value map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    compose — pipe Result-returning steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    composites — one-import meta-package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../is/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    is — predicate helpers (placeholder)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Generics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    typed — Result[T] / Optional[T] / Slice[T]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyzers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analyzers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzers/nonnil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nonnil — Null-Object enforcer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzers/respondto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    respondto — reflective-dispatch checker
   
 
     
@@ -644,10 +1042,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#last-known-bug" class="md-nav__link">
+  <a href="#accessors-and-mutators" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Last() — known bug
+        Accessors and mutators
       
     </span>
   </a>
@@ -655,10 +1053,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#each-and-the-inverted-result" class="md-nav__link">
+  <a href="#iteration-and-combinators" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Each and the inverted result
+        Iteration and combinators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration and combinators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Truthiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
       
     </span>
   </a>
@@ -696,12 +1122,20 @@
 <h1 id="array-interface-first-slice">array — interface-first slice</h1>
 <p><code>github.com/go-composites/array</code> (Go package <code>Array</code>, imported from the <code>src/</code>
 sub-directory) is an <strong>interface-first</strong> wrapper around a <code>[]interface{}</code>. Every
-method returns a <a href="../result/"><code>result</code></a>, so it composes with the rest of the org.</p>
+method returns a <a href="../result/"><code>result</code></a>, so it composes with the rest of the org,
+and each method has a package-level twin that operates on a plain
+<code>[]interface{}</code> without constructing an <code>Array</code>.</p>
 <h2 id="api">API</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Array</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/array/src&quot;</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Each</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Map</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Filter</span><span class="p">(</span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Reduce</span><span class="p">(</span><span class="nx">seed</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Find</span><span class="p">(</span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Any</span><span class="p">(</span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">All</span><span class="p">(</span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Push</span><span class="p">(</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Pop</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
@@ -712,8 +1146,17 @@ method returns a <a href="../result/"><code>result</code></a>, so it composes wi
 <span class="p">}</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
+
+<span class="c1">// Package-level twins over a raw []interface{}:</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">Each</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Map</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Filter</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Reduce</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">seed</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Find</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Any</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">All</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="p">[]</span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 </code></pre></div>
+<h2 id="accessors-and-mutators">Accessors and mutators</h2>
 <table>
 <thead>
 <tr>
@@ -740,7 +1183,7 @@ method returns a <a href="../result/"><code>result</code></a>, so it composes wi
 </tr>
 <tr>
 <td><code>Last()</code></td>
-<td><strong>Buggy — see below.</strong></td>
+<td>Returns the <strong>last</strong> element (<code>d.value[len-1]</code>) as the payload. Panics if empty.</td>
 </tr>
 <tr>
 <td><code>Clear()</code></td>
@@ -750,49 +1193,107 @@ method returns a <a href="../result/"><code>result</code></a>, so it composes wi
 <td><code>Copy()</code></td>
 <td>Returns an empty result — <strong>not implemented</strong> (no copy is performed).</td>
 </tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Bounds are not guarded</p>
+<p><code>Pop</code>, <code>First</code>, <code>Fetch</code>, and <code>Last</code> index the underlying slice directly and
+will <strong>panic</strong> on an out-of-range access (e.g. on an empty array). They do
+not convert the panic into an error result.</p>
+</div>
+<h2 id="iteration-and-combinators">Iteration and combinators</h2>
+<p>All combinators take callbacks that return a <a href="../result/"><code>result</code></a> and
+<strong>short-circuit on the first result whose <code>HasError() == true</code></strong> (a real error),
+returning that error result unchanged. On a full, error-free pass each returns a
+result describing the outcome.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><code>Each(fn)</code></td>
-<td>Iterates, calling <code>fn(index, item)</code>; short-circuits — see below.</td>
+<td>Calls <code>fn(index, item)</code> for its side effects. Returns the first error result, or an empty result.</td>
+</tr>
+<tr>
+<td><code>Map(fn)</code></td>
+<td>Collects each callback's payload into a <strong>new <code>Array</code></strong>. Payload is the new <code>Array.Interface</code>.</td>
+</tr>
+<tr>
+<td><code>Filter(pred)</code></td>
+<td>Keeps items whose <code>pred</code> payload is <strong>truthy</strong>, into a new <code>Array</code>. Payload is the new <code>Array.Interface</code>.</td>
+</tr>
+<tr>
+<td><code>Reduce(seed, fn)</code></td>
+<td>Left fold threading an accumulator (<code>fn(acc, item)</code>); payload is the final accumulator.</td>
+</tr>
+<tr>
+<td><code>Find(pred)</code></td>
+<td>First item whose <code>pred</code> payload is truthy (as payload). No match → a result carrying an <code>Error</code>.</td>
+</tr>
+<tr>
+<td><code>Any(pred)</code></td>
+<td>Payload is a Go <code>bool</code>: <code>true</code> on the first truthy item, else <code>false</code>. Empty array → <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>All(pred)</code></td>
+<td>Payload is a Go <code>bool</code>: <code>false</code> on the first falsy item, else <code>true</code>. Empty array → <code>true</code> (vacuous).</td>
 </tr>
 </tbody>
 </table>
-<p>There is also a package-level <code>Each(items, fn)</code> for iterating a plain
-<code>[]interface{}</code> without constructing an <code>Array</code>.</p>
-<h2 id="last-known-bug"><code>Last()</code> — known bug</h2>
-<div class="admonition danger">
-<p class="admonition-title"><code>Last()</code> panics: off-by-one index</p>
-<p><code>Last()</code> indexes the slice at <code>len(d.value)</code> instead of <code>len(d.value)-1</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">Last</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
-<span class="w">        </span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)]),</span><span class="w"> </span><span class="c1">// out of range</span>
-<span class="w">    </span><span class="p">)</span>
+<h3 id="truthiness">Truthiness</h3>
+<p><code>Filter</code>, <code>Find</code>, <code>Any</code>, and <code>All</code> decide whether a predicate's payload counts
+as a match via <code>isTruthy</code>:</p>
+<ul>
+<li>a Go <code>bool</code> is its own value;</li>
+<li>any value exposing an <code>IsTrue() bool</code> method (for example a
+  <code>Boolean.Interface</code>) uses that result — this is matched <strong>structurally</strong>, so
+  <code>array</code> does not import <code>boolean</code> (which would form an import cycle);</li>
+<li><code>nil</code> is <strong>falsy</strong>;</li>
+<li>any other non-nil payload is <strong>truthy</strong>.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre><span></span><code><span class="nx">arr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Array</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">// Map: double every item into a new Array.</span>
+<span class="nx">doubled</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">_</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">item</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<span class="p">})</span>
+<span class="nx">out</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">doubled</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="c1">// [2 4 6]</span>
+
+<span class="c1">// Reduce: sum the items.</span>
+<span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">Reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">acc</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">item</span><span class="p">.(</span><span class="kt">int</span><span class="p">)))</span>
+<span class="p">})</span>
+<span class="nx">total</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">sum</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="c1">// 6</span>
+
+<span class="c1">// Any / All over a predicate.</span>
+<span class="nx">hasEven</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">Any</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">_</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">item</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="p">})</span>
+<span class="nx">yes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">hasEven</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Find: first matching item, or a not-found Error.</span>
+<span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">Find</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">_</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">item</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+<span class="p">})</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span><span class="w"> </span><span class="c1">// &quot;Array.Find: no matching item&quot;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">())</span><span class="w"> </span><span class="c1">// 2</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><code>d.value[len(d.value)]</code> is always one past the last valid index, so <code>Last()</code>
-<strong>always panics</strong> with <code>index out of range [n] with length n</code> for any
-non-empty array (and on an empty array as well). It never returns. Use
-<code>Fetch(len-1)</code> as a workaround until this is fixed. This page documents the
-method as it actually behaves.</p>
-</div>
-<h2 id="each-and-the-inverted-result"><code>Each</code> and the inverted <code>result</code></h2>
-<p><code>Each</code> stops iterating as soon as the callback's result reports
-<code>HasError() == true</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">fn</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-<span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
-</code></pre></div>
-<p>Because <a href="../result/#haserror-inverted-semantics"><code>result.HasError()</code> is inverted</a>
-in the published modules, the short-circuit fires on a result that has <strong>no</strong>
-error and continues on a result that <strong>does</strong> carry one. The package's own tests
-encode this: returning a bare <code>Result.New()</code> from the callback stops iteration
-after the first item, while returning <code>Result.New(WithError(Error.New(...)))</code>
-lets it run to completion. Keep this inversion in mind when writing callbacks.</p>
+<p>The package-level twins behave identically over a raw slice, e.g.
+<code>Array.Map(items, fn)</code> or <code>Array.Reduce(items, seed, fn)</code>.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p><code>array</code> depends on <a href="../result/"><code>result</code></a> (and transitively on
-<a href="../error/"><code>error</code></a> and <a href="../null/"><code>null</code></a>).</p>
+<p><code>array</code> depends on <a href="../result/"><code>result</code></a> and <a href="../error/"><code>error</code></a> (the latter for
+<code>Find</code>'s not-found sentinel), and transitively on <a href="../null/"><code>null</code></a>.</p>
 
 
 

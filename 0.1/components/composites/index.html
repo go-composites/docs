@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/string/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/composites/">
       
       
-        <link rel="prev" href="../number/">
+        <link rel="prev" href="../compose/">
       
       
-        <link rel="next" href="../array/">
+        <link rel="next" href="../is/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>string — boxed string value - go-composites</title>
+        <title>composites — one-import meta-package - go-composites</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#string-boxed-string-value" class="md-skip">
+        <a href="#composites-the-whole-vocabulary-under-one-import" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              string — boxed string value
+              composites — one-import meta-package
             
           </span>
         </div>
@@ -512,37 +512,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    string — boxed string value
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
         
   
   
@@ -558,59 +531,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -704,10 +624,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../composites/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    composites — one-import meta-package
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -723,6 +670,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aliases-mean-zero-wrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliases mean zero wrapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1003,6 +1014,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases-mean-zero-wrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliases mean zero wrapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1041,52 +1063,147 @@
 
 
 
-<h1 id="string-boxed-string-value">string — boxed string value</h1>
-<p><code>github.com/go-composites/string</code> (Go package <code>String</code>, imported from the <code>src/</code>
-sub-directory) boxes a Go <code>string</code> behind the org's interface-first style, with
-<code>result</code>-returning mutators.</p>
+<h1 id="composites-the-whole-vocabulary-under-one-import">composites — the whole vocabulary under one import</h1>
+<p><code>github.com/go-composites/composites</code> is the org's <strong>meta-package</strong>: a thin
+facade that re-exports every building block — <a href="../array/"><code>array</code></a>,
+<a href="../boolean/"><code>boolean</code></a>, <a href="../dictionary/"><code>dictionary</code></a>, <a href="../error/"><code>error</code></a>,
+<a href="../null/"><code>null</code></a>, <a href="../number/"><code>number</code></a>, <a href="../result/"><code>result</code></a>,
+<a href="../string/"><code>string</code></a> — so a caller can reach the whole vocabulary with a
+<strong>single import</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Imported from the module root, not from <code>src/</code></p>
+<p>Every other repo is imported from its <code>src/</code> sub-directory (e.g.
+<code>import Result "github.com/go-composites/result/src"</code>). <code>composites</code> is the
+<strong>one exception</strong>: it lives at the module root and its package name <em>is</em>
+<code>composites</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/composites&quot;</span>
+</code></pre></div>
+</div>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/string/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/composites&quot;</span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Set</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="nx">Split</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
-<span class="p">}</span>
+<span class="c1">// Composite interface types (aliases).</span>
+<span class="kd">type</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">Array</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="nx">array</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Boolean</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Dictionary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Error</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="kt">error</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Null</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="nx">null</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Number</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Result</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">String</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="p">)</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">WithGoString</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
+<span class="c1">// Functional-option types (aliases).</span>
+<span class="kd">type</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">DictionaryOption</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">NumberOption</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">ResultOption</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">StringOption</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="p">)</span>
+
+<span class="c1">// Constructors, re-exported as function values.</span>
+<span class="kd">var</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">NewArray</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="nx">array</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewBoolean</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">True</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">True</span>
+<span class="w">    </span><span class="nx">False</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">False</span>
+<span class="w">    </span><span class="nx">NewString</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewError</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="kt">error</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewNull</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="nx">null</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewNumber</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewResult</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewDictionary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="p">)</span>
+
+<span class="c1">// Options, re-exported as function values.</span>
+<span class="kd">var</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">WithGoString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithGoString</span>
+<span class="w">    </span><span class="nx">WithPayload</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithPayload</span>
+<span class="w">    </span><span class="nx">WithError</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithError</span>
+<span class="w">    </span><span class="nx">WithInt</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithInt</span>
+<span class="w">    </span><span class="nx">WithFloat</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithFloat</span>
+<span class="w">    </span><span class="nx">WithPairs</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithPairs</span>
+<span class="p">)</span>
 </code></pre></div>
-<ul>
-<li><code>New()</code> builds an empty string; <code>New(String.WithGoString("Hello World!"))</code>
-  seeds a value via a functional option.</li>
-<li><code>Set(v)</code> updates the value and returns a result whose payload is the string
-  itself.</li>
-<li><code>ToGoString()</code> returns the underlying Go <code>string</code>.</li>
-<li><code>Split(sep)</code> splits on <code>sep</code> and returns a result whose payload is an
-  <a href="../array/"><code>array</code></a> of <code>String</code> values (each split field boxed as a new
-  <code>String</code>).</li>
-<li><code>IsNull()</code> always returns <code>false</code>.</li>
-</ul>
+<p><em>(The aliases above are written <code>pkg/src.X</code> for readability; in the source each
+is a Go type alias to the corresponding <code>…src.Interface</code> / <code>…src.Option</code>, and
+each constructor is the underlying <code>…src.New</code> function value.)</em></p>
+<h2 id="aliases-mean-zero-wrapping">Aliases mean zero wrapping</h2>
+<p>Because the types are <strong>type aliases</strong> and not new named types, a
+<code>composites.Result</code> <em>is literally</em> a <code>result/src.Interface</code> — the same type, not
+a wrapper around it. There is no boxing, no conversion, and no runtime cost.</p>
+<p>This means full interoperability in both directions: a value produced via the
+single <code>composites</code> import can be passed to any function written against the
+individual <code>…/src</code> packages, and vice versa. You can adopt <code>composites</code> for
+convenience in one file and import the granular repos in another, and the two
+styles compose without a single cast.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Array</code>, <code>Boolean</code>, <code>Dictionary</code>, <code>Error</code>, <code>Null</code>, <code>Number</code>, <code>Result</code>, <code>String</code></td>
+<td>Type aliases to each repo's <code>Interface</code>.</td>
+</tr>
+<tr>
+<td><code>DictionaryOption</code>, <code>NumberOption</code>, <code>ResultOption</code>, <code>StringOption</code></td>
+<td>Type aliases to each repo's <code>Option</code>.</td>
+</tr>
+<tr>
+<td><code>NewArray</code>, <code>NewBoolean</code>, <code>NewString</code>, <code>NewError</code>, <code>NewNull</code>, <code>NewNumber</code>, <code>NewResult</code>, <code>NewDictionary</code></td>
+<td>The corresponding <code>New</code> constructors, re-exported as values.</td>
+</tr>
+<tr>
+<td><code>True</code>, <code>False</code></td>
+<td>The boolean singletons.</td>
+</tr>
+<tr>
+<td><code>WithGoString</code>, <code>WithPayload</code>, <code>WithError</code>, <code>WithInt</code>, <code>WithFloat</code>, <code>WithPairs</code></td>
+<td>Functional options, re-exported as values.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">String</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">String</span><span class="p">.</span><span class="nx">WithGoString</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">))</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// Hello World!</span>
+<p>A complete program reaching numbers, dictionaries, arrays and results through
+the one import (see <code>examples/demo/main.go</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 
-<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">arr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="c1">// payload is a String boxing &quot;Hello&quot;</span>
-<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">first</span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="w">    </span><span class="s">&quot;github.com/go-composites/composites&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">div</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewNumber</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithInt</span><span class="p">(</span><span class="mi">10</span><span class="p">)).</span>
+<span class="w">        </span><span class="nx">Div</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewNumber</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithInt</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;10 / 0 → HasError=%t (%v)\n&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">div</span><span class="p">.</span><span class="nx">HasError</span><span class="p">(),</span><span class="w"> </span><span class="nx">div</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span>
+
+<span class="w">    </span><span class="nx">d</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewDictionary</span><span class="p">().</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;k&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;v&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;dict.Get(k) → %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;k&quot;</span><span class="p">).</span><span class="nx">Payload</span><span class="p">())</span>
+
+<span class="w">    </span><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewArray</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">a</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">True</span><span class="p">())</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;array.First() → %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">First</span><span class="p">().</span><span class="nx">Payload</span><span class="p">())</span>
+
+<span class="w">    </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewResult</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;result → %v (err=%t)\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">(),</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">())</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><code>Split</code> returns an error-free <a href="../result/"><code>result</code></a> on success, so the
-<code>if r.HasError()</code> guard above takes the <strong>else</strong> (success) branch — <code>HasError()</code>
-is <code>true</code> only when the result carries a real error.</p>
+<p>Because <code>composites.Result</code> and <code>result/src.Interface</code> are the same type, the
+<code>r</code> above can be handed directly to any helper declared as
+<code>func(result/src.Interface)</code> — no adapter required.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p><code>string</code> depends on <a href="../array/"><code>array</code></a> and <a href="../result/"><code>result</code></a> (and
-transitively on <a href="../error/"><code>error</code></a> and <a href="../null/"><code>null</code></a>).</p>
+<p><code>composites</code> depends on <strong>all</strong> of the individual repos it re-exports:
+<a href="../array/"><code>array</code></a>, <a href="../boolean/"><code>boolean</code></a>, <a href="../dictionary/"><code>dictionary</code></a>,
+<a href="../error/"><code>error</code></a>, <a href="../null/"><code>null</code></a>, <a href="../number/"><code>number</code></a>,
+<a href="../result/"><code>result</code></a> and <a href="../string/"><code>string</code></a>.</p>
 
 
 

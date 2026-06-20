@@ -10,25 +10,31 @@
       
       
       
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/analyzers/nonnil/">
       
+      
+        <link rel="prev" href="../../components/typed/">
+      
+      
+        <link rel="next" href="../respondto/">
       
       
         
       
       
-      <link rel="icon" href="/docs/0.1/assets/logo.svg">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>go-composites</title>
+        <title>nonnil — Null-Object enforcer - go-composites</title>
       
     
     
-      <link rel="stylesheet" href="/docs/0.1/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/docs/0.1/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="/docs/0.1/stylesheets/brand.css">
+      <link rel="stylesheet" href="../../stylesheets/brand.css">
     
-    <script>__md_scope=new URL("/docs/0.1",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nonnil-never-return-a-bare-nil-for-a-null-object-interface" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -89,9 +100,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/docs/0.1/." title="go-composites" class="md-header__button md-logo" aria-label="go-composites" data-md-component="logo">
+    <a href="../.." title="go-composites" class="md-header__button md-logo" aria-label="go-composites" data-md-component="logo">
       
-  <img src="/docs/0.1/assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              nonnil — Null-Object enforcer
             
           </span>
         </div>
@@ -226,9 +237,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/docs/0.1/." title="go-composites" class="md-nav__button md-logo" aria-label="go-composites" data-md-component="logo">
+    <a href="../.." title="go-composites" class="md-nav__button md-logo" aria-label="go-composites" data-md-component="logo">
       
-  <img src="/docs/0.1/assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     go-composites
@@ -255,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -334,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/" class="md-nav__link">
+      <a href="../../components/" class="md-nav__link">
         
   
   
@@ -362,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/null/" class="md-nav__link">
+      <a href="../../components/null/" class="md-nav__link">
         
   
   
@@ -390,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/error/" class="md-nav__link">
+      <a href="../../components/error/" class="md-nav__link">
         
   
   
@@ -418,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/result/" class="md-nav__link">
+      <a href="../../components/result/" class="md-nav__link">
         
   
   
@@ -446,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/boolean/" class="md-nav__link">
+      <a href="../../components/boolean/" class="md-nav__link">
         
   
   
@@ -474,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/number/" class="md-nav__link">
+      <a href="../../components/number/" class="md-nav__link">
         
   
   
@@ -502,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/string/" class="md-nav__link">
+      <a href="../../components/string/" class="md-nav__link">
         
   
   
@@ -530,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/array/" class="md-nav__link">
+      <a href="../../components/array/" class="md-nav__link">
         
   
   
@@ -558,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/dictionary/" class="md-nav__link">
+      <a href="../../components/dictionary/" class="md-nav__link">
         
   
   
@@ -586,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/compose/" class="md-nav__link">
+      <a href="../../components/compose/" class="md-nav__link">
         
   
   
@@ -614,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/composites/" class="md-nav__link">
+      <a href="../../components/composites/" class="md-nav__link">
         
   
   
@@ -642,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/is/" class="md-nav__link">
+      <a href="../../components/is/" class="md-nav__link">
         
   
   
@@ -729,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/components/typed/" class="md-nav__link">
+      <a href="../../components/typed/" class="md-nav__link">
         
   
   
@@ -761,8 +772,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -773,11 +786,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -798,7 +811,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -813,10 +826,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/docs/0.1/analyzers/nonnil/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nonnil — Null-Object enforcer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -832,6 +872,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-enforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it enforces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flagged-vs-accepted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flagged vs. accepted
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install &amp; run
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -844,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/docs/0.1/analyzers/respondto/" class="md-nav__link">
+      <a href="../respondto/" class="md-nav__link">
         
   
   
@@ -889,6 +1004,71 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-enforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it enforces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flagged-vs-accepted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flagged vs. accepted
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install &amp; run
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -901,8 +1081,120 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="nonnil-never-return-a-bare-nil-for-a-null-object-interface">nonnil — never return a bare <code>nil</code> for a Null-Object interface</h1>
+<p><code>github.com/go-composites/nonnil</code> is a
+<a href="https://pkg.go.dev/golang.org/x/tools/go/analysis"><code>golang.org/x/tools/go/analysis</code></a>
+analyzer (a <code>go vet</code> tool) that enforces the org's <strong>Null-Object invariant</strong>: a
+value whose type is a <em>Null-Object interface</em> — any interface that declares
+<code>IsNull() bool</code> — must never be a bare <code>nil</code>. It must instead be a real Null
+object (<code>Null.New()</code>, <a href="../../components/error/"><code>NullError.New()</code></a>, …) that
+callers can always send messages to.</p>
+<p>This turns "always return a Null object, never <code>nil</code>" from a matter of human
+discipline into a check that <strong>fails CI</strong>, closing the one gap that lets the
+nil-dereference the pattern exists to prevent slip back in.</p>
+<h2 id="what-it-enforces">What it enforces</h2>
+<p>The analyzer treats an interface type as a <strong>Null-Object interface</strong> when that
+type declares an <code>IsNull() bool</code> method — taking no parameters and returning a
+single <code>bool</code> — directly or through embedding. (<code>isNullObjectInterface</code> resolves
+this with <code>types.LookupFieldOrMethod</code>.)</p>
+<p>At every site where a bare <code>nil</code> would re-enter such a type, it reports a
+diagnostic:</p>
+<ul>
+<li><strong><code>return nil</code></strong> — a <code>nil</code> in any result position of a function or function
+  literal whose declared result type is a Null-Object interface. Only the
+  position-aligned form (<code>return a, b, c</code>) is inspected; a naked return or a
+  single call feeding multiple results (<code>return f()</code>) is left alone to avoid
+  false positives.</li>
+<li><strong><code>x = nil</code></strong> — assignment of <code>nil</code> to a Null-Object-typed variable or field.</li>
+<li><strong><code>var x T = nil</code></strong> — initialisation of a value spec whose explicit type is a
+  Null-Object interface.</li>
+<li><strong>composite literals</strong> — a <code>nil</code> element targeting a Null-Object-typed slot:
+  a struct field (<code>T{Field: nil}</code> or positional), a map value
+  (<code>map[K]T{k: nil}</code>), or a slice/array element (<code>[]T{nil}</code>, <code>[N]T{nil}</code>).</li>
+</ul>
+<p>The diagnostic for a return reads:</p>
+<div class="highlight"><pre><span></span><code>return a Null object (e.g. Null.New()) instead of nil for &lt;Type&gt;: it is a
+Null-Object interface (IsNull() bool), and nil reintroduces the nil-dereference
+the pattern prevents
+</code></pre></div>
+<p>Assignment / construction sites produce the parallel message
+<code>assign</code>/<code>initialise</code>/<code>set field … to</code>/<code>set map value to</code>/<code>set element to</code> a
+Null object instead of <code>nil</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Deliberately conservative</p>
+<p>Interfaces <strong>without</strong> <code>IsNull()</code> are never flagged — including the builtin
+<code>error</code> and <code>Result.Interface</code> — so false positives are minimal. A typed
+conversion <code>return (Thing)(nil)</code>, a nil interface <em>variable</em>, an omitted
+struct field (its zero value), and a nil map <em>key</em> are all left alone, since
+they are explicit, structural, or uncommon.</p>
+</div>
+<h2 id="flagged-vs-accepted">Flagged vs. accepted</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">Error</span><span class="w">     </span><span class="s">&quot;github.com/go-composites/error/src&quot;</span>
+<span class="w">    </span><span class="nx">NullError</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/error/src/null&quot;</span>
+<span class="p">)</span>
+
+<span class="c1">// FLAGGED: Error.Interface declares IsNull() bool, and this returns a bare nil.</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">lookup</span><span class="p">(</span><span class="nx">bad</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">// nonnil: return a Null object (e.g. Null.New()) instead of nil</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;boom&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// ACCEPTED: hands back a real Null object the caller can always message.</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">lookupOK</span><span class="p">(</span><span class="nx">bad</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">bad</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">NullError</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;boom&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Box</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Err</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="p">}</span>
+
+<span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Box</span><span class="p">{</span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">}</span><span class="w">            </span><span class="c1">// FLAGGED: set field Err to a Null object instead of nil</span>
+<span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Box</span><span class="p">{</span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="nx">NullError</span><span class="p">.</span><span class="nx">New</span><span class="p">()}</span><span class="w"> </span><span class="c1">// ACCEPTED</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">  </span><span class="c1">// FLAGGED: initialise a Null object instead of nil</span>
+<span class="nx">e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">                      </span><span class="c1">// FLAGGED: assign a Null object instead of nil</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">           </span><span class="c1">// ACCEPTED: builtin error has no IsNull(), not a Null-Object interface</span>
+</code></pre></div>
+<h2 id="install-run">Install &amp; run</h2>
+<div class="highlight"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-composites/nonnil/cmd/nonnil@latest
+go<span class="w"> </span>vet<span class="w"> </span>-vettool<span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>nonnil<span class="k">)</span><span class="w"> </span>./...
+</code></pre></div>
+<p>The command wraps the analyzer with <code>singlechecker</code>, so it also runs standalone
+and accepts the usual <code>go vet</code> flags and package patterns.</p>
+<h2 id="ci-integration">CI integration</h2>
+<p>Every org repo runs <code>nonnil</code> on push and pull request via the <code>nonnil.yml</code>
+workflow, which installs the tool and vets the whole module:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install github.com/go-composites/nonnil/cmd/nonnil@latest</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet -vettool=&quot;$(go env GOPATH)/bin/nonnil&quot; ./...</span>
+</code></pre></div>
+<p>A bare <code>nil</code> in any of the positions above turns the job red, making the mistake
+un-mergeable.</p>
+<h2 id="license">License</h2>
+<p>BSD-3-Clause © the go-composites/nonnil authors.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -945,10 +1237,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/docs/0.1", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "/docs/0.1/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="/docs/0.1/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

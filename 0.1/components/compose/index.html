@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/string/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/compose/">
       
       
-        <link rel="prev" href="../number/">
+        <link rel="prev" href="../dictionary/">
       
       
-        <link rel="next" href="../array/">
+        <link rel="next" href="../composites/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>string — boxed string value - go-composites</title>
+        <title>compose — pipe Result-returning steps - go-composites</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#string-boxed-string-value" class="md-skip">
+        <a href="#compose-railway-oriented-pipelines" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              string — boxed string value
+              compose — pipe Result-returning steps
             
           </span>
         </div>
@@ -512,37 +512,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    string — boxed string value
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
         
   
   
@@ -558,59 +531,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -676,10 +596,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../compose/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    compose — pipe Result-returning steps
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -695,6 +642,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behaviour
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behaviour">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-and-short-circuiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data flow and short-circuiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1003,6 +1031,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behaviour
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behaviour">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-and-short-circuiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data flow and short-circuiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1041,52 +1097,111 @@
 
 
 
-<h1 id="string-boxed-string-value">string — boxed string value</h1>
-<p><code>github.com/go-composites/string</code> (Go package <code>String</code>, imported from the <code>src/</code>
-sub-directory) boxes a Go <code>string</code> behind the org's interface-first style, with
-<code>result</code>-returning mutators.</p>
+<h1 id="compose-railway-oriented-pipelines">compose — railway-oriented pipelines</h1>
+<p><code>github.com/go-composites/compose</code> (Go package <code>Compose</code>, imported from the
+<code>src/</code> sub-directory) is the org's <strong>composition</strong> primitive — the operation
+that names go-composites. It wires small <code>Result</code>-returning <strong>steps</strong> into a
+single pipeline that threads a payload forward along a <em>success track</em> and
+short-circuits onto an <em>error track</em> the instant a step fails.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/string/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Compose</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/compose/src&quot;</span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Set</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="nx">Split</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Step</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">WithGoString</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Pipe</span><span class="p">(</span><span class="nx">steps</span><span class="w"> </span><span class="o">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Run</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">steps</span><span class="w"> </span><span class="o">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">Then</span><span class="p">(</span><span class="nx">transform</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Step</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Map</span><span class="p">(</span><span class="nx">transform</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Step</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Recover</span><span class="p">(</span><span class="nx">step</span><span class="w"> </span><span class="nx">Step</span><span class="p">,</span><span class="w"> </span><span class="nx">handler</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">failed</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Fail</span><span class="p">(</span><span class="nx">message</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
 </code></pre></div>
-<ul>
-<li><code>New()</code> builds an empty string; <code>New(String.WithGoString("Hello World!"))</code>
-  seeds a value via a functional option.</li>
-<li><code>Set(v)</code> updates the value and returns a result whose payload is the string
-  itself.</li>
-<li><code>ToGoString()</code> returns the underlying Go <code>string</code>.</li>
-<li><code>Split(sep)</code> splits on <code>sep</code> and returns a result whose payload is an
-  <a href="../array/"><code>array</code></a> of <code>String</code> values (each split field boxed as a new
-  <code>String</code>).</li>
-<li><code>IsNull()</code> always returns <code>false</code>.</li>
-</ul>
+<p>A <code>Step</code> receives the payload produced by the previous stage and returns a
+<a href="../result/"><code>Result</code></a>. Per the org's null-object discipline, a step never
+returns a bare <code>nil</code>: it returns either a payload-bearing <code>Result</code> (success) or
+a <code>Result</code> whose <a href="../result/#haserror"><code>HasError()</code></a> is <code>true</code> (failure).</p>
+<h2 id="behaviour">Behaviour</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pipe(steps...)</code></td>
+<td>Composes the steps <strong>left-to-right</strong> into one reusable <code>Step</code>.</td>
+</tr>
+<tr>
+<td><code>Run(input, steps...)</code></td>
+<td>Convenience for <code>Pipe(steps...)(input)</code> — compose and run in one call.</td>
+</tr>
+<tr>
+<td><code>Then(transform)</code></td>
+<td>Lifts an infallible <code>func(interface{}) interface{}</code> onto the success track; its return value becomes a successful <code>Result</code>'s payload.</td>
+</tr>
+<tr>
+<td><code>Map(transform)</code></td>
+<td>Alias of <code>Then</code>.</td>
+</tr>
+<tr>
+<td><code>Recover(step, handler)</code></td>
+<td>Runs <code>handler</code> only when <code>step</code> short-circuits, giving it a chance to return a fallback <code>Result</code> and rejoin the success track. On success the <code>Result</code> passes through untouched.</td>
+</tr>
+<tr>
+<td><code>Fail(message)</code></td>
+<td>A <code>Step</code> that always short-circuits with an error carrying <code>message</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-flow-and-short-circuiting">Data flow and short-circuiting</h3>
+<p><code>Pipe</code> wraps its <code>input</code> in a successful <code>Result</code>, then runs each step in order
+on the <strong>previous step's <code>Payload()</code></strong> — data flows forward, left to right. As
+soon as a step returns a <code>Result</code> with <code>HasError() == true</code>, the pipeline
+returns that error <code>Result</code> <strong>unchanged</strong> and no later step runs. Otherwise the
+final step's <code>Result</code> is returned.</p>
+<p><code>Pipe()</code> with no steps is the <strong>identity track</strong>: it simply wraps its input in a
+successful <code>Result</code>. The returned <code>Step</code> is reusable and safe to run on many
+inputs.</p>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">String</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">String</span><span class="p">.</span><span class="nx">WithGoString</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">))</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// Hello World!</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">Compose</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/compose/src&quot;</span>
+<span class="w">    </span><span class="nx">Error</span><span class="w">   </span><span class="s">&quot;github.com/go-composites/error/src&quot;</span>
+<span class="w">    </span><span class="nx">Result</span><span class="w">  </span><span class="s">&quot;github.com/go-composites/result/src&quot;</span>
+<span class="p">)</span>
 
-<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">arr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="c1">// payload is a String boxing &quot;Hello&quot;</span>
-<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">first</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">parse</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">strconv</span><span class="p">.</span><span class="nx">Atoi</span><span class="p">(</span><span class="nx">input</span><span class="p">.(</span><span class="kt">string</span><span class="p">))</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;not an integer&quot;</span><span class="p">)))</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
 <span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">validate</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">input</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;must be positive&quot;</span><span class="p">)))</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">input</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1">// A reusable pipeline: parse -&gt; validate -&gt; double.</span>
+<span class="nx">pipeline</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Compose</span><span class="p">.</span><span class="nx">Pipe</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">parse</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">validate</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Compose</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">input</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">)</span>
+
+<span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">&quot;21&quot;</span><span class="p">)</span><span class="w">            </span><span class="c1">// HasError() == false, Payload() == 42</span>
+<span class="nx">bad</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">&quot;not-a-number&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// HasError() == true,  Error().Message() == &quot;not an integer&quot;</span>
+<span class="w">                                </span><span class="c1">// (validate and the doubling step never run)</span>
 </code></pre></div>
-<p><code>Split</code> returns an error-free <a href="../result/"><code>result</code></a> on success, so the
-<code>if r.HasError()</code> guard above takes the <strong>else</strong> (success) branch — <code>HasError()</code>
-is <code>true</code> only when the result carries a real error.</p>
+<p><code>Run("21", parse, validate, ...)</code> is the same as <code>pipeline("21")</code> without first
+binding the pipeline to a variable.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p><code>string</code> depends on <a href="../array/"><code>array</code></a> and <a href="../result/"><code>result</code></a> (and
-transitively on <a href="../error/"><code>error</code></a> and <a href="../null/"><code>null</code></a>).</p>
+<p><code>compose</code> depends on <a href="../result/"><code>result</code></a> and <a href="../error/"><code>error</code></a> (and
+transitively on <a href="../null/"><code>null</code></a>).</p>
 
 
 

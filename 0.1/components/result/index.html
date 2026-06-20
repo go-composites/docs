@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first array, null, result, string and error building blocks. No cgo.">
+        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first null, error, result, boolean, number, string, array and dictionary building blocks, a compose pipeline, a one-import meta-package, a typed generics track, and the nonnil/respondto analyzers. No cgo, 100% coverage, 6-arch CI.">
       
       
       
         <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/result/">
       
       
-        <link rel="prev" href="../null/">
+        <link rel="prev" href="../error/">
       
       
-        <link rel="next" href="../string/">
+        <link rel="next" href="../boolean/">
       
       
         
@@ -375,14 +375,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../array/" class="md-nav__link">
+      <a href="../null/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    array — interface-first slice
+    null — the null sentinel
   
 
     
@@ -403,14 +403,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../null/" class="md-nav__link">
+      <a href="../error/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    null — the null sentinel
+    error — error interface + sentinels
   
 
     
@@ -502,10 +502,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#haserror-inverted-semantics" class="md-nav__link">
+  <a href="#haserror" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HasError() — inverted semantics
+        HasError()
       
     </span>
   </a>
@@ -513,10 +513,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
+  <a href="#construction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Demo
+        Construction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
       
     </span>
   </a>
@@ -527,6 +538,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boolean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    boolean — boxed boolean
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    number — boxed numeric value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -567,14 +634,328 @@
   
   
     <li class="md-nav__item">
-      <a href="../error/" class="md-nav__link">
+      <a href="../array/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    error — error interface + sentinels
+    array — interface-first slice + combinators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dictionary — key/value map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    compose — pipe Result-returning steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    composites — one-import meta-package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../is/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    is — predicate helpers (placeholder)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Generics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    typed — Result[T] / Optional[T] / Slice[T]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyzers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analyzers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzers/nonnil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nonnil — Null-Object enforcer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzers/respondto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    respondto — reflective-dispatch checker
   
 
     
@@ -633,10 +1014,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#haserror-inverted-semantics" class="md-nav__link">
+  <a href="#haserror" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HasError() — inverted semantics
+        HasError()
       
     </span>
   </a>
@@ -644,10 +1025,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
+  <a href="#construction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Demo
+        Construction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
       
     </span>
   </a>
@@ -696,42 +1088,62 @@ returns a bare <code>nil</code>.</p>
 <span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">()</span><span class="w"> </span><span class="c1">// 42</span>
 <span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">()</span><span class="w">   </span><span class="c1">// the null error (IsNull() == true)</span>
 </code></pre></div>
-<h2 id="haserror-inverted-semantics"><code>HasError()</code> — inverted semantics</h2>
-<div class="admonition danger">
-<p class="admonition-title">Known bug: <code>HasError()</code> is inverted in the published module</p>
-<p>In the released module
-(<code>github.com/go-composites/result@v0.0.0-20240527141542-cb3939bd2b03</code>, the
-version the rest of the org links against), <code>HasError()</code> is defined as:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Payload()</code></td>
+<td>Returns the stored payload; defaults to a non-nil <code>Null</code> value.</td>
+</tr>
+<tr>
+<td><code>Error()</code></td>
+<td>Returns the stored error; defaults to the null error.</td>
+</tr>
+<tr>
+<td><code>HasError()</code></td>
+<td><code>true</code> iff a <strong>real</strong> error is attached, i.e. <code>!d.error.IsNull()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="haserror"><code>HasError()</code></h2>
+<p><code>HasError()</code> is defined as:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="kt">error</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">!</span><span class="nx">d</span><span class="p">.</span><span class="kt">error</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Because the <strong>null error</strong> reports <code>IsNull() == true</code>, this means a
-<code>Result</code> with <strong>no</strong> error reports <code>HasError() == true</code>, and a <code>Result</code>
-carrying a <strong>real</strong> error reports <code>HasError() == false</code> — the <strong>opposite</strong>
-of what the name implies.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">().</span><span class="nx">HasError</span><span class="p">()</span><span class="w">                                   </span><span class="c1">// true  (no error!)</span>
-<span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">))).</span><span class="nx">HasError</span><span class="p">()</span><span class="w">   </span><span class="c1">// false (has error!)</span>
+<p>Because the <a href="../error/#null-error-srcnull">null error</a> reports <code>IsNull() == true</code>,
+a <code>Result</code> with <strong>no</strong> error reports <code>HasError() == false</code>, while a <code>Result</code>
+carrying a <strong>real</strong> error reports <code>HasError() == true</code> — exactly what the name
+implies.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">().</span><span class="nx">HasError</span><span class="p">()</span><span class="w">                                   </span><span class="c1">// false (no error)</span>
+<span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">))).</span><span class="nx">HasError</span><span class="p">()</span><span class="w">   </span><span class="c1">// true  (has error)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">The idiomatic guard</p>
+<p>Across the org, callers branch on the result with the natural shape:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span><span class="w"> </span><span class="c1">// failure path</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">use</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">())</span><span class="w">                 </span><span class="c1">// success path</span>
+<span class="p">}</span>
 </code></pre></div>
 </div>
-<p>This is not a documentation artefact — it is the behaviour downstream code
-relies on. The <code>array</code> package's tests explicitly note it: a fresh
-<code>Result.New()</code> is used as the <em>error-reporting</em> result that short-circuits
-iteration, while a result carrying an <code>Error.New("sentinel")</code> is used as the
-<em>ok</em> result that lets iteration continue. See
-<a href="../array/#each-and-the-inverted-result"><code>array</code></a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Intended fix lives on <code>main</code>, but is not the released behaviour</p>
-<p>The current source on the <code>main</code> branch negates the expression
-(<code>return !d.error.IsNull()</code>), which would make <code>HasError()</code> correct. That
-change has <strong>not</strong> been published as a module version, so consumers pinned
-to the pseudo-version above still get the inverted behaviour. This page
-documents the behaviour you actually get today; do not assume the negated
-form unless you bump the dependency.</p>
-</div>
-<h2 id="demo">Demo</h2>
-<p>The repository ships a <code>main.go</code> that dumps a default result and prints
-<code>r.HasError()</code> — which, per the above, prints <code>true</code> for an error-free result.</p>
+<h2 id="construction">Construction</h2>
+<p><code>New</code> is variadic over functional options:</p>
+<ul>
+<li><code>WithPayload(v)</code> installs <code>v</code> as the payload.</li>
+<li><code>WithError(e)</code> installs <code>e</code> as the error.</li>
+</ul>
+<p>Options are applied in order over the <code>Null</code>/null-error defaults, so a
+<code>Result.New()</code> with no options is a successful, empty result.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p><code>result</code> depends on <a href="../error/"><code>error</code></a> (including the null-error sentinel) and
+<a href="../null/"><code>null</code></a>.</p>
 
 
 
