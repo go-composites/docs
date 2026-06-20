@@ -619,6 +619,34 @@
   
   
     <li class="md-nav__item">
+      <a href="components/bignumber/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bignumber — arbitrary-precision integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="components/string/" class="md-nav__link">
         
   
@@ -767,6 +795,34 @@
     
   
     set — unordered unique collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/orderedset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    orderedset — insertion-ordered unique collection
   
 
     
@@ -1353,6 +1409,11 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td>A boxed numeric value (int/float); arithmetic returns a <code>result</code>, so division by zero is an error value, not a panic.</td>
 </tr>
 <tr>
+<td><a href="components/bignumber/"><code>bignumber</code></a></td>
+<td><code>github.com/go-composites/bignumber/src</code></td>
+<td>An arbitrary-precision integer over <code>math/big.Int</code> (no overflow); unbounded-precision complement to <code>number</code>, arithmetic returns a <code>result</code>.</td>
+</tr>
+<tr>
 <td><a href="components/string/"><code>string</code></a></td>
 <td><code>github.com/go-composites/string/src</code></td>
 <td>A boxed string value with <code>Set</code>/<code>ToGoString</code>/<code>Split</code>.</td>
@@ -1365,7 +1426,7 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <tr>
 <td><a href="components/time/"><code>time</code></a></td>
 <td><code>github.com/go-composites/time/src</code></td>
-<td>A deterministic instant (no <code>Now()</code>) plus a <code>Duration</code> sub-package; fallible <code>Parse</code>/<code>Add</code> return a <code>result</code>.</td>
+<td>A deterministic instant (no <code>Now()</code>) with embedded-tzdata IANA zone support (<code>In</code>/<code>Zone</code>/<code>UTC</code>) plus a <code>Duration</code> sub-package; fallible <code>Parse</code>/<code>Add</code>/<code>In</code> return a <code>result</code>.</td>
 </tr>
 <tr>
 <td><a href="components/array/"><code>array</code></a></td>
@@ -1381,6 +1442,11 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td><a href="components/set/"><code>set</code></a></td>
 <td><code>github.com/go-composites/set/src</code></td>
 <td>An unordered collection of unique items with <code>Union</code>/<code>Intersection</code>/<code>Difference</code>.</td>
+</tr>
+<tr>
+<td><a href="components/orderedset/"><code>orderedset</code></a></td>
+<td><code>github.com/go-composites/orderedset/src</code></td>
+<td>The insertion-ordered sibling of <code>set</code>: same API, but iteration is in first-insertion order.</td>
 </tr>
 <tr>
 <td><a href="components/range/"><code>range</code></a></td>

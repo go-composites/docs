@@ -515,6 +515,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../bignumber/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bignumber — arbitrary-precision integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../string/" class="md-nav__link">
         
   
@@ -799,6 +827,34 @@
     
   
     set — unordered unique collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orderedset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    orderedset — insertion-ordered unique collection
   
 
     
@@ -1371,6 +1427,9 @@ architectures and test runs.</p>
 <span class="w">    </span><span class="nx">ToUnix</span><span class="p">()</span><span class="w"> </span><span class="kt">int64</span>
 <span class="w">    </span><span class="nx">Format</span><span class="p">(</span><span class="nx">layout</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span>
 <span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">In</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Zone</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">UTC</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Before</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">After</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
@@ -1411,6 +1470,18 @@ architectures and test runs.</p>
 <td>Returns the RFC3339 representation.</td>
 </tr>
 <tr>
+<td><code>In(name)</code></td>
+<td>Returns a <code>Result</code> whose payload is a new <code>Time</code> denoting the <strong>same instant</strong> in the IANA location <code>name</code> (e.g. <code>"Europe/Paris"</code>); when <code>name</code> is not a known zone the <code>Result</code> carries an <code>Error</code> instead. Only the location changes, so the underlying instant — and <code>Before</code>/<code>After</code>/<code>Equal</code> — is preserved. Never panics, never returns <code>nil</code>.</td>
+</tr>
+<tr>
+<td><code>Zone()</code></td>
+<td>Returns the abbreviated name of the time zone in effect at the instant (e.g. <code>"UTC"</code>, <code>"CET"</code>).</td>
+</tr>
+<tr>
+<td><code>UTC()</code></td>
+<td>Returns a new <code>Time</code> denoting the same instant with its location set to UTC.</td>
+</tr>
+<tr>
 <td><code>Before(other)</code> / <code>After(other)</code></td>
 <td>Report whether the receiver is strictly before / after <code>other</code>.</td>
 </tr>
@@ -1445,13 +1516,30 @@ architectures and test runs.</p>
 <span class="k">if</span><span class="w"> </span><span class="nx">shifted</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">Duration</span><span class="p">.</span><span class="nx">FromSeconds</span><span class="p">(</span><span class="mi">3600</span><span class="p">));</span><span class="w"> </span><span class="p">!</span><span class="nx">shifted</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">shifted</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">Time</span><span class="p">.</span><span class="nx">Interface</span><span class="p">).</span><span class="nx">ToUnix</span><span class="p">())</span><span class="w"> </span><span class="c1">// 3600</span>
 <span class="p">}</span>
+
+<span class="c1">// Relocate to an IANA zone — same instant, different location:</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">In</span><span class="p">(</span><span class="s">&quot;Europe/Paris&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">paris</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">Time</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">paris</span><span class="p">.</span><span class="nx">Zone</span><span class="p">())</span><span class="w">      </span><span class="c1">// CET</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">paris</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">))</span><span class="w">    </span><span class="c1">// true — the underlying instant is unchanged</span>
+<span class="p">}</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">IANA zones work on every architecture</p>
+<p><code>time</code> embeds the IANA time-zone database (<code>time/tzdata</code>), so <code>In(...)</code>
+resolves zones like <code>"Europe/Paris"</code> deterministically on <strong>every
+architecture</strong> and inside the toolchain-less CI containers — without relying
+on a system tzdata install. Because relocating only changes the location, the
+underlying instant is preserved, so <code>Before</code>/<code>After</code>/<code>Equal</code> are unaffected.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">The Null-Object Time</p>
 <p><code>Time.Null()</code> denotes the zero instant: <code>ToUnix()</code> is <code>0</code>, <code>Format</code> returns
-<code>""</code>, <code>ToGoString()</code> is <code>&lt;NullTime&gt;</code>, comparisons are <code>false</code>, <code>Equal</code> is
-<code>true</code> only against another null, <code>Add</code> yields a null <code>Time</code>, <code>Sub</code> yields a
-null <code>Duration</code>, and <code>IsNull()</code> returns <code>true</code>.</p>
+<code>""</code>, <code>ToGoString()</code> is <code>&lt;NullTime&gt;</code>, <code>In(...)</code> carries an
+<code>Error.New("cannot relocate a null Time")</code>, <code>Zone()</code> is <code>""</code>, <code>UTC()</code> yields
+another null <code>Time</code>, comparisons are <code>false</code>, <code>Equal</code> is <code>true</code> only against
+another null, <code>Add</code> yields a null <code>Time</code>, <code>Sub</code> yields a null <code>Duration</code>, and
+<code>IsNull()</code> returns <code>true</code>.</p>
 </div>
 <h2 id="duration">Duration</h2>
 <p>The <code>src/duration</code> sub-package (Go package <code>Duration</code>) wraps Go's
