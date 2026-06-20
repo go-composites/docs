@@ -1060,6 +1060,9 @@ sub-directory) boxes a Go <code>string</code> behind the org's interface-first s
 <span class="w">    </span><span class="nx">Lower</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Trim</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">StartsWith</span><span class="p">(</span><span class="nx">prefix</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">EndsWith</span><span class="p">(</span><span class="nx">suffix</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Format</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="p">}</span>
 
@@ -1090,6 +1093,12 @@ sub-directory) boxes a Go <code>string</code> behind the org's interface-first s
   or leading/trailing white space removed.</li>
 <li><code>Equal(other)</code> returns a Go <code>bool</code>: whether the receiver and <code>other</code> carry the
   same underlying string.</li>
+<li><code>StartsWith(prefix)</code> returns a Go <code>bool</code>: whether the string begins with
+  <code>prefix</code>.</li>
+<li><code>EndsWith(suffix)</code> returns a Go <code>bool</code>: whether the string ends with <code>suffix</code>.</li>
+<li><code>Format(args...)</code> returns a result whose payload is a <strong>new</strong> <code>String</code> equal to
+  <code>fmt.Sprintf</code> applied with the receiver's value as the format string and
+  <code>args</code> as the operands.</li>
 <li><code>IsNull()</code> returns <code>false</code> for a real string.</li>
 </ul>
 <div class="admonition note">

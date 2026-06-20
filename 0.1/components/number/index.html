@@ -1060,6 +1060,9 @@ notably division by zero — are <strong>values</strong>, never panics or bare <
 <span class="w">    </span><span class="nx">Sub</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Mul</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Div</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Mod</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Abs</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Neg</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">LessThan</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">GreaterThan</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">Interface</span>
@@ -1114,6 +1117,18 @@ notably division by zero — are <strong>values</strong>, never panics or bare <
 <tr>
 <td><code>Div(other)</code></td>
 <td>Returns a <code>Result</code> whose payload is the quotient — <strong>unless</strong> <code>other</code> is zero, in which case the <code>Result</code> carries an <code>Error.New("division by zero")</code> instead of a payload. It never panics and never returns <code>nil</code>.</td>
+</tr>
+<tr>
+<td><code>Mod(other)</code></td>
+<td>Returns a <code>Result</code> whose payload is the remainder of the receiver divided by <code>other</code>: Go's <code>%</code> operator when <strong>both</strong> operands are integers, otherwise <code>math.Mod</code>. When <code>other</code> is zero the <code>Result</code> carries an <code>Error.New("modulo by zero")</code> instead of a payload — it never panics and never returns <code>nil</code>. The result stays integer only when both operands are integers.</td>
+</tr>
+<tr>
+<td><code>Abs()</code></td>
+<td>Returns a <code>Result</code> whose payload is a new <code>Number</code> holding the absolute value, preserving the receiver's integer or floating-point kind.</td>
+</tr>
+<tr>
+<td><code>Neg()</code></td>
+<td>Returns a <code>Result</code> whose payload is a new <code>Number</code> holding the negation, preserving the receiver's integer or floating-point kind.</td>
 </tr>
 <tr>
 <td><code>Equal</code> / <code>LessThan</code> / <code>GreaterThan</code></td>
