@@ -1,24 +1,42 @@
 # Components
 
-`go-composites` is five small, interface-first packages. Each is its own
+`go-composites` is a set of small, interface-first packages. Each is its own
 repository and Go module (under the `github.com/go-composites/` module path; see
-the [note on the homepage](../index.md#module-paths-vs-repository-org)).
+the [note on the homepage](../index.md#module-paths)).
+
+## Core
 
 <div class="cop-grid" markdown>
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
-**[array](array.md)** — interface-first slice with `result`-returning methods.
+**[null](null.md)** — the minimal null-object sentinel.
 </div>
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
-**[null](null.md)** — the minimal null sentinel.
+**[error](error.md)** — the error interface and its sentinels.
 </div>
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
 **[result](result.md)** — payload + error wrapper with functional options.
+</div>
+
+</div>
+
+## Values & collections
+
+<div class="cop-grid" markdown>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[boolean](boolean.md)** — a boxed boolean with a structural `IsTrue()`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[number](number.md)** — a boxed int/float; arithmetic returns a `result`.
 </div>
 
 <div class="cop-card" markdown>
@@ -28,14 +46,44 @@ the [note on the homepage](../index.md#module-paths-vs-repository-org)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
-**[error](error.md)** — the error interface and its sentinels.
+**[array](array.md)** — interface-first slice with `result`-returning methods and combinators.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[dictionary](dictionary.md)** — an interface-first key/value map.
 </div>
 
 </div>
+
+## Composition, meta & generics
+
+<div class="cop-grid" markdown>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[compose](compose.md)** — `Pipe`/`Run` of `result`-returning steps.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[composites](composites.md)** — the one-import meta-package.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[typed](typed.md)** — the `Result[T]`/`Optional[T]`/`Slice[T]` generics track.
+</div>
+
+</div>
+
+The org also ships two static analyzers that enforce its invariants on every
+repo — [`nonnil`](../analyzers/nonnil.md) (the Null-Object rule) and
+[`respondto`](../analyzers/respondto.md) (reflective dispatch).
 
 ## Placeholder repositories
 
-The organisation also contains three repositories — `object`, `is`, and
-`boolean` — that are currently **empty placeholders** (a `README` stub, a
-`LICENSE`, and a `.gitignore`, with no Go source). They are intentionally not
-documented here; this site will cover them once they ship code.
+A couple of repositories — `object` and [`is`](is.md) — are currently **empty
+placeholders** (a `README` stub, a `LICENSE`, and a `.gitignore`, with no Go
+source). They are not yet documented in depth; this site will cover them once
+they ship code.

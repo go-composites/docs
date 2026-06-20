@@ -55,6 +55,6 @@ A formatted error for stubbed methods. `New(name)` builds the message
 ## Notes
 
 - `IsNull()` is the discriminator used elsewhere in the org to tell a real
-  error apart from the "no error" sentinel. The way [`result`](result.md)
-  consumes it is the source of the inverted-`HasError()` behaviour documented on
-  that page.
+  error apart from the "no error" sentinel. [`result`](result.md) builds on it:
+  `result.HasError()` is defined as `!error.IsNull()`, so a result reports an
+  error only when it actually carries a non-null one.

@@ -1,5 +1,5 @@
 site_name: go-composites
-site_description: Small pure-Go composites for Composition-Oriented Programming — interface-first array, null, result, string and error building blocks. No cgo.
+site_description: Small pure-Go composites for Composition-Oriented Programming — interface-first null, error, result, boolean, number, string, array and dictionary building blocks, a compose pipeline, a one-import meta-package, a typed generics track, and the nonnil/respondto analyzers. No cgo, 100% coverage, 6-arch CI.
 site_url: https://go-composites.github.io/docs/
 repo_url: https://github.com/go-composites
 repo_name: go-composites
@@ -39,8 +39,19 @@ nav:
   - Home: index.md
   - Components:
       - Overview: components/index.md
-      - "array — interface-first slice": components/array.md
       - "null — the null sentinel": components/null.md
-      - "result — payload + error wrapper": components/result.md
-      - "string — boxed string value": components/string.md
       - "error — error interface + sentinels": components/error.md
+      - "result — payload + error wrapper": components/result.md
+      - "boolean — boxed boolean": components/boolean.md
+      - "number — boxed numeric value": components/number.md
+      - "string — boxed string value": components/string.md
+      - "array — interface-first slice + combinators": components/array.md
+      - "dictionary — key/value map": components/dictionary.md
+      - "compose — pipe Result-returning steps": components/compose.md
+      - "composites — one-import meta-package": components/composites.md
+      - "is — predicate helpers (placeholder)": components/is.md
+  - Generics:
+      - "typed — Result[T] / Optional[T] / Slice[T]": components/typed.md
+  - Analyzers:
+      - "nonnil — Null-Object enforcer": analyzers/nonnil.md
+      - "respondto — reflective-dispatch checker": analyzers/respondto.md

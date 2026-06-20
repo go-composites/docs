@@ -45,13 +45,9 @@ if r := s.Split(" "); r.HasError() {
 }
 ```
 
-!!! warning "Beware the inverted `HasError()`"
-    `Split` returns a normal (error-free) result on success. Because
-    [`result.HasError()` is inverted](result.md#haserror-inverted-semantics) in
-    the published modules, the `if r.HasError()` guard above takes the
-    **error** branch on a *successful* split. The repository's own `main.go`
-    contains exactly this pattern. Treat the control flow accordingly until the
-    `result` fix is released.
+`Split` returns an error-free [`result`](result.md) on success, so the
+`if r.HasError()` guard above takes the **else** (success) branch — `HasError()`
+is `true` only when the result carries a real error.
 
 ## Dependencies
 
