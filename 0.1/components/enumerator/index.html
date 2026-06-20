@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/result/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/enumerator/">
       
       
-        <link rel="prev" href="../error/">
+        <link rel="prev" href="../proc/">
       
       
-        <link rel="next" href="../boolean/">
+        <link rel="next" href="../compose/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>result — payload + error wrapper - go-composites</title>
+        <title>enumerator — lazy sequence - go-composites</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#result-payload-error-wrapper" class="md-skip">
+        <a href="#enumerator-lazy-sequence" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              result — payload + error wrapper
+              enumerator — lazy sequence
             
           </span>
         </div>
@@ -428,37 +428,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    result — payload + error wrapper
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../result/" class="md-nav__link">
         
   
   
@@ -474,70 +447,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#haserror" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HasError()
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#construction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Construction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -855,10 +764,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../enumerator/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    enumerator — lazy sequence
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -874,6 +810,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1210,10 +1210,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#haserror" class="md-nav__link">
+  <a href="#behaviour" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HasError()
+        Behaviour
       
     </span>
   </a>
@@ -1221,10 +1221,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#construction" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Construction
+        Usage
       
     </span>
   </a>
@@ -1259,86 +1259,99 @@
 
 
 
-<h1 id="result-payload-error-wrapper">result — payload + error wrapper</h1>
-<p><code>github.com/go-composites/result</code> (Go package <code>Result</code>, imported from the <code>src/</code>
-sub-directory) is the org's <strong>return-value wrapper</strong>. Instead of returning
-<code>(value, error)</code> Go-style, methods across <code>go-composites</code> return a single
-<code>Result.Interface</code> carrying both a <strong>payload</strong> and an <strong>error</strong>.</p>
+<h1 id="enumerator-lazy-sequence">enumerator — lazy sequence</h1>
+<p><code>github.com/go-composites/enumerator</code> (Go package <code>Enumerator</code>, imported from the
+<code>src/</code> sub-directory) is a <strong>lazy</strong> sequence composite in the spirit of Ruby's
+<code>Enumerator::Lazy</code>. Its transforms (<code>Map</code>/<code>Filter</code>/<code>Take</code>) build on a producer
+and evaluate <strong>nothing</strong> until a terminal operation pulls items through — so you
+can <code>Take</code> a finite prefix of an <strong>infinite</strong> source without it running away.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Result</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/result/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Enumerator</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/enumerator/src&quot;</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Payload</span><span class="p">()</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span>
-<span class="w">    </span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
-<span class="w">    </span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="c1">// Lazy transforms — return a new Enumerator, evaluate nothing.</span>
+<span class="w">    </span><span class="nx">Map</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Filter</span><span class="p">(</span><span class="nx">pred</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Take</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="c1">// Terminal operations — force evaluation.</span>
+<span class="w">    </span><span class="nx">ToArray</span><span class="p">()</span><span class="w"> </span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Each</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Reduce</span><span class="p">(</span><span class="nx">seed</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">payload</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Option</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">WithError</span><span class="p">(</span><span class="kt">error</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">items</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span><span class="w">                                    </span><span class="c1">// finite source</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Generate</span><span class="p">(</span><span class="nx">seed</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="c1">// infinite source</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span><span class="w">                                                       </span><span class="c1">// Null-Object</span>
 </code></pre></div>
-<p>A fresh <code>Result.New()</code> defaults its payload to <a href="../null/"><code>Null.New()</code></a> and its
-error to the <a href="../error/#null-error-srcnull">null error</a>, so neither accessor ever
-returns a bare <code>nil</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
-<span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">()</span><span class="w"> </span><span class="c1">// 42</span>
-<span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">()</span><span class="w">   </span><span class="c1">// the null error (IsNull() == true)</span>
-</code></pre></div>
+<h2 id="behaviour">Behaviour</h2>
 <table>
 <thead>
 <tr>
-<th>Member</th>
+<th>Kind</th>
+<th>Method</th>
 <th>Behaviour</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Payload()</code></td>
-<td>Returns the stored payload; defaults to a non-nil <code>Null</code> value.</td>
+<td>lazy</td>
+<td><code>Map(fn)</code></td>
+<td>yields <code>fn(item)</code> for each upstream item</td>
 </tr>
 <tr>
-<td><code>Error()</code></td>
-<td>Returns the stored error; defaults to the null error.</td>
+<td>lazy</td>
+<td><code>Filter(pred)</code></td>
+<td>yields only items where <code>pred(item)</code> is true</td>
 </tr>
 <tr>
-<td><code>HasError()</code></td>
-<td><code>true</code> iff a <strong>real</strong> error is attached, i.e. <code>!d.error.IsNull()</code>.</td>
+<td>lazy</td>
+<td><code>Take(n)</code></td>
+<td>yields at most <code>n</code> items, then <strong>stops the upstream producer</strong> (so it terminates an infinite source); <code>n ≤ 0</code> is empty</td>
+</tr>
+<tr>
+<td>terminal</td>
+<td><code>ToArray()</code></td>
+<td>materialise into an <a href="../array/"><code>array</code></a></td>
+</tr>
+<tr>
+<td>terminal</td>
+<td><code>Each(fn)</code></td>
+<td>run <code>fn</code> per item; <strong>short-circuit</strong> on the first error <code>result</code></td>
+</tr>
+<tr>
+<td>terminal</td>
+<td><code>First()</code></td>
+<td>a <code>result</code> with the first item; empty → an error <code>result</code> (<code>"Enumerator.First: empty"</code>)</td>
+</tr>
+<tr>
+<td>terminal</td>
+<td><code>Reduce(seed, fn)</code></td>
+<td>left fold, short-circuiting on the first error <code>result</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="haserror"><code>HasError()</code></h2>
-<p><code>HasError()</code> is defined as:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">!</span><span class="nx">d</span><span class="p">.</span><span class="kt">error</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Because the <a href="../error/#null-error-srcnull">null error</a> reports <code>IsNull() == true</code>,
-a <code>Result</code> with <strong>no</strong> error reports <code>HasError() == false</code>, while a <code>Result</code>
-carrying a <strong>real</strong> error reports <code>HasError() == true</code> — exactly what the name
-implies.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">().</span><span class="nx">HasError</span><span class="p">()</span><span class="w">                                   </span><span class="c1">// false (no error)</span>
-<span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">))).</span><span class="nx">HasError</span><span class="p">()</span><span class="w">   </span><span class="c1">// true  (has error)</span>
+<p>The two constructors differ in their source: <code>New(items…)</code> is finite, while
+<code>Generate(seed, fn)</code> is <strong>infinite</strong> (<code>seed, fn(seed), fn(fn(seed)), …</code>) and only
+terminates once a downstream <code>Take</code>/<code>First</code> stops it.</p>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">// A finite prefix of an infinite sequence — lazily.</span>
+<span class="nx">squares</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Enumerator</span><span class="p">.</span>
+<span class="w">    </span><span class="nx">Generate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}).</span>
+<span class="w">    </span><span class="nx">Map</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">}).</span>
+<span class="w">    </span><span class="nx">Take</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span>
+<span class="w">    </span><span class="nx">ToArray</span><span class="p">()</span><span class="w"> </span><span class="c1">// payload elements: 1 4 9</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">The idiomatic guard</p>
-<p>Across the org, callers branch on the result with the natural shape:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span><span class="w"> </span><span class="c1">// failure path</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">use</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">())</span><span class="w">                 </span><span class="c1">// success path</span>
-<span class="p">}</span>
-</code></pre></div>
+<p class="admonition-title">Null-Object</p>
+<p><code>Enumerator.Null()</code> is the never-nil empty sequence: transforms return it,
+<code>ToArray()</code> is empty, <code>First()</code> errors, <code>Each</code>/<code>Reduce</code> are no-op successes
+(the latter returns the seed), and <code>IsNull()</code> reports <code>true</code>.</p>
 </div>
-<h2 id="construction">Construction</h2>
-<p><code>New</code> is variadic over functional options:</p>
-<ul>
-<li><code>WithPayload(v)</code> installs <code>v</code> as the payload.</li>
-<li><code>WithError(e)</code> installs <code>e</code> as the error.</li>
-</ul>
-<p>Options are applied in order over the <code>Null</code>/null-error defaults, so a
-<code>Result.New()</code> with no options is a successful, empty result.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p><code>result</code> depends on <a href="../error/"><code>error</code></a> (including the null-error sentinel) and
+<p><code>enumerator</code> depends on <a href="../array/"><code>array</code></a> (for <code>ToArray</code>),
+<a href="../result/"><code>result</code></a> and <a href="../error/"><code>error</code></a>, and transitively on
 <a href="../null/"><code>null</code></a>.</p>
 
 
