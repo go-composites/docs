@@ -53,6 +53,7 @@ nav:
       - "range — integer interval": components/range.md
       - "pair — two-element grouping": components/pair.md
       - "proc — first-class callable": components/proc.md
+      - "enumerator — lazy sequence": components/enumerator.md
       - "compose — pipe Result-returning steps": components/compose.md
       - "composites — one-import meta-package": components/composites.md
       - "is — predicate helpers (placeholder)": components/is.md

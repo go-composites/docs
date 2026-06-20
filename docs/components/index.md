@@ -92,6 +92,11 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[enumerator](enumerator.md)** — a lazy sequence with `Map`/`Filter`/`Take`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[compose](compose.md)** — `Pipe`/`Run` of `result`-returning steps.
 </div>
 

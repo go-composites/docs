@@ -48,6 +48,7 @@ instead of nil checks.
 | [`range`](components/range.md) | `github.com/go-composites/range/src` | An integer interval (inclusive/exclusive end, non-zero step); a zero step is a `result` error, not a panic. |
 | [`pair`](components/pair.md) | `github.com/go-composites/pair/src` | A fixed two-element heterogeneous grouping (`First`/`Second`/`ToArray`). |
 | [`proc`](components/proc.md) | `github.com/go-composites/proc/src` | A first-class callable; `Then` chains steps railway-style, short-circuiting on an error `result`. |
+| [`enumerator`](components/enumerator.md) | `github.com/go-composites/enumerator/src` | A **lazy** sequence (Ruby `Enumerator::Lazy`): lazy `Map`/`Filter`/`Take` over a finite or infinite source; `result`-based terminals. |
 | [`compose`](components/compose.md) | `github.com/go-composites/compose/src` | `Pipe`/`Run` compose `result`-returning steps into one left-to-right, short-circuiting pipeline. |
 | [`composites`](components/composites.md) | `github.com/go-composites/composites` | **Meta-package**: one import re-exporting the whole vocabulary as type aliases + constructors. |
 | [`typed`](components/typed.md) | `github.com/go-composites/typed/src/...` | A **generics** parallel track: `Result[T]`, `Optional[T]`, `Slice[T]` with compile-time type safety. |
