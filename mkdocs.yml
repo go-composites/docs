@@ -45,8 +45,14 @@ nav:
       - "boolean — boxed boolean": components/boolean.md
       - "number — boxed numeric value": components/number.md
       - "string — boxed string value": components/string.md
+      - "symbol — interned identifier": components/symbol.md
+      - "time — deterministic instant + duration": components/time.md
       - "array — interface-first slice + combinators": components/array.md
       - "dictionary — key/value map": components/dictionary.md
+      - "set — unordered unique collection": components/set.md
+      - "range — integer interval": components/range.md
+      - "pair — two-element grouping": components/pair.md
+      - "proc — first-class callable": components/proc.md
       - "compose — pipe Result-returning steps": components/compose.md
       - "composites — one-import meta-package": components/composites.md
       - "is — predicate helpers (placeholder)": components/is.md

@@ -46,6 +46,16 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[symbol](symbol.md)** — an interned, immutable identifier.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[time](time.md)** — a deterministic instant plus a `Duration` span.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[array](array.md)** — interface-first slice with `result`-returning methods and combinators.
 </div>
 
@@ -54,11 +64,31 @@ the [note on the homepage](../index.md#module-paths)).
 **[dictionary](dictionary.md)** — an interface-first key/value map.
 </div>
 
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[set](set.md)** — an unordered collection of unique items.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[range](range.md)** — an integer interval with `result`-returning construction.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[pair](pair.md)** — a fixed two-element grouping.
+</div>
+
 </div>
 
 ## Composition, meta & generics
 
 <div class="cop-grid" markdown>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[proc](proc.md)** — a first-class callable with railway `Then` composition.
+</div>
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
