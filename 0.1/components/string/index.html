@@ -1100,8 +1100,10 @@ placeholder that honours the full <code>Interface</code> without ever being <cod
 <code>Length()</code> is <code>0</code>, value-producing operations return a successful result
 wrapping the null <code>String</code> (or, where chaining is meaningful, the receiver),
 and <code>IsNull()</code> returns <code>true</code>. Use it instead of a <code>nil</code>
-<code>String.Interface</code>. (The Null-Object lives in the same <code>src</code> package as a
-<code>Null()</code> constructor; there is no separate <code>src/null</code> sub-package.)</p>
+<code>String.Interface</code>. (<code>String.Null()</code> lives in the main <code>src</code> package; the
+repo also ships a sibling <code>NullString</code> package at
+<code>github.com/go-composites/string/src/null</code> providing the same Null-Object via
+its own <code>New()</code> constructor.)</p>
 </div>
 <h2 id="usage">Usage</h2>
 <div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">String</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">String</span><span class="p">.</span><span class="nx">WithGoString</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">))</span>
