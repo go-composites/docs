@@ -39,12 +39,14 @@ instead of nil checks.
 | [`result`](components/result.md) | `github.com/go-composites/result/src` | Wraps a `payload` plus an `error` built with functional options; `HasError()` is `true` only on a real error. |
 | [`boolean`](components/boolean.md) | `github.com/go-composites/boolean/src` | A boxed boolean (`IsTrue`/`IsFalse`/`Equal`); its structural `IsTrue()` is what `array`'s combinators treat as truthy. |
 | [`number`](components/number.md) | `github.com/go-composites/number/src` | A boxed numeric value (int/float); arithmetic returns a `result`, so division by zero is an error value, not a panic. |
+| [`bignumber`](components/bignumber.md) | `github.com/go-composites/bignumber/src` | An arbitrary-precision integer over `math/big.Int` (no overflow); unbounded-precision complement to `number`, arithmetic returns a `result`. |
 | [`string`](components/string.md) | `github.com/go-composites/string/src` | A boxed string value with `Set`/`ToGoString`/`Split`. |
 | [`symbol`](components/symbol.md) | `github.com/go-composites/symbol/src` | An interned, immutable identifier (Ruby's `:name`); `New("x") == New("x")`. |
-| [`time`](components/time.md) | `github.com/go-composites/time/src` | A deterministic instant (no `Now()`) plus a `Duration` sub-package; fallible `Parse`/`Add` return a `result`. |
+| [`time`](components/time.md) | `github.com/go-composites/time/src` | A deterministic instant (no `Now()`) with embedded-tzdata IANA zone support (`In`/`Zone`/`UTC`) plus a `Duration` sub-package; fallible `Parse`/`Add`/`In` return a `result`. |
 | [`array`](components/array.md) | `github.com/go-composites/array/src` | Interface-first slice with `Push`/`Pop`/`First`/`Fetch`/`Each` **plus combinators** `Map`/`Filter`/`Reduce`/`Find`/`Any`/`All`; every method returns a `result`. |
 | [`dictionary`](components/dictionary.md) | `github.com/go-composites/dictionary/src` | An interface-first key/value map; `Get` of a missing key returns a `result` error, not a panic. |
 | [`set`](components/set.md) | `github.com/go-composites/set/src` | An unordered collection of unique items with `Union`/`Intersection`/`Difference`. |
+| [`orderedset`](components/orderedset.md) | `github.com/go-composites/orderedset/src` | The insertion-ordered sibling of `set`: same API, but iteration is in first-insertion order. |
 | [`range`](components/range.md) | `github.com/go-composites/range/src` | An integer interval (inclusive/exclusive end, non-zero step); a zero step is a `result` error, not a panic. |
 | [`pair`](components/pair.md) | `github.com/go-composites/pair/src` | A fixed two-element heterogeneous grouping (`First`/`Second`/`ToArray`). |
 | [`proc`](components/proc.md) | `github.com/go-composites/proc/src` | A first-class callable; `Then` chains steps railway-style, short-circuiting on an error `result`. |

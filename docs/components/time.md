@@ -24,6 +24,9 @@ type Interface interface {
     ToUnix() int64
     Format(layout string) string
     ToGoString() string
+    In(name string) Result.Interface
+    Zone() string
+    UTC() Interface
     Before(Interface) bool
     After(Interface) bool
     Equal(Interface) bool
@@ -48,6 +51,9 @@ func Null() Interface
 | `ToUnix()` | Returns the instant as a Unix timestamp (seconds). |
 | `Format(layout)` | Renders the instant per the given layout (see `time.Time.Format`). |
 | `ToGoString()` | Returns the RFC3339 representation. |
+| `In(name)` | Returns a `Result` whose payload is a new `Time` denoting the **same instant** in the IANA location `name` (e.g. `"Europe/Paris"`); when `name` is not a known zone the `Result` carries an `Error` instead. Only the location changes, so the underlying instant — and `Before`/`After`/`Equal` — is preserved. Never panics, never returns `nil`. |
+| `Zone()` | Returns the abbreviated name of the time zone in effect at the instant (e.g. `"UTC"`, `"CET"`). |
+| `UTC()` | Returns a new `Time` denoting the same instant with its location set to UTC. |
 | `Before(other)` / `After(other)` | Report whether the receiver is strictly before / after `other`. |
 | `Equal(other)` | Reports whether both denote the same instant (compared by Unix seconds). |
 | `Add(duration)` | Returns a `Result` whose payload is a new `Time` shifted forward by `duration`. |
@@ -69,13 +75,29 @@ if !r.HasError() {
 if shifted := t.Add(Duration.FromSeconds(3600)); !shifted.HasError() {
     fmt.Println(shifted.Payload().(Time.Interface).ToUnix()) // 3600
 }
+
+// Relocate to an IANA zone — same instant, different location:
+if r := t.In("Europe/Paris"); !r.HasError() {
+    paris := r.Payload().(Time.Interface)
+    fmt.Println(paris.Zone())      // CET
+    fmt.Println(paris.Equal(t))    // true — the underlying instant is unchanged
+}
 ```
+
+!!! note "IANA zones work on every architecture"
+    `time` embeds the IANA time-zone database (`time/tzdata`), so `In(...)`
+    resolves zones like `"Europe/Paris"` deterministically on **every
+    architecture** and inside the toolchain-less CI containers — without relying
+    on a system tzdata install. Because relocating only changes the location, the
+    underlying instant is preserved, so `Before`/`After`/`Equal` are unaffected.
 
 !!! note "The Null-Object Time"
     `Time.Null()` denotes the zero instant: `ToUnix()` is `0`, `Format` returns
-    `""`, `ToGoString()` is `<NullTime>`, comparisons are `false`, `Equal` is
-    `true` only against another null, `Add` yields a null `Time`, `Sub` yields a
-    null `Duration`, and `IsNull()` returns `true`.
+    `""`, `ToGoString()` is `<NullTime>`, `In(...)` carries an
+    `Error.New("cannot relocate a null Time")`, `Zone()` is `""`, `UTC()` yields
+    another null `Time`, comparisons are `false`, `Equal` is `true` only against
+    another null, `Add` yields a null `Time`, `Sub` yields a null `Duration`, and
+    `IsNull()` returns `true`.
 
 ## Duration
 
