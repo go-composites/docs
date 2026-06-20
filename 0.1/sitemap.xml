@@ -53,11 +53,35 @@
          <lastmod>2026-06-20</lastmod>
     </url>
     <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/pair/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/proc/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/range/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
          <loc>https://go-composites.github.io/docs/0.1/components/result/</loc>
          <lastmod>2026-06-20</lastmod>
     </url>
     <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/set/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
          <loc>https://go-composites.github.io/docs/0.1/components/string/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/symbol/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/time/</loc>
          <lastmod>2026-06-20</lastmod>
     </url>
     <url>

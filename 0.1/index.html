@@ -647,6 +647,62 @@
   
   
     <li class="md-nav__item">
+      <a href="components/symbol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    symbol — interned identifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    time — deterministic instant + duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="components/array/" class="md-nav__link">
         
   
@@ -683,6 +739,118 @@
     
   
     dictionary — key/value map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    set — unordered unique collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    range — integer interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/pair/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pair — two-element grouping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/proc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    proc — first-class callable
   
 
     
@@ -1162,6 +1330,16 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td>A boxed string value with <code>Set</code>/<code>ToGoString</code>/<code>Split</code>.</td>
 </tr>
 <tr>
+<td><a href="components/symbol/"><code>symbol</code></a></td>
+<td><code>github.com/go-composites/symbol/src</code></td>
+<td>An interned, immutable identifier (Ruby's <code>:name</code>); <code>New("x") == New("x")</code>.</td>
+</tr>
+<tr>
+<td><a href="components/time/"><code>time</code></a></td>
+<td><code>github.com/go-composites/time/src</code></td>
+<td>A deterministic instant (no <code>Now()</code>) plus a <code>Duration</code> sub-package; fallible <code>Parse</code>/<code>Add</code> return a <code>result</code>.</td>
+</tr>
+<tr>
 <td><a href="components/array/"><code>array</code></a></td>
 <td><code>github.com/go-composites/array/src</code></td>
 <td>Interface-first slice with <code>Push</code>/<code>Pop</code>/<code>First</code>/<code>Fetch</code>/<code>Each</code> <strong>plus combinators</strong> <code>Map</code>/<code>Filter</code>/<code>Reduce</code>/<code>Find</code>/<code>Any</code>/<code>All</code>; every method returns a <code>result</code>.</td>
@@ -1170,6 +1348,26 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td><a href="components/dictionary/"><code>dictionary</code></a></td>
 <td><code>github.com/go-composites/dictionary/src</code></td>
 <td>An interface-first key/value map; <code>Get</code> of a missing key returns a <code>result</code> error, not a panic.</td>
+</tr>
+<tr>
+<td><a href="components/set/"><code>set</code></a></td>
+<td><code>github.com/go-composites/set/src</code></td>
+<td>An unordered collection of unique items with <code>Union</code>/<code>Intersection</code>/<code>Difference</code>.</td>
+</tr>
+<tr>
+<td><a href="components/range/"><code>range</code></a></td>
+<td><code>github.com/go-composites/range/src</code></td>
+<td>An integer interval (inclusive/exclusive end, non-zero step); a zero step is a <code>result</code> error, not a panic.</td>
+</tr>
+<tr>
+<td><a href="components/pair/"><code>pair</code></a></td>
+<td><code>github.com/go-composites/pair/src</code></td>
+<td>A fixed two-element heterogeneous grouping (<code>First</code>/<code>Second</code>/<code>ToArray</code>).</td>
+</tr>
+<tr>
+<td><a href="components/proc/"><code>proc</code></a></td>
+<td><code>github.com/go-composites/proc/src</code></td>
+<td>A first-class callable; <code>Then</code> chains steps railway-style, short-circuiting on an error <code>result</code>.</td>
 </tr>
 <tr>
 <td><a href="components/compose/"><code>compose</code></a></td>

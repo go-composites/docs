@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/boolean/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/pair/">
       
       
-        <link rel="prev" href="../result/">
+        <link rel="prev" href="../range/">
       
       
-        <link rel="next" href="../number/">
+        <link rel="next" href="../proc/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>boolean — boxed boolean - go-composites</title>
+        <title>pair — two-element grouping - go-composites</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#boolean-boxed-boolean-value" class="md-skip">
+        <a href="#pair-fixed-two-element-heterogeneous-grouping" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              boolean — boxed boolean
+              pair — two-element grouping
             
           </span>
         </div>
@@ -456,37 +456,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    boolean — boxed boolean
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../boolean/" class="md-nav__link">
         
   
   
@@ -502,59 +475,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -788,10 +708,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../pair/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pair — two-element grouping
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -807,6 +754,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1209,37 +1209,30 @@
 
 
 
-<h1 id="boolean-boxed-boolean-value">boolean — boxed boolean value</h1>
-<p><code>github.com/go-composites/boolean</code> (Go package <code>Boolean</code>, imported from the
-<code>src/</code> sub-directory) boxes a Go <code>bool</code> behind the org's interface-first style,
-exposing truthiness as composite methods.</p>
+<h1 id="pair-fixed-two-element-heterogeneous-grouping">pair — fixed two-element heterogeneous grouping</h1>
+<p><code>github.com/go-composites/pair</code> (Go package <code>Pair</code>, imported from the <code>src/</code>
+sub-directory) is a fixed <strong>two-element heterogeneous grouping</strong> — the natural
+key/value entry of Composition-Oriented Programming. The two slots hold
+arbitrary values, a <code>Pair</code> never goes <code>nil</code>, and the <strong>Null-Object</strong> variant
+honours the whole <code>Interface</code>.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Boolean</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/boolean/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Pair</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/pair/src&quot;</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">ToGoBool</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span>
+<span class="w">    </span><span class="nx">Second</span><span class="p">()</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span>
+<span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">ToArray</span><span class="p">()</span><span class="w"> </span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="nx">IsTrue</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
-<span class="w">    </span><span class="nx">IsFalse</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
-<span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">And</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Or</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Not</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Xor</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
-<span class="w">    </span><span class="nx">Inspect</span><span class="p">()</span><span class="w"> </span><span class="nx">Inspect</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">True</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">False</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
-
-<span class="c1">// Null-Object variant (honours the full Interface, never nil):</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 </code></pre></div>
 <ul>
-<li><code>New(b)</code> wraps the Go <code>bool</code> <code>b</code>.</li>
-<li><code>True()</code> is shorthand for <code>New(true)</code>; <code>False()</code> is shorthand for <code>New(false)</code>.</li>
+<li><code>New(first, second)</code> holds the two values.</li>
+<li><code>Null()</code> returns the <strong>Null-Object</strong> pair (see below).</li>
 </ul>
 <table>
 <thead>
@@ -1250,86 +1243,50 @@ exposing truthiness as composite methods.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>ToGoBool()</code></td>
-<td>Returns the underlying Go <code>bool</code>.</td>
+<td><code>First()</code></td>
+<td>Returns the first slot.</td>
 </tr>
 <tr>
-<td><code>ToGoString()</code></td>
-<td>Returns the value as a quoted string, e.g. <code>"true"</code> / <code>"false"</code>.</td>
-</tr>
-<tr>
-<td><code>IsTrue()</code></td>
-<td>Returns <code>true</code> when the boxed value is <code>true</code>.</td>
-</tr>
-<tr>
-<td><code>IsFalse()</code></td>
-<td>Returns <code>true</code> when the boxed value is <code>false</code> (the negation of <code>IsTrue()</code>).</td>
+<td><code>Second()</code></td>
+<td>Returns the second slot.</td>
 </tr>
 <tr>
 <td><code>Equal(other)</code></td>
-<td>Returns a new <code>Boolean.Interface</code> boxing whether the two boxed values are equal.</td>
+<td>Reports whether both slots are deeply equal to <code>other</code>'s (compared with <code>reflect.DeepEqual</code>). A null pair is never equal to anything.</td>
 </tr>
 <tr>
-<td><code>And(other)</code></td>
-<td>Returns a new <code>Boolean.Interface</code> boxing the logical <strong>AND</strong> of the receiver and <code>other</code>.</td>
+<td><code>ToArray()</code></td>
+<td>Returns a two-element <a href="../array/"><code>array</code></a> holding <code>[first, second]</code>.</td>
 </tr>
 <tr>
-<td><code>Or(other)</code></td>
-<td>Returns a new <code>Boolean.Interface</code> boxing the logical <strong>OR</strong> of the receiver and <code>other</code>.</td>
-</tr>
-<tr>
-<td><code>Not()</code></td>
-<td>Returns a new <code>Boolean.Interface</code> boxing the logical <strong>negation</strong> of the receiver.</td>
-</tr>
-<tr>
-<td><code>Xor(other)</code></td>
-<td>Returns a new <code>Boolean.Interface</code> boxing the <strong>exclusive OR</strong> of the receiver and <code>other</code>.</td>
+<td><code>ToGoString()</code></td>
+<td>Renders the pair as <code>(first, second)</code>.</td>
 </tr>
 <tr>
 <td><code>IsNull()</code></td>
-<td>Returns <code>false</code> for a real boolean (see the Null-Object note below).</td>
-</tr>
-<tr>
-<td><code>Inspect()</code></td>
-<td>Returns an <code>Inspect.Interface</code> describing the value (type, address, data).</td>
+<td>Returns <code>false</code> for a real pair, <code>true</code> for the <code>Null()</code> one.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">()</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">ToGoBool</span><span class="p">())</span><span class="w">   </span><span class="c1">// true</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// &quot;true&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Pair</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 
-<span class="k">if</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="kc">true</span><span class="p">)).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;both are true&quot;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// Logical operators compose Boolean.Interface values:</span>
-<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">And</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">False</span><span class="p">()).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w"> </span><span class="c1">// false</span>
-<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">Or</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">False</span><span class="p">()).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w">  </span><span class="c1">// true</span>
-<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">Not</span><span class="p">().</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w">                </span><span class="c1">// false</span>
-<span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">().</span><span class="nx">Xor</span><span class="p">(</span><span class="nx">Boolean</span><span class="p">.</span><span class="nx">True</span><span class="p">()).</span><span class="nx">IsTrue</span><span class="p">()</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">First</span><span class="p">())</span><span class="w">      </span><span class="c1">// one</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">Second</span><span class="p">())</span><span class="w">     </span><span class="c1">// 1</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// (one, 1)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Pair</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">ToArray</span><span class="p">().</span><span class="nx">Len</span><span class="p">())</span><span class="w">           </span><span class="c1">// 2</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">Null-Object variant</p>
-<p><code>Boolean.Null()</code> returns the <strong>Null-Object</strong> boolean: a placeholder that
-honours the full <code>Interface</code> without ever being <code>nil</code>. A null boolean is
-<strong>neither true nor false</strong> — both <code>IsTrue()</code> and <code>IsFalse()</code> return <code>false</code>,
-<code>ToGoString()</code> renders <code>"null"</code>, and every logical operator (<code>And</code>, <code>Or</code>,
-<code>Not</code>, <code>Xor</code>, <code>Equal</code>) returns the null boolean. <code>IsNull()</code> returns <code>true</code>.
-Use it instead of a <code>nil</code> <code>Boolean.Interface</code>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Structural truthiness recognised by <code>array</code></p>
-<p><code>IsTrue() bool</code> is a <strong>structural</strong> signal. <a href="../array/"><code>array</code></a>'s combinators
-treat any value carrying an <code>IsTrue() bool</code> method as truthy, and so accept a
-<code>Boolean.Interface</code> directly — matched by its method set rather than by an
-import. This is deliberate: <code>array</code> does <strong>not</strong> import <code>boolean</code>, which would
-create an <code>array → boolean → inspect → string → array</code> import cycle.</p>
+<p class="admonition-title">The Null-Object variant</p>
+<p><code>Pair.Null()</code> honours the full <code>Interface</code> without ever being <code>nil</code>: both
+slots are <code>nil</code>, <code>Equal</code> is always <code>false</code> (a null pair equals nothing),
+<code>ToArray()</code> returns the empty array, <code>ToGoString()</code> renders <code>(null)</code>, and
+<code>IsNull()</code> returns <code>true</code>.</p>
 </div>
 <h2 id="dependencies">Dependencies</h2>
-<p><code>boolean</code> depends only on its own <code>inspect</code> sub-package
-(<code>github.com/go-composites/boolean/src/inspect</code>); it pulls in no other composite.</p>
+<p><code>pair</code> depends on <a href="../array/"><code>array</code></a> (and uses the Go standard library <code>fmt</code>
+and <code>reflect</code>).</p>
 
 
 
