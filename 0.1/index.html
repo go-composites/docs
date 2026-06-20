@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Small pure-Go OOP / generics primitives — interface-first array, null, result, string and error building blocks. No cgo.">
+        <meta name="description" content="Small pure-Go composites for Composition-Oriented Programming — interface-first array, null, result, string and error building blocks. No cgo.">
       
       
       
-        <link rel="canonical" href="https://golang-cop.github.io/docs/0.1/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>golang-cop</title>
+        <title>go-composites</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang-cop" class="md-skip">
+        <a href="#go-composites" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="golang-cop" class="md-header__button md-logo" aria-label="golang-cop" data-md-component="logo">
+    <a href="." title="go-composites" class="md-header__button md-logo" aria-label="go-composites" data-md-component="logo">
       
   <img src="assets/logo.svg" alt="logo">
 
@@ -111,7 +111,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            golang-cop
+            go-composites
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -199,13 +199,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/golang-cop" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/go-composites" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    golang-cop
+    go-composites
   </div>
 </a>
       </div>
@@ -235,22 +235,22 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="golang-cop" class="md-nav__button md-logo" aria-label="golang-cop" data-md-component="logo">
+    <a href="." title="go-composites" class="md-nav__button md-logo" aria-label="go-composites" data-md-component="logo">
       
   <img src="assets/logo.svg" alt="logo">
 
     </a>
-    golang-cop
+    go-composites
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/golang-cop" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/go-composites" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    golang-cop
+    go-composites
   </div>
 </a>
     </div>
@@ -324,10 +324,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-paths-vs-repository-org" class="md-nav__link">
+  <a href="#module-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Module paths vs. repository org
+        Module paths
       
     </span>
   </a>
@@ -629,10 +629,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-paths-vs-repository-org" class="md-nav__link">
+  <a href="#module-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Module paths vs. repository org
+        Module paths
       
     </span>
   </a>
@@ -689,25 +689,26 @@
 
 
 
-<h1 id="golang-cop">golang-cop</h1>
-<p>A small collection of <strong>pure-Go OOP primitives</strong>: interface-first building
-blocks — an <code>array</code>, a <code>null</code> sentinel, a <code>result</code> wrapper, a boxed <code>string</code>,
-and an <code>error</code> interface with sentinels. No cgo, no third-party runtime
-dependencies (only <code>go-spew</code> in a demo <code>main</code>).</p>
-<p>The design is deliberately object-oriented in style: each package exposes an
+<h1 id="go-composites">go-composites</h1>
+<p>A small collection of <strong>pure-Go composites</strong> for <strong>Composition-Oriented
+Programming</strong>: interface-first building blocks — an <code>array</code>, a <code>null</code> sentinel,
+a <code>result</code> wrapper, a boxed <code>string</code>, and an <code>error</code> interface with sentinels.
+No cgo, no third-party runtime dependencies (only <code>go-spew</code> in a demo <code>main</code>).</p>
+<p>The design is deliberately composition-oriented: each package exposes an
 <code>Interface</code> and a private <code>data</code> struct constructed through a <code>New(...)</code>
 function (several use functional options such as <code>WithPayload</code> / <code>WithGoString</code>).
-Methods return a <a href="components/result/"><code>result</code></a> value rather than the Go
-idiom of multiple return values, so the packages compose with one another.</p>
-<h2 id="module-paths-vs-repository-org">Module paths vs. repository org</h2>
+Composites are assembled by composing and delegating to smaller composites, never
+by inheritance. Methods return a <a href="components/result/"><code>result</code></a> value rather
+than the Go idiom of multiple return values, so the packages compose with one
+another.</p>
+<h2 id="module-paths">Module paths</h2>
 <div class="admonition note">
-<p class="admonition-title">The repo org and the Go module path differ</p>
-<p>These projects live in the GitHub organisation <strong><code>golang-cop</code></strong>, but their
-Go module paths are all <strong><code>github.com/golang-oop/&lt;name&gt;</code></strong> — for example the
-<code>array</code> repository declares <code>module github.com/golang-oop/array</code>. Import the
-packages by their <strong><code>golang-oop</code></strong> module path, not <code>golang-cop</code>. The
+<p class="admonition-title">Org and module path</p>
+<p>These projects live in the GitHub organisation <strong><code>go-composites</code></strong>, and their
+Go module paths match it — <strong><code>github.com/go-composites/&lt;name&gt;</code></strong>. For example
+the <code>array</code> repository declares <code>module github.com/go-composites/array</code>. The
 importable package lives under the <code>src/</code> sub-directory (e.g.
-<code>github.com/golang-oop/array/src</code>, package <code>Array</code>).</p>
+<code>github.com/go-composites/array/src</code>, package <code>Array</code>).</p>
 </div>
 <h2 id="components">Components</h2>
 <table>
@@ -721,27 +722,27 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <tbody>
 <tr>
 <td><a href="components/array/"><code>array</code></a></td>
-<td><code>github.com/golang-oop/array/src</code></td>
+<td><code>github.com/go-composites/array/src</code></td>
 <td>Interface-first slice of <code>interface{}</code> with <code>Push</code>/<code>Pop</code>/<code>First</code>/<code>Fetch</code>/<code>Each</code>; every method returns a <code>result</code>.</td>
 </tr>
 <tr>
 <td><a href="components/null/"><code>null</code></a></td>
-<td><code>github.com/golang-oop/null/src</code></td>
+<td><code>github.com/go-composites/null/src</code></td>
 <td>A minimal null sentinel value used as the default <code>result</code> payload.</td>
 </tr>
 <tr>
 <td><a href="components/result/"><code>result</code></a></td>
-<td><code>github.com/golang-oop/result/src</code></td>
+<td><code>github.com/go-composites/result/src</code></td>
 <td>Wraps a <code>payload</code> plus an <code>error</code> built with functional options.</td>
 </tr>
 <tr>
 <td><a href="components/string/"><code>string</code></a></td>
-<td><code>github.com/golang-oop/string/src</code></td>
+<td><code>github.com/go-composites/string/src</code></td>
 <td>A boxed string value with <code>Set</code>/<code>ToGoString</code>/<code>Split</code>.</td>
 </tr>
 <tr>
 <td><a href="components/error/"><code>error</code></a></td>
-<td><code>github.com/golang-oop/error/src</code></td>
+<td><code>github.com/go-composites/error/src</code></td>
 <td>The <code>error</code> interface (<code>Message</code>/<code>IsNull</code>) plus null and <code>method-not-implemented</code> sentinels.</td>
 </tr>
 </tbody>
