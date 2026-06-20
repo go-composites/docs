@@ -13,11 +13,22 @@ type Interface interface {
     Set(string) Result.Interface
     ToGoString() string
     Split(string) Result.Interface
+    Length() int
+    Concat(Interface) Result.Interface
+    Contains(substr string) bool
+    Replace(old, new string) Result.Interface
+    Upper() Result.Interface
+    Lower() Result.Interface
+    Trim() Result.Interface
+    Equal(Interface) bool
     IsNull() bool
 }
 
 func New(options ...Option) Interface
 func WithGoString(value string) Option
+
+// Null-Object variant (honours the full Interface, never nil):
+func Null() Interface
 ```
 
 - `New()` builds an empty string; `New(String.WithGoString("Hello World!"))`
@@ -28,7 +39,29 @@ func WithGoString(value string) Option
 - `Split(sep)` splits on `sep` and returns a result whose payload is an
   [`array`](array.md) of `String` values (each split field boxed as a new
   `String`).
-- `IsNull()` always returns `false`.
+- `Length()` returns the number of **runes** (via `utf8.RuneCountInString`), so
+  multibyte UTF-8 content is counted correctly — not the byte length.
+- `Concat(other)` returns a result whose payload is a **new** `String` equal to
+  the receiver followed by `other`.
+- `Contains(substr)` returns a Go `bool`: whether `substr` is within the string.
+- `Replace(old, new)` returns a result whose payload is a **new** `String` with
+  all non-overlapping instances of `old` replaced by `new`.
+- `Upper()` / `Lower()` / `Trim()` each return a result whose payload is a
+  **new** `String` with, respectively, all characters upper-cased, lower-cased,
+  or leading/trailing white space removed.
+- `Equal(other)` returns a Go `bool`: whether the receiver and `other` carry the
+  same underlying string.
+- `IsNull()` returns `false` for a real string.
+
+!!! note "Null-Object variant"
+    `String.Null()` returns the **Null-Object** string: an empty, immutable
+    placeholder that honours the full `Interface` without ever being `nil`.
+    `ToGoString()` is `""`, predicates (`Contains`, `Equal`) report `false`,
+    `Length()` is `0`, value-producing operations return a successful result
+    wrapping the null `String` (or, where chaining is meaningful, the receiver),
+    and `IsNull()` returns `true`. Use it instead of a `nil`
+    `String.Interface`. (The Null-Object lives in the same `src` package as a
+    `Null()` constructor; there is no separate `src/null` sub-package.)
 
 ## Usage
 

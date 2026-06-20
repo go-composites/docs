@@ -26,9 +26,19 @@ type Interface interface {
     Last() Result.Interface
     Clear() Result.Interface
     Copy() Result.Interface
+    Len() int
+    IsEmpty() bool
+    Contains(item interface{}) Result.Interface
+    Insert(index int, item interface{}) Result.Interface
+    Delete(index int) Result.Interface
+    Reverse() Result.Interface
+    IsNull() bool
 }
 
 func New() Interface
+
+// Null-Object variant (honours the full Interface, never nil):
+func Null() Interface
 
 // Package-level twins over a raw []interface{}:
 func Each(items []interface{}, fn func(int, interface{}) Result.Interface) Result.Interface
@@ -50,12 +60,28 @@ func All(items []interface{}, pred func(int, interface{}) Result.Interface) Resu
 | `Fetch(i)` | Returns element `i` as the payload. Panics if `i` is out of range. |
 | `Last()` | Returns the **last** element (`d.value[len-1]`) as the payload. Panics if empty. |
 | `Clear()` | Resets to an empty slice; returns an empty result. |
-| `Copy()` | Returns an empty result — **not implemented** (no copy is performed). |
+| `Copy()` | Returns a result whose payload is a **new, independent `Array`** (the backing slice is copied, so mutating one does not affect the other). |
+| `Len()` | Returns the number of elements as a Go `int`. |
+| `IsEmpty()` | Returns a Go `bool`: `true` when the array has no elements. |
+| `Contains(x)` | Returns a result whose payload is a Go `bool`: `true` when `x` is present (compared with `reflect.DeepEqual`). |
+| `Insert(i, x)` | Inserts `x` at index `i`, shifting the tail right (`i == Len()` appends). Payload is the array itself; an out-of-range `i` yields a result carrying an `Error` (`"Array.Insert: index out of range"`). |
+| `Delete(i)` | Removes the element at index `i`, shifting the tail left. Payload is the **removed item**; an out-of-range `i` yields a result carrying an `Error` (`"Array.Delete: index out of range"`). |
+| `Reverse()` | Reverses the array **in place**; payload is the array itself. |
+| `IsNull()` | Returns `false` for a real array (see the Null-Object note below). |
 
 !!! note "Bounds are not guarded"
     `Pop`, `First`, `Fetch`, and `Last` index the underlying slice directly and
     will **panic** on an out-of-range access (e.g. on an empty array). They do
-    not convert the panic into an error result.
+    not convert the panic into an error result. By contrast, the newer
+    `Insert` and `Delete` **do** validate their index and report an out-of-range
+    access as an `Error` result.
+
+!!! note "Null-Object variant"
+    `Array.Null()` returns the **Null-Object** array: an empty, immutable
+    placeholder that honours the full `Interface` without ever being `nil`.
+    Mutating methods are no-ops returning a successful result, lookups and
+    queries return empty/`false`/zero values (`Len() == 0`, `IsEmpty() == true`),
+    and `IsNull()` returns `true`. Use it instead of a `nil` `Array.Interface`.
 
 ## Iteration and combinators
 
