@@ -59,6 +59,7 @@ nav:
       - "set — unordered unique collection": components/set.md
       - "orderedset — insertion-ordered unique collection": components/orderedset.md
       - "sortedset — comparator-sorted unique collection": components/sortedset.md
+      - "bag — counted collection (multiset)": components/bag.md
       - "range — integer interval": components/range.md
       - "pair — two-element grouping": components/pair.md
       - "proc — first-class callable": components/proc.md

@@ -116,6 +116,11 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[bag](bag.md)** — a counted collection (multiset): items carry a multiplicity.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[range](range.md)** — an integer interval with `result`-returning construction.
 </div>
 

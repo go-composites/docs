@@ -54,6 +54,7 @@ instead of nil checks.
 | [`set`](components/set.md) | `github.com/go-composites/set/src` | An unordered collection of unique items with `Union`/`Intersection`/`Difference`. |
 | [`orderedset`](components/orderedset.md) | `github.com/go-composites/orderedset/src` | The insertion-ordered sibling of `set`: same API, but iteration is in first-insertion order. |
 | [`sortedset`](components/sortedset.md) | `github.com/go-composites/sortedset/src` | The comparator-sorted sibling of `set`: items kept in ascending `less`-comparator order (TreeSet-like). |
+| [`bag`](components/bag.md) | `github.com/go-composites/bag/src` | A counted collection (multiset): items carry a multiplicity, with `Count`/`Len`/`DistinctLen` and multiset `Sum`/`Union`/`Intersection`/`Difference`. |
 | [`range`](components/range.md) | `github.com/go-composites/range/src` | An integer interval (inclusive/exclusive end, non-zero step); a zero step is a `result` error, not a panic. |
 | [`pair`](components/pair.md) | `github.com/go-composites/pair/src` | A fixed two-element heterogeneous grouping (`First`/`Second`/`ToArray`). |
 | [`proc`](components/proc.md) | `github.com/go-composites/proc/src` | A first-class callable; `Then` chains steps railway-style, short-circuiting on an error `result`. |
