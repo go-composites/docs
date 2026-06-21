@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/proc/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/base/">
       
       
-        <link rel="prev" href="../pair/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../enumerator/">
+        <link rel="next" href="../null/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>proc — first-class callable - go-composites</title>
+        <title>base — the reflective root - go-composites</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proc-first-class-callable-with-railway-composition" class="md-skip">
+        <a href="#base-the-reflective-root" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              proc — first-class callable
+              base — the reflective root
             
           </span>
         </div>
@@ -372,10 +372,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    base — the reflective root
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -391,6 +418,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-it-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it is used
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -960,37 +1029,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    proc — first-class callable
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../proc/" class="md-nav__link">
         
   
   
@@ -1006,59 +1048,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1423,21 +1412,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#where-it-is-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
+        Where it is used
       
     </span>
   </a>
@@ -1461,78 +1439,61 @@
 
 
 
-<h1 id="proc-first-class-callable-with-railway-composition">proc — first-class callable with railway composition</h1>
-<p><code>github.com/go-composites/proc</code> (Go package <code>Proc</code>, imported from the <code>src/</code>
-sub-directory) is a <strong>first-class callable</strong> composite — the org's analogue of
-Ruby's <code>Proc</code>/lambda. A <code>Proc</code> wraps a single function as a value you can pass
-around, invoke, and chain. Every <code>Proc</code> is a real object: it never returns a
-bare <code>nil</code>, it answers <code>IsNull()</code>, and even the <strong>Null</strong> <code>Proc</code> is safe to
-<code>Call</code>. Chaining with <code>Then</code> is <strong>railway-oriented</strong> — it short-circuits on an
-error <a href="../result/"><code>result</code></a>.</p>
+<h1 id="base-the-reflective-root">base — the reflective root</h1>
+<p><code>github.com/go-composites/base</code> (Go package <code>Base</code>, imported from the <code>src/</code>
+sub-directory) is the org's <strong>reflective base</strong>: it gives every composite a
+common, self-describing root. A value can answer what kind of interface it is,
+whether it responds to a named method, and which methods it exposes — all via
+reflection, with no hand-written boilerplate.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Proc</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/proc/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Base</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/base/src&quot;</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Call</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Then</span><span class="p">(</span><span class="nx">next</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Kind</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w">             </span><span class="c1">// the interface kind, e.g. &quot;Vehicle.Interface&quot;</span>
+<span class="w">    </span><span class="nx">RespondTo</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="c1">// whether an exported method `name` exists</span>
+<span class="w">    </span><span class="nx">Methods</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w">        </span><span class="c1">// the value&#39;s exported method names</span>
 <span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 </code></pre></div>
-<ul>
-<li><code>New(fn)</code> wraps <code>fn</code> as a <code>Proc</code>. If <code>fn</code> is <code>nil</code> the resulting <code>Proc</code> is
-  still safe — <code>Call</code> returns an error <code>Result</code> rather than panicking.</li>
-<li><code>Null()</code> returns the <strong>Null-Object</strong> (not-callable) <code>Proc</code> (see below).</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Member</th>
-<th>Behaviour</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Call(args...)</code></td>
-<td>Invokes the wrapped function with the given arguments and returns its <code>Result</code>. A <code>Proc</code> whose wrapped function is <code>nil</code> does not panic — it returns an <code>Error.New("Proc.Call: nil function")</code> <code>Result</code>.</td>
-</tr>
-<tr>
-<td><code>Then(next)</code></td>
-<td>Returns a new <code>Proc</code> that calls the receiver and, on a successful <code>Result</code>, feeds that result's payload as the single argument to <code>next.Call</code>. If the receiver yields an error <code>Result</code>, <code>Then</code> short-circuits and returns that error unchanged — <code>next</code> is never called.</td>
-</tr>
-<tr>
-<td><code>IsNull()</code></td>
-<td>Returns <code>false</code> for an ordinary <code>Proc</code>, <code>true</code> for the <code>Null()</code> one.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">double</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Proc</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">n</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">].(</span><span class="kt">int</span><span class="p">)</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
-<span class="p">})</span>
+<p><code>New()</code> returns a bare <code>Base.Interface</code>. Each method has a <strong>package-level twin</strong>
+that operates on any value — these are what an embedding type delegates to:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">Kind</span><span class="p">(</span><span class="nx">instance</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kt">string</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">RespondTo</span><span class="p">(</span><span class="nx">instance</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">methodName</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Methods</span><span class="p">(</span><span class="nx">instance</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+</code></pre></div>
+<p><code>Kind</code> derives the name from the value's reflected type (package name +
+<code>.Interface</code>); <code>RespondTo</code> checks <code>reflect.Value.MethodByName</code>; <code>Methods</code>
+enumerates the reflected method set.</p>
+<h2 id="where-it-is-used">Where it is used</h2>
+<p><code>base</code> is the <strong>scaffolding the other composites embed and reuse</strong>, keeping each
+per-repo surface small. A composite embeds <code>Base.Interface</code> in its own interface
+and delegates the three methods to the package-level twins:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">Vehicle</span>
 
-<span class="nx">incr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Proc</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">n</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">].(</span><span class="kt">int</span><span class="p">)</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
-<span class="p">})</span>
+<span class="kn">import</span><span class="w"> </span><span class="nx">Base</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/base/src&quot;</span>
 
-<span class="c1">// Railway composition: double then incr.</span>
-<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">double</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="nx">incr</span><span class="p">).</span><span class="nx">Call</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">())</span><span class="w"> </span><span class="c1">// 11</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Base</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Start</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kd">struct</span><span class="p">{}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">data</span><span class="p">{}</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">Kind</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">Base</span><span class="p">.</span><span class="nx">Kind</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">RespondTo</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">Base</span><span class="p">.</span><span class="nx">RespondTo</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">Methods</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w">       </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">Base</span><span class="p">.</span><span class="nx">Methods</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">Start</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span><span class="w">             </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">The Null-Object variant</p>
-<p><code>Proc.Null()</code> is not callable: <code>Call</code> returns an
-<code>Error.New("Proc.Null: not callable")</code> <code>Result</code>, <code>Then</code> returns the Null
-<code>Proc</code> again (so chains stay on the null), and <code>IsNull()</code> returns <code>true</code>.</p>
-</div>
-<h2 id="dependencies">Dependencies</h2>
-<p><code>proc</code> depends on <a href="../result/"><code>result</code></a> and <a href="../error/"><code>error</code></a> (and
-transitively on <a href="../null/"><code>null</code></a>).</p>
+<div class="highlight"><pre><span></span><code><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Vehicle</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<span class="nx">v</span><span class="p">.</span><span class="nx">Kind</span><span class="p">()</span><span class="w">             </span><span class="c1">// &quot;Vehicle.Interface&quot;</span>
+<span class="nx">v</span><span class="p">.</span><span class="nx">RespondTo</span><span class="p">(</span><span class="s">&quot;Start&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">v</span><span class="p">.</span><span class="nx">Methods</span><span class="p">()</span><span class="w">          </span><span class="c1">// [&quot;Kind&quot; &quot;Methods&quot; &quot;RespondTo&quot; &quot;Start&quot;]</span>
+</code></pre></div>
+<p>This is the reflective half of the org's two analyzers: <a href="../../analyzers/respondto/"><code>respondto</code></a>
+checks that callers use this dispatch rather than concrete type assertions.</p>
 
 
 
