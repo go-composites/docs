@@ -2,102 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://go-composites.github.io/docs/0.1/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/analyzers/nonnil/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/analyzers/respondto/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/array/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/bignumber/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/boolean/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
+    </url>
+    <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/complex/</loc>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/compose/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/composites/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/dictionary/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/enumerator/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/error/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/is/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/null/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/number/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/orderedset/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/pair/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/proc/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/range/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
+    </url>
+    <url>
+         <loc>https://go-composites.github.io/docs/0.1/components/rational/</loc>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/result/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/set/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/string/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/symbol/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/time/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
     <url>
          <loc>https://go-composites.github.io/docs/0.1/components/typed/</loc>
-         <lastmod>2026-06-20</lastmod>
+         <lastmod>2026-06-21</lastmod>
     </url>
 </urlset>
