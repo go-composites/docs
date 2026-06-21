@@ -86,6 +86,11 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[date](date.md)** — a deterministic calendar date, the pure-calendar complement to `time`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[array](array.md)** — interface-first slice with `result`-returning methods and combinators.
 </div>
 

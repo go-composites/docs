@@ -48,6 +48,7 @@ instead of nil checks.
 | [`buffer`](components/buffer.md) | `github.com/go-composites/buffer/src` | A mutable text buffer (StringBuilder); `Append`/`AppendRune`/`Reset` mutate in place and chain — the mutable counterpart to `string`. |
 | [`symbol`](components/symbol.md) | `github.com/go-composites/symbol/src` | An interned, immutable identifier (Ruby's `:name`); `New("x") == New("x")`. |
 | [`time`](components/time.md) | `github.com/go-composites/time/src` | A deterministic instant (no `Now()`) with embedded-tzdata IANA zone support (`In`/`Zone`/`UTC`) plus a `Duration` sub-package; fallible `Parse`/`Add`/`In` return a `result`. |
+| [`date`](components/date.md) | `github.com/go-composites/date/src` | A deterministic calendar date (year/month/day, no time-of-day; no `Today()`), the pure-calendar complement to `time`; fallible `FromYMD`/`Parse`/`AddDays` return a `result`. |
 | [`array`](components/array.md) | `github.com/go-composites/array/src` | Interface-first slice with `Push`/`Pop`/`First`/`Fetch`/`Each` **plus combinators** `Map`/`Filter`/`Reduce`/`Find`/`Any`/`All`; every method returns a `result`. |
 | [`dictionary`](components/dictionary.md) | `github.com/go-composites/dictionary/src` | An interface-first key/value map; `Get` of a missing key returns a `result` error, not a panic. |
 | [`set`](components/set.md) | `github.com/go-composites/set/src` | An unordered collection of unique items with `Union`/`Intersection`/`Difference`. |

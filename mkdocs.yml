@@ -53,6 +53,7 @@ nav:
       - "buffer — mutable text buffer": components/buffer.md
       - "symbol — interned identifier": components/symbol.md
       - "time — deterministic instant + duration": components/time.md
+      - "date — deterministic calendar date": components/date.md
       - "array — interface-first slice + combinators": components/array.md
       - "dictionary — key/value map": components/dictionary.md
       - "set — unordered unique collection": components/set.md
