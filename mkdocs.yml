@@ -45,6 +45,8 @@ nav:
       - "boolean — boxed boolean": components/boolean.md
       - "number — boxed numeric value": components/number.md
       - "bignumber — arbitrary-precision integer": components/bignumber.md
+      - "rational — exact rational number": components/rational.md
+      - "complex — complex number": components/complex.md
       - "string — boxed string value": components/string.md
       - "symbol — interned identifier": components/symbol.md
       - "time — deterministic instant + duration": components/time.md

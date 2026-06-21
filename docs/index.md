@@ -40,6 +40,8 @@ instead of nil checks.
 | [`boolean`](components/boolean.md) | `github.com/go-composites/boolean/src` | A boxed boolean (`IsTrue`/`IsFalse`/`Equal`); its structural `IsTrue()` is what `array`'s combinators treat as truthy. |
 | [`number`](components/number.md) | `github.com/go-composites/number/src` | A boxed numeric value (int/float); arithmetic returns a `result`, so division by zero is an error value, not a panic. |
 | [`bignumber`](components/bignumber.md) | `github.com/go-composites/bignumber/src` | An arbitrary-precision integer over `math/big.Int` (no overflow); unbounded-precision complement to `number`, arithmetic returns a `result`. |
+| [`rational`](components/rational.md) | `github.com/go-composites/rational/src` | An exact rational number over `math/big.Rat` (Ruby's `Rational`); fractions stay in lowest terms, arithmetic returns a `result`. |
+| [`complex`](components/complex.md) | `github.com/go-composites/complex/src` | A complex number `a+bi` over `complex128` (Ruby's `Complex`); arithmetic returns a `result`, with `Abs`/`Conjugate`. |
 | [`string`](components/string.md) | `github.com/go-composites/string/src` | A boxed string value with `Set`/`ToGoString`/`Split`. |
 | [`symbol`](components/symbol.md) | `github.com/go-composites/symbol/src` | An interned, immutable identifier (Ruby's `:name`); `New("x") == New("x")`. |
 | [`time`](components/time.md) | `github.com/go-composites/time/src` | A deterministic instant (no `Now()`) with embedded-tzdata IANA zone support (`In`/`Zone`/`UTC`) plus a `Duration` sub-package; fallible `Parse`/`Add`/`In` return a `result`. |

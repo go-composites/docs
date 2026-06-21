@@ -46,6 +46,16 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[rational](rational.md)** — an exact rational number over `math/big.Rat`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[complex](complex.md)** — a complex number `a+bi` over `complex128`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[string](string.md)** — a boxed string value.
 </div>
 
