@@ -56,7 +56,17 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[bigfloat](bigfloat.md)** — an arbitrary-precision float over `math/big.Float`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[string](string.md)** — a boxed string value.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[buffer](buffer.md)** — a mutable text buffer (StringBuilder), the counterpart to `string`.
 </div>
 
 <div class="cop-card" markdown>
@@ -87,6 +97,11 @@ the [note on the homepage](../index.md#module-paths)).
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
 **[orderedset](orderedset.md)** — the insertion-ordered sibling of `set`.
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
+**[sortedset](sortedset.md)** — the comparator-sorted sibling of `set`.
 </div>
 
 <div class="cop-card" markdown>

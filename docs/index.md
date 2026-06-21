@@ -42,13 +42,16 @@ instead of nil checks.
 | [`bignumber`](components/bignumber.md) | `github.com/go-composites/bignumber/src` | An arbitrary-precision integer over `math/big.Int` (no overflow); unbounded-precision complement to `number`, arithmetic returns a `result`. |
 | [`rational`](components/rational.md) | `github.com/go-composites/rational/src` | An exact rational number over `math/big.Rat` (Ruby's `Rational`); fractions stay in lowest terms, arithmetic returns a `result`. |
 | [`complex`](components/complex.md) | `github.com/go-composites/complex/src` | A complex number `a+bi` over `complex128` (Ruby's `Complex`); arithmetic returns a `result`, with `Abs`/`Conjugate`. |
+| [`bigfloat`](components/bigfloat.md) | `github.com/go-composites/bigfloat/src` | An arbitrary-precision float over `math/big.Float` (256-bit mantissa, Ruby's `BigDecimal`); exact decimals, arithmetic returns a `result`. |
 | [`string`](components/string.md) | `github.com/go-composites/string/src` | A boxed string value with `Set`/`ToGoString`/`Split`. |
+| [`buffer`](components/buffer.md) | `github.com/go-composites/buffer/src` | A mutable text buffer (StringBuilder); `Append`/`AppendRune`/`Reset` mutate in place and chain — the mutable counterpart to `string`. |
 | [`symbol`](components/symbol.md) | `github.com/go-composites/symbol/src` | An interned, immutable identifier (Ruby's `:name`); `New("x") == New("x")`. |
 | [`time`](components/time.md) | `github.com/go-composites/time/src` | A deterministic instant (no `Now()`) with embedded-tzdata IANA zone support (`In`/`Zone`/`UTC`) plus a `Duration` sub-package; fallible `Parse`/`Add`/`In` return a `result`. |
 | [`array`](components/array.md) | `github.com/go-composites/array/src` | Interface-first slice with `Push`/`Pop`/`First`/`Fetch`/`Each` **plus combinators** `Map`/`Filter`/`Reduce`/`Find`/`Any`/`All`; every method returns a `result`. |
 | [`dictionary`](components/dictionary.md) | `github.com/go-composites/dictionary/src` | An interface-first key/value map; `Get` of a missing key returns a `result` error, not a panic. |
 | [`set`](components/set.md) | `github.com/go-composites/set/src` | An unordered collection of unique items with `Union`/`Intersection`/`Difference`. |
 | [`orderedset`](components/orderedset.md) | `github.com/go-composites/orderedset/src` | The insertion-ordered sibling of `set`: same API, but iteration is in first-insertion order. |
+| [`sortedset`](components/sortedset.md) | `github.com/go-composites/sortedset/src` | The comparator-sorted sibling of `set`: items kept in ascending `less`-comparator order (TreeSet-like). |
 | [`range`](components/range.md) | `github.com/go-composites/range/src` | An integer interval (inclusive/exclusive end, non-zero step); a zero step is a `result` error, not a panic. |
 | [`pair`](components/pair.md) | `github.com/go-composites/pair/src` | A fixed two-element heterogeneous grouping (`First`/`Second`/`ToArray`). |
 | [`proc`](components/proc.md) | `github.com/go-composites/proc/src` | A first-class callable; `Then` chains steps railway-style, short-circuiting on an error `result`. |

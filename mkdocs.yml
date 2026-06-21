@@ -47,13 +47,16 @@ nav:
       - "bignumber — arbitrary-precision integer": components/bignumber.md
       - "rational — exact rational number": components/rational.md
       - "complex — complex number": components/complex.md
+      - "bigfloat — arbitrary-precision float": components/bigfloat.md
       - "string — boxed string value": components/string.md
+      - "buffer — mutable text buffer": components/buffer.md
       - "symbol — interned identifier": components/symbol.md
       - "time — deterministic instant + duration": components/time.md
       - "array — interface-first slice + combinators": components/array.md
       - "dictionary — key/value map": components/dictionary.md
       - "set — unordered unique collection": components/set.md
       - "orderedset — insertion-ordered unique collection": components/orderedset.md
+      - "sortedset — comparator-sorted unique collection": components/sortedset.md
       - "range — integer interval": components/range.md
       - "pair — two-element grouping": components/pair.md
       - "proc — first-class callable": components/proc.md
