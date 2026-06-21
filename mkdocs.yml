@@ -39,6 +39,7 @@ nav:
   - Home: index.md
   - Components:
       - Overview: components/index.md
+      - "base — the reflective root": components/base.md
       - "null — the null sentinel": components/null.md
       - "error — error interface + sentinels": components/error.md
       - "result — payload + error wrapper": components/result.md

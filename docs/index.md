@@ -34,6 +34,7 @@ instead of nil checks.
 
 | Module | Import path | What it does |
 |--------|-------------|--------------|
+| [`base`](components/base.md)   | `github.com/go-composites/base/src` | The reflective root every composite embeds: `Kind()`/`RespondTo()`/`Methods()` via reflection, so each repo's surface stays small. |
 | [`null`](components/null.md)   | `github.com/go-composites/null/src` | A minimal null-object sentinel used as the default `result` payload. |
 | [`error`](components/error.md) | `github.com/go-composites/error/src` | The `error` interface (`Message`/`IsNull`) plus null and `method-not-implemented` sentinels. |
 | [`result`](components/result.md) | `github.com/go-composites/result/src` | Wraps a `payload` plus an `error` built with functional options; `HasError()` is `true` only on a real error. |

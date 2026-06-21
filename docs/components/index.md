@@ -10,6 +10,11 @@ the [note on the homepage](../index.md#module-paths)).
 
 <div class="cop-card" markdown>
 <img src="../../assets/logo.svg" alt="">
+**[base](base.md)** — the reflective root every composite embeds (`Kind`/`RespondTo`/`Methods`).
+</div>
+
+<div class="cop-card" markdown>
+<img src="../../assets/logo.svg" alt="">
 **[null](null.md)** — the minimal null-object sentinel.
 </div>
 
@@ -153,7 +158,6 @@ repo — [`nonnil`](../analyzers/nonnil.md) (the Null-Object rule) and
 
 ## Placeholder repositories
 
-A couple of repositories — `object` and [`is`](is.md) — are currently **empty
-placeholders** (a `README` stub, a `LICENSE`, and a `.gitignore`, with no Go
-source). They are not yet documented in depth; this site will cover them once
-they ship code.
+One repository — [`is`](is.md) — is currently an **empty placeholder** (a
+`README` stub and a `LICENSE`, with no Go source). It is not yet documented in
+depth; this site will cover it once it ships code.
