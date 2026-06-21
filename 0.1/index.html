@@ -703,6 +703,34 @@
   
   
     <li class="md-nav__item">
+      <a href="components/bigfloat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bigfloat — arbitrary-precision float
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="components/string/" class="md-nav__link">
         
   
@@ -711,6 +739,34 @@
     
   
     string — boxed string value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/buffer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    buffer — mutable text buffer
   
 
     
@@ -879,6 +935,34 @@
     
   
     orderedset — insertion-ordered unique collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/sortedset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    sortedset — comparator-sorted unique collection
   
 
     
@@ -1480,9 +1564,19 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td>A complex number <code>a+bi</code> over <code>complex128</code> (Ruby's <code>Complex</code>); arithmetic returns a <code>result</code>, with <code>Abs</code>/<code>Conjugate</code>.</td>
 </tr>
 <tr>
+<td><a href="components/bigfloat/"><code>bigfloat</code></a></td>
+<td><code>github.com/go-composites/bigfloat/src</code></td>
+<td>An arbitrary-precision float over <code>math/big.Float</code> (256-bit mantissa, Ruby's <code>BigDecimal</code>); exact decimals, arithmetic returns a <code>result</code>.</td>
+</tr>
+<tr>
 <td><a href="components/string/"><code>string</code></a></td>
 <td><code>github.com/go-composites/string/src</code></td>
 <td>A boxed string value with <code>Set</code>/<code>ToGoString</code>/<code>Split</code>.</td>
+</tr>
+<tr>
+<td><a href="components/buffer/"><code>buffer</code></a></td>
+<td><code>github.com/go-composites/buffer/src</code></td>
+<td>A mutable text buffer (StringBuilder); <code>Append</code>/<code>AppendRune</code>/<code>Reset</code> mutate in place and chain — the mutable counterpart to <code>string</code>.</td>
 </tr>
 <tr>
 <td><a href="components/symbol/"><code>symbol</code></a></td>
@@ -1513,6 +1607,11 @@ importable package lives under the <code>src/</code> sub-directory (e.g.
 <td><a href="components/orderedset/"><code>orderedset</code></a></td>
 <td><code>github.com/go-composites/orderedset/src</code></td>
 <td>The insertion-ordered sibling of <code>set</code>: same API, but iteration is in first-insertion order.</td>
+</tr>
+<tr>
+<td><a href="components/sortedset/"><code>sortedset</code></a></td>
+<td><code>github.com/go-composites/sortedset/src</code></td>
+<td>The comparator-sorted sibling of <code>set</code>: items kept in ascending <code>less</code>-comparator order (TreeSet-like).</td>
 </tr>
 <tr>
 <td><a href="components/range/"><code>range</code></a></td>

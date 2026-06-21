@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/compose/">
+        <link rel="canonical" href="https://go-composites.github.io/docs/0.1/components/sortedset/">
       
       
-        <link rel="prev" href="../enumerator/">
+        <link rel="prev" href="../orderedset/">
       
       
-        <link rel="next" href="../composites/">
+        <link rel="next" href="../range/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>compose — pipe Result-returning steps - go-composites</title>
+        <title>sortedset — comparator-sorted unique collection - go-composites</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#compose-railway-oriented-pipelines" class="md-skip">
+        <a href="#sortedset-comparator-sorted-collection-of-unique-items" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              compose — pipe Result-returning steps
+              sortedset — comparator-sorted unique collection
             
           </span>
         </div>
@@ -848,10 +848,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sortedset/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    sortedset — comparator-sorted unique collection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -867,6 +894,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -988,37 +1068,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    compose — pipe Result-returning steps
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../compose/" class="md-nav__link">
         
   
   
@@ -1034,87 +1087,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behaviour" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behaviour
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Behaviour">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-flow-and-short-circuiting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data flow and short-circuiting
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1423,34 +1395,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#behaviour" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behaviour
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Behaviour">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-flow-and-short-circuiting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data flow and short-circuiting
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1489,111 +1433,150 @@
 
 
 
-<h1 id="compose-railway-oriented-pipelines">compose — railway-oriented pipelines</h1>
-<p><code>github.com/go-composites/compose</code> (Go package <code>Compose</code>, imported from the
-<code>src/</code> sub-directory) is the org's <strong>composition</strong> primitive — the operation
-that names go-composites. It wires small <code>Result</code>-returning <strong>steps</strong> into a
-single pipeline that threads a payload forward along a <em>success track</em> and
-short-circuits onto an <em>error track</em> the instant a step fails.</p>
+<h1 id="sortedset-comparator-sorted-collection-of-unique-items">sortedset — comparator-sorted collection of unique items</h1>
+<p><code>github.com/go-composites/sortedset</code> (Go package <code>SortedSet</code>, imported from the
+<code>src/</code> sub-directory) is the org's <strong>comparator-ordered set</strong> — a collection of
+unique items kept permanently sorted by a caller-supplied <code>less</code> comparator
+(TreeSet-like), and the sibling of <a href="../set/"><code>set</code></a> (unordered) and
+<a href="../orderedset/"><code>orderedset</code></a> (first-insertion order). It shares the
+<code>Each</code>/<code>ToArray</code> grammar with <a href="../array/"><code>array</code></a>: iteration, <code>ToArray</code> and the
+set-algebra results are all emitted in <strong>ascending comparator order</strong> rather than
+Go's unspecified map order. Membership tests return a plain <code>bool</code>, fallible
+iteration and <code>First</code>/<code>Last</code> return a <a href="../result/"><code>result</code></a>, and every method
+honours the <strong>Null-Object</strong> invariant (never <code>nil</code>).</p>
+<p>Items must satisfy two constraints, which the caller guarantees: they are
+<strong>comparable</strong> (the set is backed by a Go map for O(1) membership and dedup,
+exactly like a <a href="../dictionary/"><code>dictionary</code></a> key) <strong>and</strong> orderable by the <code>less</code>
+comparator passed to <code>New</code>.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Compose</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/compose/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">SortedSet</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/sortedset/src&quot;</span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">Step</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Add</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Delete</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Has</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Len</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">IsEmpty</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Each</span><span class="p">(</span><span class="nx">fn</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">ToArray</span><span class="p">()</span><span class="w"> </span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Last</span><span class="p">()</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Union</span><span class="p">(</span><span class="nx">other</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Intersection</span><span class="p">(</span><span class="nx">other</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Difference</span><span class="p">(</span><span class="nx">other</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">IsSubset</span><span class="p">(</span><span class="nx">other</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">other</span><span class="w"> </span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
+<span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">Pipe</span><span class="p">(</span><span class="nx">steps</span><span class="w"> </span><span class="o">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">Run</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">steps</span><span class="w"> </span><span class="o">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">Then</span><span class="p">(</span><span class="nx">transform</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Step</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">Map</span><span class="p">(</span><span class="nx">transform</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Step</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">Recover</span><span class="p">(</span><span class="nx">step</span><span class="w"> </span><span class="nx">Step</span><span class="p">,</span><span class="w"> </span><span class="nx">handler</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">failed</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">Fail</span><span class="p">(</span><span class="nx">message</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">less</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Null</span><span class="p">()</span><span class="w"> </span><span class="nx">Interface</span>
 </code></pre></div>
-<p>A <code>Step</code> receives the payload produced by the previous stage and returns a
-<a href="../result/"><code>Result</code></a>. Per the org's null-object discipline, a step never
-returns a bare <code>nil</code>: it returns either a payload-bearing <code>Result</code> (success) or
-a <code>Result</code> whose <a href="../result/#haserror"><code>HasError()</code></a> is <code>true</code> (failure).</p>
-<h2 id="behaviour">Behaviour</h2>
+<ul>
+<li><code>New(less, items...)</code> builds a <code>SortedSet</code> ordered by the <code>less</code> comparator and
+  seeded with the given items (deduplicated and inserted in sorted position).</li>
+<li><code>Null()</code> returns the <strong>Null-Object</strong> set (see below).</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>Function</th>
+<th>Member</th>
 <th>Behaviour</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Pipe(steps...)</code></td>
-<td>Composes the steps <strong>left-to-right</strong> into one reusable <code>Step</code>.</td>
+<td><code>Add(item)</code></td>
+<td>Inserts <code>item</code> in its sorted position when new (idempotent — a no-op when already present, which keeps the set sorted) and returns the receiver, so calls chain.</td>
 </tr>
 <tr>
-<td><code>Run(input, steps...)</code></td>
-<td>Convenience for <code>Pipe(steps...)(input)</code> — compose and run in one call.</td>
+<td><code>Delete(item)</code></td>
+<td>Removes <code>item</code> (a no-op when absent), keeping the rest sorted, and returns the receiver, so calls chain.</td>
 </tr>
 <tr>
-<td><code>Then(transform)</code></td>
-<td>Lifts an infallible <code>func(interface{}) interface{}</code> onto the success track; its return value becomes a successful <code>Result</code>'s payload.</td>
+<td><code>Has(item)</code></td>
+<td>Returns a plain <code>bool</code> reporting whether <code>item</code> is a member.</td>
 </tr>
 <tr>
-<td><code>Map(transform)</code></td>
-<td>Alias of <code>Then</code>.</td>
+<td><code>Len()</code></td>
+<td>Returns the number of items.</td>
 </tr>
 <tr>
-<td><code>Recover(step, handler)</code></td>
-<td>Runs <code>handler</code> only when <code>step</code> short-circuits, giving it a chance to return a fallback <code>Result</code> and rejoin the success track. On success the <code>Result</code> passes through untouched.</td>
+<td><code>IsEmpty()</code></td>
+<td>Returns <code>true</code> when the set has no items.</td>
 </tr>
 <tr>
-<td><code>Fail(message)</code></td>
-<td>A <code>Step</code> that always short-circuits with an error carrying <code>message</code>.</td>
+<td><code>Each(fn)</code></td>
+<td>Invokes <code>fn</code> per item in <strong>ascending comparator order</strong>; short-circuits and returns the first <code>Result</code> whose <code>HasError()</code> is <code>true</code>, otherwise returns a fresh <code>Result.New()</code>.</td>
+</tr>
+<tr>
+<td><code>ToArray()</code></td>
+<td>Materialises the set into an <a href="../array/"><code>array</code></a>, in ascending comparator order.</td>
+</tr>
+<tr>
+<td><code>First()</code></td>
+<td>Returns a <code>Result</code> whose payload is the <strong>minimum</strong> item (by the comparator), or an <code>Error.New("SortedSet is empty")</code> when the set is empty.</td>
+</tr>
+<tr>
+<td><code>Last()</code></td>
+<td>Returns a <code>Result</code> whose payload is the <strong>maximum</strong> item (by the comparator), or an <code>Error.New("SortedSet is empty")</code> when the set is empty.</td>
+</tr>
+<tr>
+<td><code>Union(other)</code></td>
+<td>Returns a new <code>SortedSet</code> of every item present in this set or <code>other</code> (Ruby's <code>\|</code>). The result uses the <strong>receiver's</strong> comparator and stays sorted.</td>
+</tr>
+<tr>
+<td><code>Intersection(other)</code></td>
+<td>Returns a new <code>SortedSet</code> of only the items present in both sets (Ruby's <code>&amp;</code>), using the receiver's comparator.</td>
+</tr>
+<tr>
+<td><code>Difference(other)</code></td>
+<td>Returns a new <code>SortedSet</code> of the items present here but not in <code>other</code> (Ruby's <code>-</code>), using the receiver's comparator.</td>
+</tr>
+<tr>
+<td><code>IsSubset(other)</code></td>
+<td>Reports whether every item of this set is also in <code>other</code>.</td>
+</tr>
+<tr>
+<td><code>Equal(other)</code></td>
+<td>Reports whether both sets hold the same members. Equality is <strong>order-insensitive</strong>: two <code>SortedSet</code>s are equal when they hold the same items regardless of their comparators, exactly like a mathematical set.</td>
+</tr>
+<tr>
+<td><code>IsNull()</code></td>
+<td>Returns <code>false</code> for a real set, <code>true</code> for the <code>Null()</code> one.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="data-flow-and-short-circuiting">Data flow and short-circuiting</h3>
-<p><code>Pipe</code> wraps its <code>input</code> in a successful <code>Result</code>, then runs each step in order
-on the <strong>previous step's <code>Payload()</code></strong> — data flows forward, left to right. As
-soon as a step returns a <code>Result</code> with <code>HasError() == true</code>, the pipeline
-returns that error <code>Result</code> <strong>unchanged</strong> and no later step runs. Otherwise the
-final step's <code>Result</code> is returned.</p>
-<p><code>Pipe()</code> with no steps is the <strong>identity track</strong>: it simply wraps its input in a
-successful <code>Result</code>. The returned <code>Step</code> is reusable and safe to run on many
-inputs.</p>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">Compose</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/compose/src&quot;</span>
-<span class="w">    </span><span class="nx">Error</span><span class="w">   </span><span class="s">&quot;github.com/go-composites/error/src&quot;</span>
-<span class="w">    </span><span class="nx">Result</span><span class="w">  </span><span class="s">&quot;github.com/go-composites/result/src&quot;</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nx">less</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">parse</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">strconv</span><span class="p">.</span><span class="nx">Atoi</span><span class="p">(</span><span class="nx">input</span><span class="p">.(</span><span class="kt">string</span><span class="p">))</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;not an integer&quot;</span><span class="p">)))</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
+<span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">SortedSet</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">less</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">// {1, 2, 3} — deduplicated and sorted</span>
+<span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">SortedSet</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">less</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Has</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w">                </span><span class="c1">// true</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Len</span><span class="p">())</span><span class="w">                 </span><span class="c1">// 3</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">ToArray</span><span class="p">())</span><span class="w">             </span><span class="c1">// iterates 1, 2, 3 in sorted order</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Intersection</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">Len</span><span class="p">())</span><span class="w"> </span><span class="c1">// 2  (2 and 3)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Union</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">Len</span><span class="p">())</span><span class="w">        </span><span class="c1">// 4  (1, 2, 3, 4)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Difference</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">Len</span><span class="p">())</span><span class="w">   </span><span class="c1">// 1  (1)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">First</span><span class="p">();</span><span class="w"> </span><span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">())</span><span class="w"> </span><span class="c1">// 1  (the minimum)</span>
 <span class="p">}</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">validate</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">input</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;must be positive&quot;</span><span class="p">)))</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">input</span><span class="p">))</span>
-<span class="p">}</span>
-
-<span class="c1">// A reusable pipeline: parse -&gt; validate -&gt; double.</span>
-<span class="nx">pipeline</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Compose</span><span class="p">.</span><span class="nx">Pipe</span><span class="p">(</span>
-<span class="w">    </span><span class="nx">parse</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">validate</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">Compose</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">input</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}),</span>
-<span class="p">)</span>
-
-<span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">&quot;21&quot;</span><span class="p">)</span><span class="w">            </span><span class="c1">// HasError() == false, Payload() == 42</span>
-<span class="nx">bad</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">&quot;not-a-number&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// HasError() == true,  Error().Message() == &quot;not an integer&quot;</span>
-<span class="w">                                </span><span class="c1">// (validate and the doubling step never run)</span>
 </code></pre></div>
-<p><code>Run("21", parse, validate, ...)</code> is the same as <code>pipeline("21")</code> without first
-binding the pipeline to a variable.</p>
+<div class="admonition note">
+<p class="admonition-title">The Null-Object variant</p>
+<p><code>SortedSet.Null()</code> honours the full <code>Interface</code> without ever being <code>nil</code>:
+mutating methods (<code>Add</code>, <code>Delete</code>) are no-ops returning the receiver, every
+query is empty/false/zero (<code>Has</code> is <code>false</code>, <code>Len()</code> is <code>0</code>, <code>IsEmpty()</code> is
+<code>true</code>), <code>Each</code> is a clean pass, the set operations return the receiver,
+<code>First</code>/<code>Last</code> return an <code>Error.New("SortedSet is empty")</code> <code>Result</code>,
+<code>IsSubset</code> is <code>true</code>, <code>Equal(other)</code> is <code>other.IsEmpty()</code>, and <code>IsNull()</code>
+returns <code>true</code>.</p>
+</div>
 <h2 id="dependencies">Dependencies</h2>
-<p><code>compose</code> depends on <a href="../result/"><code>result</code></a> and <a href="../error/"><code>error</code></a> (and
-transitively on <a href="../null/"><code>null</code></a>).</p>
+<p><code>sortedset</code> depends on <a href="../array/"><code>array</code></a> and <a href="../result/"><code>result</code></a> (and
+transitively on <a href="../error/"><code>error</code></a> and <a href="../null/"><code>null</code></a>).</p>
 
 
 
