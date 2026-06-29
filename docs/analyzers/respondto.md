@@ -1,6 +1,10 @@
 # respondto — make reflective method-name strings compile-checked
 
-`github.com/go-composites/respondto` is a
+!!! info "Now maintained in the go-vet-analyzers org"
+    `respondto` has moved to [`github.com/go-vet-analyzers/respondto`](https://github.com/go-vet-analyzers/respondto). The install path below reflects the new home.
+
+
+`github.com/go-vet-analyzers/respondto` is a
 [`golang.org/x/tools/go/analysis`](https://pkg.go.dev/golang.org/x/tools/go/analysis)
 analyzer (a `go vet` tool) that catches typo'd or stale **reflective method
 sends** at build time.
@@ -102,7 +106,7 @@ _ = RespondTo(p, "Nope")          // ACCEPTED: pointer to unnamed type, no metho
 ## Install & run
 
 ```sh
-go install github.com/go-composites/respondto/cmd/respondto@latest
+go install github.com/go-vet-analyzers/respondto/cmd/respondto@latest
 go vet -vettool=$(which respondto) ./...
 ```
 
@@ -114,7 +118,7 @@ and accepts the usual `go vet` flags and package patterns.
 Run `respondto` on every org repo by adding it to the workflow:
 
 ```yaml
-  - run: go install github.com/go-composites/respondto/cmd/respondto@latest
+  - run: go install github.com/go-vet-analyzers/respondto/cmd/respondto@latest
   - run: go vet -vettool="$(go env GOPATH)/bin/respondto" ./...
 ```
 
@@ -123,4 +127,4 @@ job red, so a typo'd or renamed dynamic send can never merge.
 
 ## License
 
-BSD-3-Clause © the go-composites/respondto authors.
+BSD-3-Clause © the go-vet-analyzers/respondto authors.

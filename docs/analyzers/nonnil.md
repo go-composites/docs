@@ -1,6 +1,10 @@
 # nonnil — never return a bare `nil` for a Null-Object interface
 
-`github.com/go-composites/nonnil` is a
+!!! info "Now maintained in the go-vet-analyzers org"
+    `nonnil` has moved to [`github.com/go-vet-analyzers/nonnil`](https://github.com/go-vet-analyzers/nonnil). The install path below reflects the new home.
+
+
+`github.com/go-vet-analyzers/nonnil` is a
 [`golang.org/x/tools/go/analysis`](https://pkg.go.dev/golang.org/x/tools/go/analysis)
 analyzer (a `go vet` tool) that enforces the org's **Null-Object invariant**: a
 value whose type is a *Null-Object interface* — any interface that declares
@@ -95,7 +99,7 @@ var ok error = nil           // ACCEPTED: builtin error has no IsNull(), not a N
 ## Install & run
 
 ```sh
-go install github.com/go-composites/nonnil/cmd/nonnil@latest
+go install github.com/go-vet-analyzers/nonnil/cmd/nonnil@latest
 go vet -vettool=$(which nonnil) ./...
 ```
 
@@ -108,7 +112,7 @@ Every org repo runs `nonnil` on push and pull request via the `nonnil.yml`
 workflow, which installs the tool and vets the whole module:
 
 ```yaml
-  - run: go install github.com/go-composites/nonnil/cmd/nonnil@latest
+  - run: go install github.com/go-vet-analyzers/nonnil/cmd/nonnil@latest
   - run: go vet -vettool="$(go env GOPATH)/bin/nonnil" ./...
 ```
 
@@ -117,4 +121,4 @@ un-mergeable.
 
 ## License
 
-BSD-3-Clause © the go-composites/nonnil authors.
+BSD-3-Clause © the go-vet-analyzers/nonnil authors.
