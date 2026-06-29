@@ -1560,7 +1560,11 @@
 
 
 <h1 id="respondto-make-reflective-method-name-strings-compile-checked">respondto — make reflective method-name strings compile-checked</h1>
-<p><code>github.com/go-composites/respondto</code> is a
+<div class="admonition info">
+<p class="admonition-title">Now maintained in the go-vet-analyzers org</p>
+<p><code>respondto</code> has moved to <a href="https://github.com/go-vet-analyzers/respondto"><code>github.com/go-vet-analyzers/respondto</code></a>. The install path below reflects the new home.</p>
+</div>
+<p><code>github.com/go-vet-analyzers/respondto</code> is a
 <a href="https://pkg.go.dev/golang.org/x/tools/go/analysis"><code>golang.org/x/tools/go/analysis</code></a>
 analyzer (a <code>go vet</code> tool) that catches typo'd or stale <strong>reflective method
 sends</strong> at build time.</p>
@@ -1650,20 +1654,20 @@ building — only to fail (or silently mis-dispatch) at runtime. <code>respondto
 surfaces that stale string as a build error instead.</p>
 </div>
 <h2 id="install-run">Install &amp; run</h2>
-<div class="highlight"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-composites/respondto/cmd/respondto@latest
+<div class="highlight"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-vet-analyzers/respondto/cmd/respondto@latest
 go<span class="w"> </span>vet<span class="w"> </span>-vettool<span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>respondto<span class="k">)</span><span class="w"> </span>./...
 </code></pre></div>
 <p>The command wraps the analyzer with <code>singlechecker</code>, so it also runs standalone
 and accepts the usual <code>go vet</code> flags and package patterns.</p>
 <h2 id="ci-integration">CI integration</h2>
 <p>Run <code>respondto</code> on every org repo by adding it to the workflow:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install github.com/go-composites/respondto/cmd/respondto@latest</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install github.com/go-vet-analyzers/respondto/cmd/respondto@latest</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet -vettool=&quot;$(go env GOPATH)/bin/respondto&quot; ./...</span>
 </code></pre></div>
 <p>A string-literal method name that does not exist on its resolved type turns the
 job red, so a typo'd or renamed dynamic send can never merge.</p>
 <h2 id="license">License</h2>
-<p>BSD-3-Clause © the go-composites/respondto authors.</p>
+<p>BSD-3-Clause © the go-vet-analyzers/respondto authors.</p>
 
 
 

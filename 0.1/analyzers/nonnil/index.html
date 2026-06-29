@@ -1562,7 +1562,11 @@
 
 
 <h1 id="nonnil-never-return-a-bare-nil-for-a-null-object-interface">nonnil — never return a bare <code>nil</code> for a Null-Object interface</h1>
-<p><code>github.com/go-composites/nonnil</code> is a
+<div class="admonition info">
+<p class="admonition-title">Now maintained in the go-vet-analyzers org</p>
+<p><code>nonnil</code> has moved to <a href="https://github.com/go-vet-analyzers/nonnil"><code>github.com/go-vet-analyzers/nonnil</code></a>. The install path below reflects the new home.</p>
+</div>
+<p><code>github.com/go-vet-analyzers/nonnil</code> is a
 <a href="https://pkg.go.dev/golang.org/x/tools/go/analysis"><code>golang.org/x/tools/go/analysis</code></a>
 analyzer (a <code>go vet</code> tool) that enforces the org's <strong>Null-Object invariant</strong>: a
 value whose type is a <em>Null-Object interface</em> — any interface that declares
@@ -1643,7 +1647,7 @@ they are explicit, structural, or uncommon.</p>
 <span class="kd">var</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">           </span><span class="c1">// ACCEPTED: builtin error has no IsNull(), not a Null-Object interface</span>
 </code></pre></div>
 <h2 id="install-run">Install &amp; run</h2>
-<div class="highlight"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-composites/nonnil/cmd/nonnil@latest
+<div class="highlight"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-vet-analyzers/nonnil/cmd/nonnil@latest
 go<span class="w"> </span>vet<span class="w"> </span>-vettool<span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>nonnil<span class="k">)</span><span class="w"> </span>./...
 </code></pre></div>
 <p>The command wraps the analyzer with <code>singlechecker</code>, so it also runs standalone
@@ -1651,13 +1655,13 @@ and accepts the usual <code>go vet</code> flags and package patterns.</p>
 <h2 id="ci-integration">CI integration</h2>
 <p>Every org repo runs <code>nonnil</code> on push and pull request via the <code>nonnil.yml</code>
 workflow, which installs the tool and vets the whole module:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install github.com/go-composites/nonnil/cmd/nonnil@latest</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install github.com/go-vet-analyzers/nonnil/cmd/nonnil@latest</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet -vettool=&quot;$(go env GOPATH)/bin/nonnil&quot; ./...</span>
 </code></pre></div>
 <p>A bare <code>nil</code> in any of the positions above turns the job red, making the mistake
 un-mergeable.</p>
 <h2 id="license">License</h2>
-<p>BSD-3-Clause © the go-composites/nonnil authors.</p>
+<p>BSD-3-Clause © the go-vet-analyzers/nonnil authors.</p>
 
 
 
