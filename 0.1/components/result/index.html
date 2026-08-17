@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1545,7 +1545,7 @@ sub-directory) is the org's <strong>return-value wrapper</strong>. Instead of re
 <code>(value, error)</code> Go-style, methods across <code>go-composites</code> return a single
 <code>Result.Interface</code> carrying both a <strong>payload</strong> and an <strong>error</strong>.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Result</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/result/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Result</span><span class="w"> </span><span class="s">"github.com/go-composites/result/src"</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Payload</span><span class="p">()</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span>
@@ -1553,7 +1553,7 @@ sub-directory) is the org's <strong>return-value wrapper</strong>. Instead of re
 <span class="w">    </span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="p">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">payload</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Option</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">WithError</span><span class="p">(</span><span class="kt">error</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
 </code></pre></div>
@@ -1589,7 +1589,7 @@ returns a bare <code>nil</code>.</p>
 <h2 id="haserror"><code>HasError()</code></h2>
 <p><code>HasError()</code> is defined as:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">!</span><span class="nx">d</span><span class="p">.</span><span class="kt">error</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="nx">d</span><span class="p">.</span><span class="kt">error</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Because the <a href="../error/#null-error-srcnull">null error</a> reports <code>IsNull() == true</code>,
@@ -1597,12 +1597,12 @@ a <code>Result</code> with <strong>no</strong> error reports <code>HasError() ==
 carrying a <strong>real</strong> error reports <code>HasError() == true</code> — exactly what the name
 implies.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">().</span><span class="nx">HasError</span><span class="p">()</span><span class="w">                                   </span><span class="c1">// false (no error)</span>
-<span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">))).</span><span class="nx">HasError</span><span class="p">()</span><span class="w">   </span><span class="c1">// true  (has error)</span>
+<span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"x"</span><span class="p">))).</span><span class="nx">HasError</span><span class="p">()</span><span class="w">   </span><span class="c1">// true  (has error)</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">The idiomatic guard</p>
 <p>Across the org, callers branch on the result with the natural shape:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span><span class="w"> </span><span class="c1">// failure path</span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">use</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">())</span><span class="w">                 </span><span class="c1">// success path</span>
@@ -1678,7 +1678,7 @@ implies.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

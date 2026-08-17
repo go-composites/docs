@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1552,54 +1552,54 @@ facade that re-exports every building block — <a href="../array/"><code>array<
 <code>import Result "github.com/go-composites/result/src"</code>). <code>composites</code> is the
 <strong>one exception</strong>: it lives at the module root and its package name <em>is</em>
 <code>composites</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/composites&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">"github.com/go-composites/composites"</span>
 </code></pre></div>
 </div>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/composites&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="s">"github.com/go-composites/composites"</span>
 
 <span class="c1">// Composite interface types (aliases).</span>
 <span class="kd">type</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">Array</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="nx">array</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Boolean</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Dictionary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Error</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="kt">error</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Null</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="nx">null</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Number</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">Result</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
-<span class="w">    </span><span class="nx">String</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Array</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Boolean</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Error</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="kt">error</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Null</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nx">null</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Number</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Result</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">String</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="p">)</span>
 
 <span class="c1">// Functional-option types (aliases).</span>
 <span class="kd">type</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">DictionaryOption</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
-<span class="w">    </span><span class="nx">NumberOption</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
-<span class="w">    </span><span class="nx">ResultOption</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
-<span class="w">    </span><span class="nx">StringOption</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">DictionaryOption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">NumberOption</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">ResultOption</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
+<span class="w">    </span><span class="nx">StringOption</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">Option</span>
 <span class="p">)</span>
 
 <span class="c1">// Constructors, re-exported as function values.</span>
 <span class="kd">var</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">NewArray</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="nx">array</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">NewBoolean</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">True</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">True</span>
-<span class="w">    </span><span class="nx">False</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">False</span>
-<span class="w">    </span><span class="nx">NewString</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">NewError</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="kt">error</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">NewNull</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="nx">null</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">NewNumber</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">NewResult</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
-<span class="w">    </span><span class="nx">NewDictionary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewArray</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewBoolean</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">True</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">True</span>
+<span class="w">    </span><span class="nx">False</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="nx">boolean</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">False</span>
+<span class="w">    </span><span class="nx">NewString</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewError</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="kt">error</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewNull</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nx">null</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewNumber</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewResult</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
+<span class="w">    </span><span class="nx">NewDictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">New</span>
 <span class="p">)</span>
 
 <span class="c1">// Options, re-exported as function values.</span>
 <span class="kd">var</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">WithGoString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithGoString</span>
-<span class="w">    </span><span class="nx">WithPayload</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithPayload</span>
-<span class="w">    </span><span class="nx">WithError</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithError</span>
-<span class="w">    </span><span class="nx">WithInt</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithInt</span>
-<span class="w">    </span><span class="nx">WithFloat</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithFloat</span>
-<span class="w">    </span><span class="nx">WithPairs</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithPairs</span>
+<span class="w">    </span><span class="nx">WithGoString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithGoString</span>
+<span class="w">    </span><span class="nx">WithPayload</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithPayload</span>
+<span class="w">    </span><span class="nx">WithError</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithError</span>
+<span class="w">    </span><span class="nx">WithInt</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithInt</span>
+<span class="w">    </span><span class="nx">WithFloat</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">number</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithFloat</span>
+<span class="w">    </span><span class="nx">WithPairs</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">dictionary</span><span class="o">/</span><span class="nx">src</span><span class="p">.</span><span class="nx">WithPairs</span>
 <span class="p">)</span>
 </code></pre></div>
 <p><em>(The aliases above are written <code>pkg/src.X</code> for readability; in the source each
@@ -1650,26 +1650,26 @@ the one import (see <code>examples/demo/main.go</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">"fmt"</span>
 
-<span class="w">    </span><span class="s">&quot;github.com/go-composites/composites&quot;</span>
+<span class="w">    </span><span class="s">"github.com/go-composites/composites"</span>
 <span class="p">)</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">div</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewNumber</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithInt</span><span class="p">(</span><span class="mi">10</span><span class="p">)).</span>
 <span class="w">        </span><span class="nx">Div</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewNumber</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithInt</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;10 / 0 → HasError=%t (%v)\n&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"10 / 0 → HasError=%t (%v)\n"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">div</span><span class="p">.</span><span class="nx">HasError</span><span class="p">(),</span><span class="w"> </span><span class="nx">div</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span>
 
-<span class="w">    </span><span class="nx">d</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewDictionary</span><span class="p">().</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;k&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;v&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;dict.Get(k) → %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;k&quot;</span><span class="p">).</span><span class="nx">Payload</span><span class="p">())</span>
+<span class="w">    </span><span class="nx">d</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewDictionary</span><span class="p">().</span><span class="nx">Set</span><span class="p">(</span><span class="s">"k"</span><span class="p">,</span><span class="w"> </span><span class="s">"v"</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"dict.Get(k) → %v\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">"k"</span><span class="p">).</span><span class="nx">Payload</span><span class="p">())</span>
 
 <span class="w">    </span><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewArray</span><span class="p">()</span>
 <span class="w">    </span><span class="nx">a</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">True</span><span class="p">())</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;array.First() → %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">First</span><span class="p">().</span><span class="nx">Payload</span><span class="p">())</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"array.First() → %v\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">First</span><span class="p">().</span><span class="nx">Payload</span><span class="p">())</span>
 
-<span class="w">    </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewResult</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">))</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;result → %v (err=%t)\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">(),</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">())</span>
+<span class="w">    </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">composites</span><span class="p">.</span><span class="nx">NewResult</span><span class="p">(</span><span class="nx">composites</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="s">"ok"</span><span class="p">))</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"result → %v (err=%t)\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">(),</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">())</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Because <code>composites.Result</code> and <code>result/src.Interface</code> are the same type, the
@@ -1738,7 +1738,7 @@ the one import (see <code>examples/demo/main.go</code>):</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

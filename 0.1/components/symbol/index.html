@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1525,7 +1525,7 @@ sub-directory) is the org's equivalent of Ruby's <code>Symbol</code> (<code>:nam
 identity comparison is meaningful and cheap. The registry is guarded by a
 <code>sync.Mutex</code>, making interning safe for concurrent callers.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Symbol</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/symbol/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Symbol</span><span class="w"> </span><span class="s">"github.com/go-composites/symbol/src"</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
@@ -1574,8 +1574,8 @@ identity comparison is meaningful and cheap. The registry is guarded by a
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;status&quot;</span><span class="p">)</span>
-<span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;status&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"status"</span><span class="p">)</span>
+<span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"status"</span><span class="p">)</span>
 
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w">          </span><span class="c1">// true — interned, same instance</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">b</span><span class="p">))</span><span class="w">      </span><span class="c1">// true</span>
@@ -1650,7 +1650,7 @@ library (<code>fmt</code>, <code>sync</code>).</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

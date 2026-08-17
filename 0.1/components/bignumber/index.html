@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1528,7 +1528,7 @@ that failures — notably division by zero — are <strong>values</strong>, neve
 as the fast path, <code>bignumber</code> carries <strong>unbounded precision</strong> for integers that
 overflow <code>int64</code>.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">BigNumber</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/bignumber/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">BigNumber</span><span class="w"> </span><span class="s">"github.com/go-composites/bignumber/src"</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">ToGoString</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
@@ -1613,13 +1613,13 @@ overflow <code>int64</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">BigNumber</span><span class="p">.</span><span class="nx">FromInt64</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">BigNumber</span><span class="p">.</span><span class="nx">FromInt64</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">BigNumber</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// 13</span>
 <span class="p">}</span>
 
 <span class="c1">// Arbitrary precision — values that overflow int64:</span>
-<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">BigNumber</span><span class="p">.</span><span class="nx">FromString</span><span class="p">(</span><span class="s">&quot;123456789012345678901234567890&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">BigNumber</span><span class="p">.</span><span class="nx">FromString</span><span class="p">(</span><span class="s">"123456789012345678901234567890"</span><span class="p">);</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">big</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">BigNumber</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">big</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// 123456789012345678901234567890</span>
 <span class="p">}</span>
@@ -1698,7 +1698,7 @@ transitively on <a href="../null/"><code>null</code></a>).</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

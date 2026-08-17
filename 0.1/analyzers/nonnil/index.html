@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1614,8 +1614,8 @@ they are explicit, structural, or uncommon.</p>
 </div>
 <h2 id="flagged-vs-accepted">Flagged vs. accepted</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">Error</span><span class="w">     </span><span class="s">&quot;github.com/go-composites/error/src&quot;</span>
-<span class="w">    </span><span class="nx">NullError</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/error/src/null&quot;</span>
+<span class="w">    </span><span class="nx">Error</span><span class="w">     </span><span class="s">"github.com/go-composites/error/src"</span>
+<span class="w">    </span><span class="nx">NullError</span><span class="w"> </span><span class="s">"github.com/go-composites/error/src/null"</span>
 <span class="p">)</span>
 
 <span class="c1">// FLAGGED: Error.Interface declares IsNull() bool, and this returns a bare nil.</span>
@@ -1623,7 +1623,7 @@ they are explicit, structural, or uncommon.</p>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">bad</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">// nonnil: return a Null object (e.g. Null.New()) instead of nil</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;boom&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"boom"</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// ACCEPTED: hands back a real Null object the caller can always message.</span>
@@ -1631,20 +1631,20 @@ they are explicit, structural, or uncommon.</p>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">bad</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">NullError</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;boom&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"boom"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Box</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Err</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="p">}</span>
 
-<span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Box</span><span class="p">{</span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">}</span><span class="w">            </span><span class="c1">// FLAGGED: set field Err to a Null object instead of nil</span>
-<span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Box</span><span class="p">{</span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="nx">NullError</span><span class="p">.</span><span class="nx">New</span><span class="p">()}</span><span class="w"> </span><span class="c1">// ACCEPTED</span>
+<span class="nx">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Box</span><span class="p">{</span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">}</span><span class="w">            </span><span class="c1">// FLAGGED: set field Err to a Null object instead of nil</span>
+<span class="nx">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Box</span><span class="p">{</span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="nx">NullError</span><span class="p">.</span><span class="nx">New</span><span class="p">()}</span><span class="w"> </span><span class="c1">// ACCEPTED</span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">  </span><span class="c1">// FLAGGED: initialise a Null object instead of nil</span>
-<span class="nx">e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">                      </span><span class="c1">// FLAGGED: assign a Null object instead of nil</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">  </span><span class="c1">// FLAGGED: initialise a Null object instead of nil</span>
+<span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">                      </span><span class="c1">// FLAGGED: assign a Null object instead of nil</span>
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">           </span><span class="c1">// ACCEPTED: builtin error has no IsNull(), not a Null-Object interface</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span><span class="w">           </span><span class="c1">// ACCEPTED: builtin error has no IsNull(), not a Null-Object interface</span>
 </code></pre></div>
 <h2 id="install-run">Install &amp; run</h2>
 <div class="highlight"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-vet-analyzers/nonnil/cmd/nonnil@latest
@@ -1656,7 +1656,7 @@ and accepts the usual <code>go vet</code> flags and package patterns.</p>
 <p>Every org repo runs <code>nonnil</code> on push and pull request via the <code>nonnil.yml</code>
 workflow, which installs the tool and vets the whole module:</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install github.com/go-vet-analyzers/nonnil/cmd/nonnil@latest</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet -vettool=&quot;$(go env GOPATH)/bin/nonnil&quot; ./...</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet -vettool="$(go env GOPATH)/bin/nonnil" ./...</span>
 </code></pre></div>
 <p>A bare <code>nil</code> in any of the positions above turns the job red, making the mistake
 un-mergeable.</p>
@@ -1720,7 +1720,7 @@ un-mergeable.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

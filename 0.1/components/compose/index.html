@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1580,12 +1580,12 @@ that names go-composites. It wires small <code>Result</code>-returning <strong>s
 single pipeline that threads a payload forward along a <em>success track</em> and
 short-circuits onto an <em>error track</em> the instant a step fails.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Compose</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/compose/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Compose</span><span class="w"> </span><span class="s">"github.com/go-composites/compose/src"</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Step</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">Pipe</span><span class="p">(</span><span class="nx">steps</span><span class="w"> </span><span class="o">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
-<span class="kd">func</span><span class="w"> </span><span class="nx">Run</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">steps</span><span class="w"> </span><span class="o">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Pipe</span><span class="p">(</span><span class="nx">steps</span><span class="w"> </span><span class="p">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Step</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Run</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{},</span><span class="w"> </span><span class="nx">steps</span><span class="w"> </span><span class="p">...</span><span class="nx">Step</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">Then</span><span class="p">(</span><span class="nx">transform</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Step</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">Map</span><span class="p">(</span><span class="nx">transform</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Step</span>
@@ -1642,22 +1642,22 @@ successful <code>Result</code>. The returned <code>Step</code> is reusable and s
 inputs.</p>
 <h2 id="usage">Usage</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">Compose</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/compose/src&quot;</span>
-<span class="w">    </span><span class="nx">Error</span><span class="w">   </span><span class="s">&quot;github.com/go-composites/error/src&quot;</span>
-<span class="w">    </span><span class="nx">Result</span><span class="w">  </span><span class="s">&quot;github.com/go-composites/result/src&quot;</span>
+<span class="w">    </span><span class="nx">Compose</span><span class="w"> </span><span class="s">"github.com/go-composites/compose/src"</span>
+<span class="w">    </span><span class="nx">Error</span><span class="w">   </span><span class="s">"github.com/go-composites/error/src"</span>
+<span class="w">    </span><span class="nx">Result</span><span class="w">  </span><span class="s">"github.com/go-composites/result/src"</span>
 <span class="p">)</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">parse</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">strconv</span><span class="p">.</span><span class="nx">Atoi</span><span class="p">(</span><span class="nx">input</span><span class="p">.(</span><span class="kt">string</span><span class="p">))</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;not an integer&quot;</span><span class="p">)))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"not an integer"</span><span class="p">)))</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
 <span class="p">}</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">validate</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">input</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;must be positive&quot;</span><span class="p">)))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithError</span><span class="p">(</span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"must be positive"</span><span class="p">)))</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">Result</span><span class="p">.</span><span class="nx">WithPayload</span><span class="p">(</span><span class="nx">input</span><span class="p">))</span>
 <span class="p">}</span>
@@ -1669,8 +1669,8 @@ inputs.</p>
 <span class="w">    </span><span class="nx">Compose</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">input</span><span class="p">.(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}),</span>
 <span class="p">)</span>
 
-<span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">&quot;21&quot;</span><span class="p">)</span><span class="w">            </span><span class="c1">// HasError() == false, Payload() == 42</span>
-<span class="nx">bad</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">&quot;not-a-number&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// HasError() == true,  Error().Message() == &quot;not an integer&quot;</span>
+<span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">"21"</span><span class="p">)</span><span class="w">            </span><span class="c1">// HasError() == false, Payload() == 42</span>
+<span class="nx">bad</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="s">"not-a-number"</span><span class="p">)</span><span class="w"> </span><span class="c1">// HasError() == true,  Error().Message() == "not an integer"</span>
 <span class="w">                                </span><span class="c1">// (validate and the doubling step never run)</span>
 </code></pre></div>
 <p><code>Run("21", parse, validate, ...)</code> is the same as <code>pipeline("21")</code> without first
@@ -1736,7 +1736,7 @@ transitively on <a href="../null/"><code>null</code></a>).</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

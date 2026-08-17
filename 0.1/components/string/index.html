@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1522,7 +1522,7 @@
 sub-directory) boxes a Go <code>string</code> behind the org's interface-first style, with
 <code>result</code>-returning mutators.</p>
 <h2 id="api">API</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/string/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="s">"github.com/go-composites/string/src"</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Set</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
@@ -1538,11 +1538,11 @@ sub-directory) boxes a Go <code>string</code> behind the org's interface-first s
 <span class="w">    </span><span class="nx">Equal</span><span class="p">(</span><span class="nx">Interface</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">StartsWith</span><span class="p">(</span><span class="nx">prefix</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
 <span class="w">    </span><span class="nx">EndsWith</span><span class="p">(</span><span class="nx">suffix</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
-<span class="w">    </span><span class="nx">Format</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="o">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
+<span class="w">    </span><span class="nx">Format</span><span class="p">(</span><span class="nx">args</span><span class="w"> </span><span class="p">...</span><span class="kd">interface</span><span class="p">{})</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">Interface</span>
 <span class="w">    </span><span class="nx">IsNull</span><span class="p">()</span><span class="w"> </span><span class="kt">bool</span>
 <span class="p">}</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">New</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="p">...</span><span class="nx">Option</span><span class="p">)</span><span class="w"> </span><span class="nx">Interface</span>
 <span class="kd">func</span><span class="w"> </span><span class="nx">WithGoString</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">Option</span>
 
 <span class="c1">// Null-Object variant (honours the full Interface, never nil):</span>
@@ -1591,15 +1591,15 @@ repo also ships a sibling <code>NullString</code> package at
 its own <code>New()</code> constructor.)</p>
 </div>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">String</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">String</span><span class="p">.</span><span class="nx">WithGoString</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">String</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">String</span><span class="p">.</span><span class="nx">WithGoString</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">))</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">ToGoString</span><span class="p">())</span><span class="w"> </span><span class="c1">// Hello World!</span>
 
-<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">HasError</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Error</span><span class="p">().</span><span class="nx">Message</span><span class="p">())</span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">arr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Payload</span><span class="p">().(</span><span class="nx">Array</span><span class="p">.</span><span class="nx">Interface</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="c1">// payload is a String boxing &quot;Hello&quot;</span>
-<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">first</span>
+<span class="w">    </span><span class="nx">first</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">First</span><span class="p">()</span><span class="w"> </span><span class="c1">// payload is a String boxing "Hello"</span>
+<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">first</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><code>Split</code> returns an error-free <a href="../result/"><code>result</code></a> on success, so the
@@ -1666,7 +1666,7 @@ transitively on <a href="../error/"><code>error</code></a> and <a href="../null/
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

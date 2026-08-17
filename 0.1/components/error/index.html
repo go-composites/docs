@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1578,7 +1578,7 @@
 sub-directory) defines the family's <strong>error contract</strong> and a couple of sentinel
 implementations. It is a leaf module with no intra-org dependencies.</p>
 <h2 id="the-error-interface">The <code>Error</code> interface</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Error</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/error/src&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">Error</span><span class="w"> </span><span class="s">"github.com/go-composites/error/src"</span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Interface</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
@@ -1587,25 +1587,25 @@ implementations. It is a leaf module with no intra-org dependencies.</p>
 </code></pre></div>
 <p><code>Error.New(message string)</code> returns a concrete error whose <code>Message()</code> returns
 the supplied text and whose <code>IsNull()</code> returns <strong><code>false</code></strong> (it is a real error).</p>
-<div class="highlight"><pre><span></span><code><span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;boom&quot;</span><span class="p">)</span>
-<span class="nx">e</span><span class="p">.</span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="c1">// &quot;boom&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Error</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"boom"</span><span class="p">)</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="c1">// "boom"</span>
 <span class="nx">e</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span><span class="w">  </span><span class="c1">// false</span>
 </code></pre></div>
 <h2 id="sentinels">Sentinels</h2>
 <h3 id="null-error-srcnull">Null error — <code>src/null</code></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">NullError</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/error/src/null&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">NullError</span><span class="w"> </span><span class="s">"github.com/go-composites/error/src/null"</span>
 
 <span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">NullError</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
-<span class="nx">e</span><span class="p">.</span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="c1">// &quot;&quot; (empty)</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="c1">// "" (empty)</span>
 <span class="nx">e</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span><span class="w">  </span><span class="c1">// true</span>
 </code></pre></div>
 <p>The null error represents "no error". It is what <a href="../result/"><code>result</code></a> installs
 as the default error of a freshly constructed <code>Result</code>.</p>
 <h3 id="method-not-implemented-error-srcmethod_not_implemented">Method-not-implemented error — <code>src/method_not_implemented</code></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">MethodNotImplementedError</span><span class="w"> </span><span class="s">&quot;github.com/go-composites/error/src/method_not_implemented&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nx">MethodNotImplementedError</span><span class="w"> </span><span class="s">"github.com/go-composites/error/src/method_not_implemented"</span>
 
-<span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">MethodNotImplementedError</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;Copy&quot;</span><span class="p">)</span>
-<span class="nx">e</span><span class="p">.</span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="c1">// &quot;The method Copy is not implemented&quot;</span>
+<span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">MethodNotImplementedError</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"Copy"</span><span class="p">)</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">Message</span><span class="p">()</span><span class="w"> </span><span class="c1">// "The method Copy is not implemented"</span>
 <span class="nx">e</span><span class="p">.</span><span class="nx">IsNull</span><span class="p">()</span><span class="w">  </span><span class="c1">// false</span>
 </code></pre></div>
 <p>A formatted error for stubbed methods. <code>New(name)</code> builds the message
@@ -1675,7 +1675,7 @@ as the default error of a freshly constructed <code>Result</code>.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
