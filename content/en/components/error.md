@@ -1,0 +1,65 @@
+---
+title: "error — error interface + sentinels"
+weight: 50
+---
+
+# error — error interface + sentinels {#error-error-interface-sentinels}
+
+`github.com/go-composites/error` (Go package `Error`, imported from the `src/`
+sub-directory) defines the family's **error contract** and a couple of sentinel
+implementations. It is a leaf module with no intra-org dependencies.
+
+## The `Error` interface {#the-error-interface}
+
+```go
+import Error "github.com/go-composites/error/src"
+
+type Interface interface {
+    Message() string
+    IsNull() bool
+}
+```
+
+`Error.New(message string)` returns a concrete error whose `Message()` returns
+the supplied text and whose `IsNull()` returns **`false`** (it is a real error).
+
+```go
+e := Error.New("boom")
+e.Message() // "boom"
+e.IsNull()  // false
+```
+
+## Sentinels {#sentinels}
+
+### Null error — `src/null` {#null-error-srcnull}
+
+```go
+import NullError "github.com/go-composites/error/src/null"
+
+e := NullError.New()
+e.Message() // "" (empty)
+e.IsNull()  // true
+```
+
+The null error represents "no error". It is what [`result`]({{< relref "result.md" >}}) installs
+as the default error of a freshly constructed `Result`.
+
+### Method-not-implemented error — `src/method_not_implemented` {#method-not-implemented-error-srcmethod_not_implemented}
+
+```go
+import MethodNotImplementedError "github.com/go-composites/error/src/method_not_implemented"
+
+e := MethodNotImplementedError.New("Copy")
+e.Message() // "The method Copy is not implemented"
+e.IsNull()  // false
+```
+
+A formatted error for stubbed methods. `New(name)` builds the message
+`"The method <name> is not implemented"`.
+
+## Notes {#notes}
+
+- `IsNull()` is the discriminator used elsewhere in the org to tell a real
+  error apart from the "no error" sentinel. [`result`]({{< relref "result.md" >}}) builds on it:
+  `result.HasError()` is defined as `!error.IsNull()`, so a result reports an
+  error only when it actually carries a non-null one.
