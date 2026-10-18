@@ -1,0 +1,13 @@
+:root {
+  --md-primary-fg-color: #4B33B0;
+  --md-primary-fg-color--light: #8B7CF0;
+  --md-primary-fg-color--dark: #3A2790;
+  --md-accent-fg-color: #8B7CF0;
+}
+.md-header, .md-tabs { background: linear-gradient(135deg, #8B7CF0, #4B33B0); }
+.md-typeset h1 { color: #4B33B0; font-weight: 800; }
+[data-md-color-scheme="slate"] .md-typeset h1 { color: #8B7CF0; }
+.cop-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; }
+.cop-card { display:flex; gap:12px; align-items:center; border:1px solid var(--md-default-fg-color--lightest);
+  border-radius:12px; padding:12px; }
+.cop-card img { width:42px; height:42px; }
